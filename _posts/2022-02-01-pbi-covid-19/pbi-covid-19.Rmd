@@ -1,0 +1,286 @@
+---
+title: "Pbi Covid-19"
+description: |
+  Series temporales y graficos de barras de algunos países de LATAM, Euro y Asia en el año pandemico.
+author: Maxi Galoto
+date: 2022-02-01
+slug: almost-done
+categories:
+  - R
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+<div>
+<img src="https://hdwallpaperim.com/wp-content/uploads/2017/08/27/139372-world-God-748x421.jpg" alt="react" width="1" height="1" />
+</div>
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{css my-header-colors, echo = FALSE}
+.distill-site-nav {
+    color: white;
+    background-image: linear-gradient(200deg, black, blue);
+    border: solid 1px black;
+    border-radius: .3rem;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+
+```
+
+
+
+```{r}
+
+library(flexdashboard)
+library(tidyr)
+library(ggplot2)
+library(readr)  
+library(dplyr)  
+library(plotly)
+library(readxl)
+library(rvest)
+library(rsconnect)
+
+
+```
+
+
+```{r}
+
+
+
+gdp = read_excel("GDP1.xls") 
+
+gdp2 = read_excel("GDP2.xls") 
+
+gdp_var = read_excel("GDP_Variacion.xls")
+
+gdp_var_2 = read_excel("GDP2_Variacion.xls")
+
+gdpaño = gdp$Año
+
+
+
+gdp =  log(gdp[,2:19])
+
+
+gdp$Año = gdpaño
+
+
+gdp_var$Variacion = round(gdp_var$Variacion,2)
+
+gdp_var_2$Variacion = round(gdp_var_2$Variacion*100,2)
+
+
+```
+
+
+
+### **Ficha técnica del estudio**
+
+*Podemos visualizar, en las series de tiempo de países de LATAM, la abrupta caída del PIB de Venezuela, parecería ser que hubo una gran devaluación del bolívar ya que estos valores están expresados en dolares.*
+
+*Si nos ponemos a analizar la evolución del PBI en las series temporales de Irlanda, España y Grecia dentro de Países Euro y Asia, a partir de la crisis del 2008 hay una divergencia entre las tendencias, por un lado Irlanda luego del shock recupera los niveles del PBI en el 2015, pero España y Grecia nunca lo recuperan y siguen en tendencia bajista, incluso en el año previo a la pandemia.*
+
+*Podemos ver mayor volatilidad en los Países de LATAM.*
+
+
+
+```{r}
+
+
+grafico = plot_ly(x = ~gdp$Año) %>%
+       add_lines(y = ~gdp$Argentina, name = "Argentina", line = list(shape = "spline")) %>%
+       add_lines(y = gdp$Bolivia, name = "Bolivia", line = list(shape = "spline"), visible = 'legendonly') %>%
+       add_lines(y = gdp$Brasil , name = "Brasil", line = list(shape = "spline")) %>%
+       add_lines(y = gdp$Chile , name = "Chile", line = list(shape = "spline")) %>%
+       add_lines(y = gdp$Colombia , name = "Colombia", line = list(shape = "spline"), visible = 'legendonly') %>%
+       add_lines(y = gdp$`Costa Rica` , name = "Costa Rica`", line = list(shape = "spline"), visible = 'legendonly') %>%
+       add_lines(y = gdp$Dominican , name = "Dominican", line = list(shape = "spline"), visible = 'legendonly') %>%
+       add_lines(y = gdp$Ecuador , name = "Ecuador", line = list(shape = "spline"), visible = 'legendonly') %>%
+       add_lines(y = gdp$Guatemala , name = "Guatemala", line = list(shape = "spline"), visible = 'legendonly') %>%
+       add_lines(y = gdp$Honduras , name = "Honduras", line = list(shape = "spline"), visible = 'legendonly') %>%
+       add_lines(y = gdp$México , name = "México", line = list(shape = "spline")) %>%
+       add_lines(y = gdp$Nicaragua , name = "Nicaragua", line = list(shape = "spline"), visible = 'legendonly') %>%
+       add_lines(y = gdp$Panamá , name = "Panamá", line = list(shape = "spline"), visible = 'legendonly') %>%
+       add_lines(y = gdp$Perú , name = "Perú", line = list(shape = "spline")) %>%
+       add_lines(y = gdp$Paraguay , name = "Paraguay", line = list(shape = "spline")) %>%
+       add_lines(y = gdp$Uruguay , name = "Uruguay", line = list(shape = "spline")) %>%
+       add_lines(y = gdp$Venezuela , name = "Venezuela", line = list(shape = "spline")) %>%
+       layout(title =  "Pib Per capita en Logaritmos Paises LATAM", font = list(size = 12, color = 'black'), 
+              xaxis = list(title = 'Año', 
+                           color = 'black', 
+                           tickangle = -45), 
+              yaxis = list (title = 'Pib Per Capita', color = 'black'), 
+              paper_bgcolor='white', plot_bgcolor='white')
+grafico %>%  config(displayModeBar = F)
+
+
+
+```
+
+
+
+
+
+```{r}
+
+
+grafico2 = plot_ly(x = ~gdp2$Año) %>%
+       add_lines(y = ~gdp2$Australia, name = "Australia", line = list(shape = "spline")) %>%
+       add_lines(y = gdp2$Austria, name = "Austria", line = list(shape = "spline"), visible = 'legendonly') %>%
+       add_lines(y = gdp2$Bélgica , name = "Bélgica", line = list(shape = "spline"), visible = 'legendonly') %>%
+       add_lines(y = gdp2$Canadá , name = "Canadá", line = list(shape = "spline")) %>%
+       add_lines(y = gdp2$China , name = "China", line = list(shape = "spline"), visible = 'legendonly') %>%
+       add_lines(y = gdp2$`Alemania` , name = "Alemania`", line = list(shape = "spline")) %>%
+       add_lines(y = gdp2$Dinamarca , name = "Dinamarca", line = list(shape = "spline"), visible = 'legendonly') %>%
+       add_lines(y = gdp2$España , name = "España", line = list(shape = "spline"), visible = 'legendonly') %>%
+       add_lines(y = gdp2$Francia , name = "Francia", line = list(shape = "spline")) %>%
+       add_lines(y = gdp2$`Reino Unido` , name = "Reino Unido", line = list(shape = "spline")) %>%
+       add_lines(y = gdp2$Grecia , name = "Grecia", line = list(shape = "spline")) %>%
+       add_lines(y = gdp2$India , name = "India", line = list(shape = "spline"), visible = 'legendonly') %>%
+       add_lines(y = gdp2$Italia , name = "Italia", line = list(shape = "spline"), visible = 'legendonly') %>%
+       add_lines(y = gdp2$Japón , name = "Japón", line = list(shape = "spline"), visible = 'legendonly') %>%
+       add_lines(y = gdp2$Luxemburgo , name = "Luxemburgo", line = list(shape = "spline")) %>%
+       add_lines(y = gdp2$`Países Bajos` , name = "Países Bajos", line = list(shape = "spline"), visible = 'legendonly') %>%
+       add_lines(y = gdp2$Noruega , name = "Noruega", line = list(shape = "spline"), visible = 'legendonly') %>%
+       add_lines(y = gdp2$`Nueva Zelandia` , name = "Nueva Zelandia", line = list(shape = "spline"), visible = 'legendonly') %>%
+       add_lines(y = gdp2$Portugal , name = "Portugal", line = list(shape = "spline"), visible = 'legendonly') %>%
+       add_lines(y = gdp2$Singapur , name = "Singapur", line = list(shape = "spline")) %>%
+       add_lines(y = gdp2$Suecia , name = "Suecia", line = list(shape = "spline")) %>%
+       add_lines(y = gdp2$Turquía , name = "Turquía", line = list(shape = "spline"), visible = 'legendonly') %>%
+       add_lines(y = gdp2$Irlanda , name = "Irlanda", line = list(shape = "spline")) %>%
+       layout(title =  "Pib Per capita en Logaritmos Paises Euro y Asia", font = list(size = 12, color = 'black'),
+              xaxis = list(title = 'Año',
+                           color = 'black',
+                           tickangle = -45),
+              yaxis = list (title = 'Pib Per Capita', color = 'black'),
+              paper_bgcolor='white', plot_bgcolor='white')
+grafico2 %>%  config(displayModeBar = F)
+
+
+
+
+
+```
+
+
+<b>Debemos tener en cuenta que los valores están expresados en dólares, por lo tanto, en la variación del producto bruto interno respecto al 2019 no solo se incluye el impacto del Covid-19 sino que también puede haber una devaluación o apreciación de la moneda.</b>
+
+
+
+### **Paises LATAM**
+
+```{r}
+
+
+
+x = c('Argentina', 'Brasil', 'Chile', 'Uruguay', 'Perú', 'Bolivia', 'Paraguay')
+y = c(gdp_var$Variacion[gdp_var$`Country Name` == 'Argentina'] , 
+      gdp_var$Variacion[gdp_var$`Country Name` == 'Bolivia'] ,
+      gdp_var$Variacion[gdp_var$`Country Name` == 'Brasil'],
+      gdp_var$Variacion[gdp_var$`Country Name` == 'Chile'],
+      gdp_var$Variacion[gdp_var$`Country Name` == 'Paraguay'],
+      gdp_var$Variacion[gdp_var$`Country Name` == 'Perú'],
+      gdp_var$Variacion[gdp_var$`Country Name` == 'Uruguay'])
+
+y2 = c('Argentina', 'Brasil', 'Chile', 'Uruguay', 'Perú', 'Bolivia', 'Paraguay')
+
+celeste = '#3aafe1'
+
+verde_claro = '#23c26a'
+
+amarillo_claro = '#d6d24b'
+
+rojo= '#d93b3b'
+  
+azul = '#2825e8'
+
+rojo_claro = '#f07d90'
+
+celeste_claro = '#85e9f2'
+
+
+grafico_barras = plot_ly() %>% add_trace(x = ~sort(x), y = ~y, name= "Paises", type = 'bar',
+                    text = paste(y, '%') , textposition = 'auto',
+                    marker = list(color = c(celeste, verde_claro, amarillo_claro,rojo,azul,rojo_claro,celeste_claro),
+                     line = list(color = 'rgb(8,48,107)', width = 1.5))) %>% 
+                 layout(title = "Variacion % Pib Per Capita en USD 2020",
+                     barmode = 'group', 
+                     xaxis = list(title = "Paises"),
+                     yaxis = list(title = "%"),
+                     annotations = list(x = 1, y = -0.1, text = "Datos del Banco Mundial a dolar oficial", 
+                                       showarrow = F, xref='paper', yref='paper', 
+                                       xanchor='right', yanchor='auto', xshift=0, yshift=0,
+                                       font=list(size=13.5, color="grey")))
+
+grafico_barras %>%  config(displayModeBar = F)
+
+
+
+
+```
+
+
+
+### **Paises Euro y Asia** 
+
+
+
+```{r}
+
+
+
+x_2 = c('Noruega', 'India', 'Singapur', 'España', 'Grecia', 'China', 'Irlanda')
+y_2 = c(gdp_var_2$Variacion[gdp_var_2$`Country Name` == 'Noruega'] , 
+      gdp_var_2$Variacion[gdp_var_2$`Country Name` == 'India'] ,
+      gdp_var_2$Variacion[gdp_var_2$`Country Name` == 'Singapur'],
+      gdp_var_2$Variacion[gdp_var_2$`Country Name` == 'España'],
+      gdp_var_2$Variacion[gdp_var_2$`Country Name` == 'Grecia'],
+      gdp_var_2$Variacion[gdp_var_2$`Country Name` == 'China'],
+      gdp_var_2$Variacion[gdp_var_2$`Country Name` == 'Irlanda'])
+
+
+celeste = '#3aafe1'
+
+verde_claro = '#23c26a'
+
+amarillo_claro = '#d6d24b'
+
+rojo= '#d93b3b'
+  
+azul = '#2825e8'
+
+rojo_claro = '#f07d90'
+
+celeste_claro = '#85e9f2'
+
+
+grafico_barras_2 = plot_ly() %>% add_trace(x = ~x_2, y = ~y_2, name= "Paises", type = 'bar',
+                    text = paste(y_2, '%') , textposition = 'auto',
+                    marker = list(color = c(celeste, verde_claro, amarillo_claro,rojo,azul,rojo_claro,celeste_claro),
+                     line = list(color = 'rgb(8,48,107)', width = 1.5))) %>% 
+                 layout(title = "Variacion % Pib Per Capita en USD 2020",
+                     barmode = 'group', 
+                     xaxis = list(title = "Paises"),
+                     yaxis = list(title = "%"),
+                     annotations = list(x = 1, y = -0.1, text = "Datos del Banco Mundial a dolar oficial", 
+                                       showarrow = F, xref='paper', yref='paper', 
+                                       xanchor='right', yanchor='auto', xshift=0, yshift=0,
+                                       font=list(size=13.5, color="grey")))
+
+grafico_barras_2 %>%  config(displayModeBar = F)
+
+```
+
+
+
+Dashboard publicado en: [RPubs](https://rpubs.com/MGaloto/PBI_Logs)
+

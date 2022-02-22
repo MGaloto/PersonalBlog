@@ -1,0 +1,1635 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+  <meta name="generator" content="distill" />
+
+  <style type="text/css">
+  /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
+  body {
+    visibility: hidden;
+  }
+  </style>
+
+ <!--radix_placeholder_import_source-->
+ <!--/radix_placeholder_import_source-->
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ad0000; } /* Alert */
+code span.an { color: #5e5e5e; } /* Annotation */
+code span.at { } /* Attribute */
+code span.bn { color: #ad0000; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007ba5; } /* ControlFlow */
+code span.ch { color: #20794d; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #5e5e5e; } /* Comment */
+code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+code span.dt { color: #ad0000; } /* DataType */
+code span.dv { color: #ad0000; } /* DecVal */
+code span.er { color: #ad0000; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #ad0000; } /* Float */
+code span.fu { color: #4758ab; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #5e5e5e; } /* Information */
+code span.kw { color: #007ba5; } /* Keyword */
+code span.op { color: #5e5e5e; } /* Operator */
+code span.ot { color: #007ba5; } /* Other */
+code span.pp { color: #ad0000; } /* Preprocessor */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
+code span.ss { color: #20794d; } /* SpecialString */
+code span.st { color: #20794d; } /* String */
+code span.va { color: #111111; } /* Variable */
+code span.vs { color: #20794d; } /* VerbatimString */
+code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+</style>
+
+
+  <!--radix_placeholder_meta_tags-->
+  <title>Political Marketing</title>
+
+  <meta property="description" itemprop="description" content="Trabajo sobre Scrap Web de los principales y potenciales políticos Argentinos. Se busca analizar la popularidad en base a seguidores, seguidos e interacciones. Se utilizo la librería de R {highcharter}."/>
+
+
+  <!--  https://schema.org/Article -->
+  <meta property="article:published" itemprop="datePublished" content="2022-02-10"/>
+  <meta property="article:created" itemprop="dateCreated" content="2022-02-10"/>
+  <meta name="article:author" content="Maxi Galoto"/>
+
+  <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
+  <meta property="og:title" content="Political Marketing"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:description" content="Trabajo sobre Scrap Web de los principales y potenciales políticos Argentinos. Se busca analizar la popularidad en base a seguidores, seguidos e interacciones. Se utilizo la librería de R {highcharter}."/>
+  <meta property="og:locale" content="en_US"/>
+
+  <!--  https://dev.twitter.com/cards/types/summary -->
+  <meta property="twitter:card" content="summary"/>
+  <meta property="twitter:title" content="Political Marketing"/>
+  <meta property="twitter:description" content="Trabajo sobre Scrap Web de los principales y potenciales políticos Argentinos. Se busca analizar la popularidad en base a seguidores, seguidos e interacciones. Se utilizo la librería de R {highcharter}."/>
+
+  <!--/radix_placeholder_meta_tags-->
+  <!--radix_placeholder_rmarkdown_metadata-->
+
+  <script type="text/json" id="radix-rmarkdown-metadata">
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","slug","categories","output"]}},"value":[{"type":"character","attributes":{},"value":["Political Marketing"]},{"type":"character","attributes":{},"value":["Trabajo sobre Scrap Web de los principales y potenciales políticos Argentinos. Se busca analizar la popularidad en base a seguidores, seguidos e interacciones. Se utilizo la librería de R {highcharter}.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Maxi Galoto"]}]}]},{"type":"character","attributes":{},"value":["2022-02-10"]},{"type":"character","attributes":{},"value":["almost-done"]},{"type":"character","attributes":{},"value":["R"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
+  </script>
+  <!--/radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["instagram_actualizado.xlsx","instagram_seguidores_100.xlsx","political-marketing_files/anchor-4.2.2/anchor.min.js","political-marketing_files/bowser-1.9.3/bowser.min.js","political-marketing_files/distill-2.2.21/template.v2.js","political-marketing_files/header-attrs-2.11/header-attrs.js","political-marketing_files/highchart-binding-0.8.2/highchart.js","political-marketing_files/highcharts-8.1.2/css/htmlwdgtgrid.css","political-marketing_files/highcharts-8.1.2/css/motion.css","political-marketing_files/highcharts-8.1.2/custom/appear.js","political-marketing_files/highcharts-8.1.2/custom/reset.js","political-marketing_files/highcharts-8.1.2/custom/symbols-extra.js","political-marketing_files/highcharts-8.1.2/custom/text-symbols.js","political-marketing_files/highcharts-8.1.2/highcharts-3d.js","political-marketing_files/highcharts-8.1.2/highcharts-more.js","political-marketing_files/highcharts-8.1.2/highcharts.js","political-marketing_files/highcharts-8.1.2/modules/accessibility.js","political-marketing_files/highcharts-8.1.2/modules/annotations-advanced.js","political-marketing_files/highcharts-8.1.2/modules/annotations.js","political-marketing_files/highcharts-8.1.2/modules/arrow-symbols.js","political-marketing_files/highcharts-8.1.2/modules/boost-canvas.js","political-marketing_files/highcharts-8.1.2/modules/boost.js","political-marketing_files/highcharts-8.1.2/modules/broken-axis.js","political-marketing_files/highcharts-8.1.2/modules/bullet.js","political-marketing_files/highcharts-8.1.2/modules/coloraxis.js","political-marketing_files/highcharts-8.1.2/modules/current-date-indicator.js","political-marketing_files/highcharts-8.1.2/modules/cylinder.js","political-marketing_files/highcharts-8.1.2/modules/data.js","political-marketing_files/highcharts-8.1.2/modules/datagrouping.js","political-marketing_files/highcharts-8.1.2/modules/debugger.js","political-marketing_files/highcharts-8.1.2/modules/dependency-wheel.js","political-marketing_files/highcharts-8.1.2/modules/dotplot.js","political-marketing_files/highcharts-8.1.2/modules/drag-panes.js","political-marketing_files/highcharts-8.1.2/modules/draggable-points.js","political-marketing_files/highcharts-8.1.2/modules/drilldown.js","political-marketing_files/highcharts-8.1.2/modules/dumbbell.js","political-marketing_files/highcharts-8.1.2/modules/export-data.js","political-marketing_files/highcharts-8.1.2/modules/exporting.js","political-marketing_files/highcharts-8.1.2/modules/full-screen.js","political-marketing_files/highcharts-8.1.2/modules/funnel.js","political-marketing_files/highcharts-8.1.2/modules/funnel3d.js","political-marketing_files/highcharts-8.1.2/modules/gantt.js","political-marketing_files/highcharts-8.1.2/modules/grid-axis.js","political-marketing_files/highcharts-8.1.2/modules/heatmap.js","political-marketing_files/highcharts-8.1.2/modules/histogram-bellcurve.js","political-marketing_files/highcharts-8.1.2/modules/item-series.js","political-marketing_files/highcharts-8.1.2/modules/lollipop.js","political-marketing_files/highcharts-8.1.2/modules/map.js","political-marketing_files/highcharts-8.1.2/modules/marker-clusters.js","political-marketing_files/highcharts-8.1.2/modules/networkgraph.js","political-marketing_files/highcharts-8.1.2/modules/no-data-to-display.js","political-marketing_files/highcharts-8.1.2/modules/offline-exporting.js","political-marketing_files/highcharts-8.1.2/modules/oldie-polyfills.js","political-marketing_files/highcharts-8.1.2/modules/oldie.js","political-marketing_files/highcharts-8.1.2/modules/organization.js","political-marketing_files/highcharts-8.1.2/modules/overlapping-datalabels.js","political-marketing_files/highcharts-8.1.2/modules/parallel-coordinates.js","political-marketing_files/highcharts-8.1.2/modules/pareto.js","political-marketing_files/highcharts-8.1.2/modules/pathfinder.js","political-marketing_files/highcharts-8.1.2/modules/pattern-fill.js","political-marketing_files/highcharts-8.1.2/modules/price-indicator.js","political-marketing_files/highcharts-8.1.2/modules/pyramid3d.js","political-marketing_files/highcharts-8.1.2/modules/sankey.js","political-marketing_files/highcharts-8.1.2/modules/series-label.js","political-marketing_files/highcharts-8.1.2/modules/solid-gauge.js","political-marketing_files/highcharts-8.1.2/modules/sonification.js","political-marketing_files/highcharts-8.1.2/modules/static-scale.js","political-marketing_files/highcharts-8.1.2/modules/stock-tools.js","political-marketing_files/highcharts-8.1.2/modules/stock.js","political-marketing_files/highcharts-8.1.2/modules/streamgraph.js","political-marketing_files/highcharts-8.1.2/modules/sunburst.js","political-marketing_files/highcharts-8.1.2/modules/tilemap.js","political-marketing_files/highcharts-8.1.2/modules/timeline.js","political-marketing_files/highcharts-8.1.2/modules/treegrid.js","political-marketing_files/highcharts-8.1.2/modules/treemap.js","political-marketing_files/highcharts-8.1.2/modules/variable-pie.js","political-marketing_files/highcharts-8.1.2/modules/variwide.js","political-marketing_files/highcharts-8.1.2/modules/vector.js","political-marketing_files/highcharts-8.1.2/modules/venn.js","political-marketing_files/highcharts-8.1.2/modules/windbarb.js","political-marketing_files/highcharts-8.1.2/modules/wordcloud.js","political-marketing_files/highcharts-8.1.2/modules/xrange.js","political-marketing_files/highcharts-8.1.2/plugins/draggable-legend.js","political-marketing_files/highcharts-8.1.2/plugins/grouped-categories.js","political-marketing_files/highcharts-8.1.2/plugins/highcharts-regression.js","political-marketing_files/highcharts-8.1.2/plugins/motion.js","political-marketing_files/highcharts-8.1.2/plugins/multicolor_series.js","political-marketing_files/highcharts-8.1.2/plugins/pattern-fill-v2.js","political-marketing_files/highcharts-8.1.2/plugins/tooltip-delay.js","political-marketing_files/htmlwidgets-1.5.4/htmlwidgets.js","political-marketing_files/jquery-3.6.0/jquery-3.6.0.js","political-marketing_files/jquery-3.6.0/jquery-3.6.0.min.js","political-marketing_files/jquery-3.6.0/jquery-3.6.0.min.map","political-marketing_files/popper-2.6.0/popper.min.js","political-marketing_files/proj4js-2.3.15/proj4.js","political-marketing_files/tippy-6.2.7/tippy-bundle.umd.min.js","political-marketing_files/tippy-6.2.7/tippy-light-border.css","political-marketing_files/tippy-6.2.7/tippy.css","political-marketing_files/tippy-6.2.7/tippy.umd.min.js","political-marketing_files/webcomponents-2.0.0/webcomponents.js","total_seguidores_100.xlsx","twitter_seguidores_100.xlsx"]}
+  </script>
+  <!--radix_placeholder_navigation_in_header-->
+  <!--/radix_placeholder_navigation_in_header-->
+  <!--radix_placeholder_distill-->
+
+  <style type="text/css">
+
+  body {
+    background-color: white;
+  }
+
+  .pandoc-table {
+    width: 100%;
+  }
+
+  .pandoc-table>caption {
+    margin-bottom: 10px;
+  }
+
+  .pandoc-table th:not([align]) {
+    text-align: left;
+  }
+
+  .pagedtable-footer {
+    font-size: 15px;
+  }
+
+  d-byline .byline {
+    grid-template-columns: 2fr 2fr;
+  }
+
+  d-byline .byline h3 {
+    margin-block-start: 1.5em;
+  }
+
+  d-byline .byline .authors-affiliations h3 {
+    margin-block-start: 0.5em;
+  }
+
+  .authors-affiliations .orcid-id {
+    width: 16px;
+    height:16px;
+    margin-left: 4px;
+    margin-right: 4px;
+    vertical-align: middle;
+    padding-bottom: 2px;
+  }
+
+  d-title .dt-tags {
+    margin-top: 1em;
+    grid-column: text;
+  }
+
+  .dt-tags .dt-tag {
+    text-decoration: none;
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0em 0.4em;
+    margin-right: 0.5em;
+    margin-bottom: 0.4em;
+    font-size: 70%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  d-article table.gt_table td,
+  d-article table.gt_table th {
+    border-bottom: none;
+  }
+
+  .html-widget {
+    margin-bottom: 2.0em;
+  }
+
+  .l-screen-inset {
+    padding-right: 16px;
+  }
+
+  .l-screen .caption {
+    margin-left: 10px;
+  }
+
+  .shaded {
+    background: rgb(247, 247, 247);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .shaded .html-widget {
+    margin-bottom: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .shaded .shaded-content {
+    background: white;
+  }
+
+  .text-output {
+    margin-top: 0;
+    line-height: 1.5em;
+  }
+
+  .hidden {
+    display: none !important;
+  }
+
+  d-article {
+    padding-top: 2.5rem;
+    padding-bottom: 30px;
+  }
+
+  d-appendix {
+    padding-top: 30px;
+  }
+
+  d-article>p>img {
+    width: 100%;
+  }
+
+  d-article h2 {
+    margin: 1rem 0 1.5rem 0;
+  }
+
+  d-article h3 {
+    margin-top: 1.5rem;
+  }
+
+  d-article iframe {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 2.0em;
+    width: 100%;
+  }
+
+  /* Tweak code blocks */
+
+  d-article div.sourceCode code,
+  d-article pre code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: auto;
+  }
+
+  d-article div.sourceCode {
+    background-color: white;
+  }
+
+  d-article div.sourceCode pre {
+    padding-left: 10px;
+    font-size: 12px;
+    border-left: 2px solid rgba(0,0,0,0.1);
+  }
+
+  d-article pre {
+    font-size: 12px;
+    color: black;
+    background: none;
+    margin-top: 0;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  d-article pre a {
+    border-bottom: none;
+  }
+
+  d-article pre a:hover {
+    border-bottom: none;
+    text-decoration: underline;
+  }
+
+  d-article details {
+    grid-column: text;
+    margin-bottom: 0.8em;
+  }
+
+  @media(min-width: 768px) {
+
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: visible !important;
+  }
+
+  d-article div.sourceCode pre {
+    padding-left: 18px;
+    font-size: 14px;
+  }
+
+  d-article pre {
+    font-size: 14px;
+  }
+
+  }
+
+  figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+
+  /* CSS for d-contents */
+
+  .d-contents {
+    grid-column: text;
+    color: rgba(0,0,0,0.8);
+    font-size: 0.9em;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+    padding-left: 0.25em;
+    justify-self: start;
+  }
+
+  @media(min-width: 1000px) {
+    .d-contents.d-contents-float {
+      height: 0;
+      grid-column-start: 1;
+      grid-column-end: 4;
+      justify-self: center;
+      padding-right: 3em;
+      padding-left: 2em;
+    }
+  }
+
+  .d-contents nav h3 {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+
+  .d-contents li {
+    list-style-type: none
+  }
+
+  .d-contents nav > ul {
+    padding-left: 0;
+  }
+
+  .d-contents ul {
+    padding-left: 1em
+  }
+
+  .d-contents nav ul li {
+    margin-top: 0.6em;
+    margin-bottom: 0.2em;
+  }
+
+  .d-contents nav a {
+    font-size: 13px;
+    border-bottom: none;
+    text-decoration: none
+    color: rgba(0, 0, 0, 0.8);
+  }
+
+  .d-contents nav a:hover {
+    text-decoration: underline solid rgba(0, 0, 0, 0.6)
+  }
+
+  .d-contents nav > ul > li > a {
+    font-weight: 600;
+  }
+
+  .d-contents nav > ul > li > ul {
+    font-weight: inherit;
+  }
+
+  .d-contents nav > ul > li > ul > li {
+    margin-top: 0.2em;
+  }
+
+
+  .d-contents nav ul {
+    margin-top: 0;
+    margin-bottom: 0.25em;
+  }
+
+  .d-article-with-toc h2:nth-child(2) {
+    margin-top: 0;
+  }
+
+
+  /* Figure */
+
+  .figure {
+    position: relative;
+    margin-bottom: 2.5em;
+    margin-top: 1.5em;
+  }
+
+  .figure img {
+    width: 100%;
+  }
+
+  .figure .caption {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 12px;
+    line-height: 1.5em;
+  }
+
+  .figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+
+  .figure .caption a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  .figure .caption b,
+  .figure .caption strong, {
+    font-weight: 600;
+    color: rgba(0, 0, 0, 1.0);
+  }
+
+  /* Citations */
+
+  d-article .citation {
+    color: inherit;
+    cursor: inherit;
+  }
+
+  div.hanging-indent{
+    margin-left: 1em; text-indent: -1em;
+  }
+
+  /* Citation hover box */
+
+  .tippy-box[data-theme~=light-border] {
+    background-color: rgba(250, 250, 250, 0.95);
+  }
+
+  .tippy-content > p {
+    margin-bottom: 0;
+    padding: 2px;
+  }
+
+
+  /* Tweak 1000px media break to show more text */
+
+  @media(min-width: 1000px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 80px [middle-start] 50px [text-start kicker-end] 65px 65px 65px 65px 65px 65px 65px 65px [text-end gutter-start] 65px [middle-end] 65px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 16px;
+    }
+
+    .grid {
+      grid-column-gap: 16px;
+    }
+
+    d-article {
+      font-size: 1.06rem;
+      line-height: 1.7em;
+    }
+    figure .caption, .figure .caption, figure figcaption {
+      font-size: 13px;
+    }
+  }
+
+  @media(min-width: 1180px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 32px;
+    }
+
+    .grid {
+      grid-column-gap: 32px;
+    }
+  }
+
+
+  /* Get the citation styles for the appendix (not auto-injected on render since
+     we do our own rendering of the citation appendix) */
+
+  d-appendix .citation-appendix,
+  .d-appendix .citation-appendix {
+    font-size: 11px;
+    line-height: 15px;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    padding-left: 18px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background: rgba(0, 0, 0, 0.02);
+    padding: 10px 18px;
+    border-radius: 3px;
+    color: rgba(150, 150, 150, 1);
+    overflow: hidden;
+    margin-top: -12px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  /* Include appendix styles here so they can be overridden */
+
+  d-appendix {
+    contain: layout style;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-top: 60px;
+    margin-bottom: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    color: rgba(0,0,0,0.5);
+    padding-top: 60px;
+    padding-bottom: 48px;
+  }
+
+  d-appendix h3 {
+    grid-column: page-start / text-start;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 1em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.65);
+  }
+
+  d-appendix h3 + * {
+    margin-top: 1em;
+  }
+
+  d-appendix ol {
+    padding: 0 0 0 15px;
+  }
+
+  @media (min-width: 768px) {
+    d-appendix ol {
+      padding: 0 0 0 30px;
+      margin-left: -30px;
+    }
+  }
+
+  d-appendix li {
+    margin-bottom: 1em;
+  }
+
+  d-appendix a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  d-appendix > * {
+    grid-column: text;
+  }
+
+  d-appendix > d-footnote-list,
+  d-appendix > d-citation-list,
+  d-appendix > distill-appendix {
+    grid-column: screen;
+  }
+
+  /* Include footnote styles here so they can be overridden */
+
+  d-footnote-list {
+    contain: layout style;
+  }
+
+  d-footnote-list > * {
+    grid-column: text;
+  }
+
+  d-footnote-list a.footnote-backlink {
+    color: rgba(0,0,0,0.3);
+    padding-left: 0.5em;
+  }
+
+
+
+  /* Anchor.js */
+
+  .anchorjs-link {
+    /*transition: all .25s linear; */
+    text-decoration: none;
+    border-bottom: none;
+  }
+  *:hover > .anchorjs-link {
+    margin-left: -1.125em !important;
+    text-decoration: none;
+    border-bottom: none;
+  }
+
+  /* Social footer */
+
+  .social_footer {
+    margin-top: 30px;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.67);
+  }
+
+  .disqus-comments {
+    margin-right: 30px;
+  }
+
+  .disqus-comment-count {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+  }
+
+  #disqus_thread {
+    margin-top: 30px;
+  }
+
+  .article-sharing a {
+    border-bottom: none;
+    margin-right: 8px;
+  }
+
+  .article-sharing a:hover {
+    border-bottom: none;
+  }
+
+  .sidebar-section.subscribe {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+
+  .subscribe p {
+    margin-bottom: 0.5em;
+  }
+
+
+  .article-footer .subscribe {
+    font-size: 15px;
+    margin-top: 45px;
+  }
+
+
+  .sidebar-section.custom {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+
+  .custom p {
+    margin-bottom: 0.5em;
+  }
+
+  /* Styles for listing layout (hide title) */
+  .layout-listing d-title, .layout-listing .d-title {
+    display: none;
+  }
+
+  /* Styles for posts lists (not auto-injected) */
+
+
+  .posts-with-sidebar {
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+
+  .posts-list .description h2,
+  .posts-list .description p {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  }
+
+  .posts-list .description h2 {
+    font-weight: 700;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .posts-list h2.post-tag {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding-bottom: 12px;
+  }
+  .posts-list {
+    margin-top: 60px;
+    margin-bottom: 24px;
+  }
+
+  .posts-list .post-preview {
+    text-decoration: none;
+    overflow: hidden;
+    display: block;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 24px 0;
+  }
+
+  .post-preview-last {
+    border-bottom: none !important;
+  }
+
+  .posts-list .posts-list-caption {
+    grid-column: screen;
+    font-weight: 400;
+  }
+
+  .posts-list .post-preview h2 {
+    margin: 0 0 6px 0;
+    line-height: 1.2em;
+    font-style: normal;
+    font-size: 24px;
+  }
+
+  .posts-list .post-preview p {
+    margin: 0 0 12px 0;
+    line-height: 1.4em;
+    font-size: 16px;
+  }
+
+  .posts-list .post-preview .thumbnail {
+    box-sizing: border-box;
+    margin-bottom: 24px;
+    position: relative;
+    max-width: 500px;
+  }
+  .posts-list .post-preview img {
+    width: 100%;
+    display: block;
+  }
+
+  .posts-list .metadata {
+    font-size: 12px;
+    line-height: 1.4em;
+    margin-bottom: 18px;
+  }
+
+  .posts-list .metadata > * {
+    display: inline-block;
+  }
+
+  .posts-list .metadata .publishedDate {
+    margin-right: 2em;
+  }
+
+  .posts-list .metadata .dt-authors {
+    display: block;
+    margin-top: 0.3em;
+    margin-right: 2em;
+  }
+
+  .posts-list .dt-tags {
+    display: block;
+    line-height: 1em;
+  }
+
+  .posts-list .dt-tags .dt-tag {
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0.3em 0.4em;
+    margin-right: 0.2em;
+    margin-bottom: 0.4em;
+    font-size: 60%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .posts-list img {
+    opacity: 1;
+  }
+
+  .posts-list img[data-src] {
+    opacity: 0;
+  }
+
+  .posts-more {
+    clear: both;
+  }
+
+
+  .posts-sidebar {
+    font-size: 16px;
+  }
+
+  .posts-sidebar h3 {
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .sidebar-section {
+    margin-bottom: 30px;
+  }
+
+  .categories ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .categories li {
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 0;
+  }
+
+  .categories li>a {
+    border-bottom: none;
+  }
+
+  .categories li>a:hover {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  }
+
+  .categories .active {
+    font-weight: 600;
+  }
+
+  .categories .category-count {
+    color: rgba(0, 0, 0, 0.4);
+  }
+
+
+  @media(min-width: 768px) {
+    .posts-list .post-preview h2 {
+      font-size: 26px;
+    }
+    .posts-list .post-preview .thumbnail {
+      float: right;
+      width: 30%;
+      margin-bottom: 0;
+    }
+    .posts-list .post-preview .description {
+      float: left;
+      width: 45%;
+    }
+    .posts-list .post-preview .metadata {
+      float: left;
+      width: 20%;
+      margin-top: 8px;
+    }
+    .posts-list .post-preview p {
+      margin: 0 0 12px 0;
+      line-height: 1.5em;
+      font-size: 16px;
+    }
+    .posts-with-sidebar .posts-list {
+      float: left;
+      width: 75%;
+    }
+    .posts-with-sidebar .posts-sidebar {
+      float: right;
+      width: 20%;
+      margin-top: 60px;
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+  }
+
+
+  /* Improve display for browsers without grid (IE/Edge <= 15) */
+
+  .downlevel {
+    line-height: 1.6em;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+  }
+
+  .downlevel .d-title {
+    padding-top: 6rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .downlevel .d-title h1 {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.1em;
+    margin: 0 0 0.5rem;
+  }
+
+  .downlevel .d-title p {
+    font-weight: 300;
+    font-size: 1.2rem;
+    line-height: 1.55em;
+    margin-top: 0;
+  }
+
+  .downlevel .d-byline {
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    font-size: 0.8rem;
+    line-height: 1.8em;
+  }
+
+  .downlevel .section-separator {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .downlevel .d-article {
+    font-size: 1.06rem;
+    line-height: 1.7em;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+  }
+
+
+  .downlevel .d-appendix {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: none;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.5);
+    padding-top: 40px;
+    padding-bottom: 48px;
+  }
+
+  .downlevel .footnotes ol {
+    padding-left: 13px;
+  }
+
+  .downlevel .base-grid,
+  .downlevel .distill-header,
+  .downlevel .d-title,
+  .downlevel .d-abstract,
+  .downlevel .d-article,
+  .downlevel .d-appendix,
+  .downlevel .distill-appendix,
+  .downlevel .d-byline,
+  .downlevel .d-footnote-list,
+  .downlevel .d-citation-list,
+  .downlevel .distill-footer,
+  .downlevel .appendix-bottom,
+  .downlevel .posts-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @media(min-width: 768px) {
+    .downlevel .base-grid,
+    .downlevel .distill-header,
+    .downlevel .d-title,
+    .downlevel .d-abstract,
+    .downlevel .d-article,
+    .downlevel .d-appendix,
+    .downlevel .distill-appendix,
+    .downlevel .d-byline,
+    .downlevel .d-footnote-list,
+    .downlevel .d-citation-list,
+    .downlevel .distill-footer,
+    .downlevel .appendix-bottom,
+    .downlevel .posts-container {
+    padding-left: 150px;
+    padding-right: 150px;
+    max-width: 900px;
+  }
+  }
+
+  .downlevel pre code {
+    display: block;
+    border-left: 2px solid rgba(0, 0, 0, .1);
+    padding: 0 0 0 20px;
+    font-size: 14px;
+  }
+
+  .downlevel code, .downlevel pre {
+    color: black;
+    background: none;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  .downlevel .posts-list .post-preview {
+    color: inherit;
+  }
+
+
+
+  </style>
+
+  <script type="application/javascript">
+
+  function is_downlevel_browser() {
+    if (bowser.isUnsupportedBrowser({ msie: "12", msedge: "16"},
+                                   window.navigator.userAgent)) {
+      return true;
+    } else {
+      return window.load_distill_framework === undefined;
+    }
+  }
+
+  // show body when load is complete
+  function on_load_complete() {
+
+    // add anchors
+    if (window.anchors) {
+      window.anchors.options.placement = 'left';
+      window.anchors.add('d-article > h2, d-article > h3, d-article > h4, d-article > h5');
+    }
+
+
+    // set body to visible
+    document.body.style.visibility = 'visible';
+
+    // force redraw for leaflet widgets
+    if (window.HTMLWidgets) {
+      var maps = window.HTMLWidgets.findAll(".leaflet");
+      $.each(maps, function(i, el) {
+        var map = this.getMap();
+        map.invalidateSize();
+        map.eachLayer(function(layer) {
+          if (layer instanceof L.TileLayer)
+            layer.redraw();
+        });
+      });
+    }
+
+    // trigger 'shown' so htmlwidgets resize
+    $('d-article').trigger('shown');
+  }
+
+  function init_distill() {
+
+    init_common();
+
+    // create front matter
+    var front_matter = $('<d-front-matter></d-front-matter>');
+    $('#distill-front-matter').wrap(front_matter);
+
+    // create d-title
+    $('.d-title').changeElementType('d-title');
+
+    // create d-byline
+    var byline = $('<d-byline></d-byline>');
+    $('.d-byline').replaceWith(byline);
+
+    // create d-article
+    var article = $('<d-article></d-article>');
+    $('.d-article').wrap(article).children().unwrap();
+
+    // move posts container into article
+    $('.posts-container').appendTo($('d-article'));
+
+    // create d-appendix
+    $('.d-appendix').changeElementType('d-appendix');
+
+    // flag indicating that we have appendix items
+    var appendix = $('.appendix-bottom').children('h3').length > 0;
+
+    // replace footnotes with <d-footnote>
+    $('.footnote-ref').each(function(i, val) {
+      appendix = true;
+      var href = $(this).attr('href');
+      var id = href.replace('#', '');
+      var fn = $('#' + id);
+      var fn_p = $('#' + id + '>p');
+      fn_p.find('.footnote-back').remove();
+      var text = fn_p.html();
+      var dtfn = $('<d-footnote></d-footnote>');
+      dtfn.html(text);
+      $(this).replaceWith(dtfn);
+    });
+    // remove footnotes
+    $('.footnotes').remove();
+
+    // move refs into #references-listing
+    $('#references-listing').replaceWith($('#refs'));
+
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      var id = $(this).attr('id');
+      $('.d-contents a[href="#' + id + '"]').parent().remove();
+      appendix = true;
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
+    });
+
+    // show d-appendix if we have appendix content
+    $("d-appendix").css('display', appendix ? 'grid' : 'none');
+
+    // localize layout chunks to just output
+    $('.layout-chunk').each(function(i, val) {
+
+      // capture layout
+      var layout = $(this).attr('data-layout');
+
+      // apply layout to markdown level block elements
+      var elements = $(this).children().not('details, div.sourceCode, pre, script');
+      elements.each(function(i, el) {
+        var layout_div = $('<div class="' + layout + '"></div>');
+        if (layout_div.hasClass('shaded')) {
+          var shaded_content = $('<div class="shaded-content"></div>');
+          $(this).wrap(shaded_content);
+          $(this).parent().wrap(layout_div);
+        } else {
+          $(this).wrap(layout_div);
+        }
+      });
+
+
+      // unwrap the layout-chunk div
+      $(this).children().unwrap();
+    });
+
+    // remove code block used to force  highlighting css
+    $('.distill-force-highlighting-css').parent().remove();
+
+    // remove empty line numbers inserted by pandoc when using a
+    // custom syntax highlighting theme
+    $('code.sourceCode a:empty').remove();
+
+    // load distill framework
+    load_distill_framework();
+
+    // wait for window.distillRunlevel == 4 to do post processing
+    function distill_post_process() {
+
+      if (!window.distillRunlevel || window.distillRunlevel < 4)
+        return;
+
+      // hide author/affiliations entirely if we have no authors
+      var front_matter = JSON.parse($("#distill-front-matter").html());
+      var have_authors = front_matter.authors && front_matter.authors.length > 0;
+      if (!have_authors)
+        $('d-byline').addClass('hidden');
+
+      // article with toc class
+      $('.d-contents').parent().addClass('d-article-with-toc');
+
+      // strip links that point to #
+      $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
+
+      // add orcid ids
+      $('.authors-affiliations').find('.author').each(function(i, el) {
+        var orcid_id = front_matter.authors[i].orcidID;
+        if (orcid_id) {
+          var a = $('<a></a>');
+          a.attr('href', 'https://orcid.org/' + orcid_id);
+          var img = $('<img></img>');
+          img.addClass('orcid-id');
+          img.attr('alt', 'ORCID ID');
+          img.attr('src','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==');
+          a.append(img);
+          $(this).append(a);
+        }
+      });
+
+      // hide elements of author/affiliations grid that have no value
+      function hide_byline_column(caption) {
+        $('d-byline').find('h3:contains("' + caption + '")').parent().css('visibility', 'hidden');
+      }
+
+      // affiliations
+      var have_affiliations = false;
+      for (var i = 0; i<front_matter.authors.length; ++i) {
+        var author = front_matter.authors[i];
+        if (author.affiliation !== "&nbsp;") {
+          have_affiliations = true;
+          break;
+        }
+      }
+      if (!have_affiliations)
+        $('d-byline').find('h3:contains("Affiliations")').css('visibility', 'hidden');
+
+      // published date
+      if (!front_matter.publishedDate)
+        hide_byline_column("Published");
+
+      // document object identifier
+      var doi = $('d-byline').find('h3:contains("DOI")');
+      var doi_p = doi.next().empty();
+      if (!front_matter.doi) {
+        // if we have a citation and valid citationText then link to that
+        if ($('#citation').length > 0 && front_matter.citationText) {
+          doi.html('Citation');
+          $('<a href="#citation"></a>')
+            .text(front_matter.citationText)
+            .appendTo(doi_p);
+        } else {
+          hide_byline_column("DOI");
+        }
+      } else {
+        $('<a></a>')
+           .attr('href', "https://doi.org/" + front_matter.doi)
+           .html(front_matter.doi)
+           .appendTo(doi_p);
+      }
+
+       // change plural form of authors/affiliations
+      if (front_matter.authors.length === 1) {
+        var grid = $('.authors-affiliations');
+        grid.children('h3:contains("Authors")').text('Author');
+        grid.children('h3:contains("Affiliations")').text('Affiliation');
+      }
+
+      // remove d-appendix and d-footnote-list local styles
+      $('d-appendix > style:first-child').remove();
+      $('d-footnote-list > style:first-child').remove();
+
+      // move appendix-bottom entries to the bottom
+      $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
+      $('.appendix-bottom').remove();
+
+      // hoverable references
+      $('span.citation[data-cites]').each(function() {
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
+        window.tippy(this, {
+          allowHTML: true,
+          content: refHtml,
+          maxWidth: 500,
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start'
+        });
+      });
+
+      // clear polling timer
+      clearInterval(tid);
+
+      // show body now that everything is ready
+      on_load_complete();
+    }
+
+    var tid = setInterval(distill_post_process, 50);
+    distill_post_process();
+
+  }
+
+  function init_downlevel() {
+
+    init_common();
+
+     // insert hr after d-title
+    $('.d-title').after($('<hr class="section-separator"/>'));
+
+    // check if we have authors
+    var front_matter = JSON.parse($("#distill-front-matter").html());
+    var have_authors = front_matter.authors && front_matter.authors.length > 0;
+
+    // manage byline/border
+    if (!have_authors)
+      $('.d-byline').remove();
+    $('.d-byline').after($('<hr class="section-separator"/>'));
+    $('.d-byline a').remove();
+
+    // remove toc
+    $('.d-contents').remove();
+
+    // move appendix elements
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('.d-appendix'));
+    });
+
+
+    // inject headers into references and footnotes
+    var refs_header = $('<h3></h3>');
+    refs_header.text('References');
+    $('#refs').prepend(refs_header);
+
+    var footnotes_header = $('<h3></h3');
+    footnotes_header.text('Footnotes');
+    $('.footnotes').children('hr').first().replaceWith(footnotes_header);
+
+    // move appendix-bottom entries to the bottom
+    $('.appendix-bottom').appendTo('.d-appendix').children().unwrap();
+    $('.appendix-bottom').remove();
+
+    // remove appendix if it's empty
+    if ($('.d-appendix').children().length === 0)
+      $('.d-appendix').remove();
+
+    // prepend separator above appendix
+    $('.d-appendix').before($('<hr class="section-separator" style="clear: both"/>'));
+
+    // trim code
+    $('pre>code').each(function(i, val) {
+      $(this).html($.trim($(this).html()));
+    });
+
+    // move posts-container right before article
+    $('.posts-container').insertBefore($('.d-article'));
+
+    $('body').addClass('downlevel');
+
+    on_load_complete();
+  }
+
+
+  function init_common() {
+
+    // jquery plugin to change element types
+    (function($) {
+      $.fn.changeElementType = function(newType) {
+        var attrs = {};
+
+        $.each(this[0].attributes, function(idx, attr) {
+          attrs[attr.nodeName] = attr.nodeValue;
+        });
+
+        this.replaceWith(function() {
+          return $("<" + newType + "/>", attrs).append($(this).contents());
+        });
+      };
+    })(jQuery);
+
+    // prevent underline for linked images
+    $('a > img').parent().css({'border-bottom' : 'none'});
+
+    // mark non-body figures created by knitr chunks as 100% width
+    $('.layout-chunk').each(function(i, val) {
+      var figures = $(this).find('img, .html-widget');
+      if ($(this).attr('data-layout') !== "l-body") {
+        figures.css('width', '100%');
+      } else {
+        figures.css('max-width', '100%');
+        figures.filter("[width]").each(function(i, val) {
+          var fig = $(this);
+          fig.css('width', fig.attr('width') + 'px');
+        });
+
+      }
+    });
+
+    // auto-append index.html to post-preview links in file: protocol
+    // and in rstudio ide preview
+    $('.post-preview').each(function(i, val) {
+      if (window.location.protocol === "file:")
+        $(this).attr('href', $(this).attr('href') + "index.html");
+    });
+
+    // get rid of index.html references in header
+    if (window.location.protocol !== "file:") {
+      $('.distill-site-header a[href]').each(function(i,val) {
+        $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+      });
+    }
+
+    // add class to pandoc style tables
+    $('tr.header').parent('thead').parent('table').addClass('pandoc-table');
+    $('.kable-table').children('table').addClass('pandoc-table');
+
+    // add figcaption style to table captions
+    $('caption').parent('table').addClass("figcaption");
+
+    // initialize posts list
+    if (window.init_posts_list)
+      window.init_posts_list();
+
+    // implmement disqus comment link
+    $('.disqus-comment-count').click(function() {
+      window.headroom_prevent_pin = true;
+      $('#disqus_thread').toggleClass('hidden');
+      if (!$('#disqus_thread').hasClass('hidden')) {
+        var offset = $(this).offset();
+        $(window).resize();
+        $('html, body').animate({
+          scrollTop: offset.top - 35
+        });
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    if (is_downlevel_browser())
+      init_downlevel();
+    else
+      window.addEventListener('WebComponentsReady', init_distill);
+  });
+
+  </script>
+
+  <!--/radix_placeholder_distill-->
+  <script src="political-marketing_files/header-attrs-2.11/header-attrs.js"></script>
+  <script src="political-marketing_files/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+  <script src="political-marketing_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+  <script src="political-marketing_files/proj4js-2.3.15/proj4.js"></script>
+  <link href="political-marketing_files/highcharts-8.1.2/css/motion.css" rel="stylesheet" />
+  <script src="political-marketing_files/highcharts-8.1.2/highcharts.js"></script>
+  <script src="political-marketing_files/highcharts-8.1.2/highcharts-3d.js"></script>
+  <script src="political-marketing_files/highcharts-8.1.2/highcharts-more.js"></script>
+  <script src="political-marketing_files/highcharts-8.1.2/modules/stock.js"></script>
+  <script src="political-marketing_files/highcharts-8.1.2/modules/map.js"></script>
+  <script src="political-marketing_files/highcharts-8.1.2/modules/annotations.js"></script>
+  <script src="political-marketing_files/highcharts-8.1.2/modules/data.js"></script>
+  <script src="political-marketing_files/highcharts-8.1.2/modules/drilldown.js"></script>
+  <script src="political-marketing_files/highcharts-8.1.2/modules/item-series.js"></script>
+  <script src="political-marketing_files/highcharts-8.1.2/modules/offline-exporting.js"></script>
+  <script src="political-marketing_files/highcharts-8.1.2/modules/overlapping-datalabels.js"></script>
+  <script src="political-marketing_files/highcharts-8.1.2/modules/exporting.js"></script>
+  <script src="political-marketing_files/highcharts-8.1.2/modules/export-data.js"></script>
+  <script src="political-marketing_files/highcharts-8.1.2/modules/funnel.js"></script>
+  <script src="political-marketing_files/highcharts-8.1.2/modules/heatmap.js"></script>
+  <script src="political-marketing_files/highcharts-8.1.2/modules/treemap.js"></script>
+  <script src="political-marketing_files/highcharts-8.1.2/modules/sankey.js"></script>
+  <script src="political-marketing_files/highcharts-8.1.2/modules/dependency-wheel.js"></script>
+  <script src="political-marketing_files/highcharts-8.1.2/modules/organization.js"></script>
+  <script src="political-marketing_files/highcharts-8.1.2/modules/solid-gauge.js"></script>
+  <script src="political-marketing_files/highcharts-8.1.2/modules/streamgraph.js"></script>
+  <script src="political-marketing_files/highcharts-8.1.2/modules/sunburst.js"></script>
+  <script src="political-marketing_files/highcharts-8.1.2/modules/vector.js"></script>
+  <script src="political-marketing_files/highcharts-8.1.2/modules/wordcloud.js"></script>
+  <script src="political-marketing_files/highcharts-8.1.2/modules/xrange.js"></script>
+  <script src="political-marketing_files/highcharts-8.1.2/modules/tilemap.js"></script>
+  <script src="political-marketing_files/highcharts-8.1.2/modules/venn.js"></script>
+  <script src="political-marketing_files/highcharts-8.1.2/modules/gantt.js"></script>
+  <script src="political-marketing_files/highcharts-8.1.2/modules/timeline.js"></script>
+  <script src="political-marketing_files/highcharts-8.1.2/modules/parallel-coordinates.js"></script>
+  <script src="political-marketing_files/highcharts-8.1.2/modules/bullet.js"></script>
+  <script src="political-marketing_files/highcharts-8.1.2/modules/coloraxis.js"></script>
+  <script src="political-marketing_files/highcharts-8.1.2/modules/dumbbell.js"></script>
+  <script src="political-marketing_files/highcharts-8.1.2/modules/lollipop.js"></script>
+  <script src="political-marketing_files/highcharts-8.1.2/modules/series-label.js"></script>
+  <script src="political-marketing_files/highcharts-8.1.2/plugins/motion.js"></script>
+  <script src="political-marketing_files/highcharts-8.1.2/custom/reset.js"></script>
+  <script src="political-marketing_files/highcharts-8.1.2/modules/boost.js"></script>
+  <script src="political-marketing_files/highchart-binding-0.8.2/highchart.js"></script>
+  <script src="political-marketing_files/popper-2.6.0/popper.min.js"></script>
+  <link href="political-marketing_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="political-marketing_files/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="political-marketing_files/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="political-marketing_files/anchor-4.2.2/anchor.min.js"></script>
+  <script src="political-marketing_files/bowser-1.9.3/bowser.min.js"></script>
+  <script src="political-marketing_files/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="political-marketing_files/distill-2.2.21/template.v2.js"></script>
+  <!--radix_placeholder_site_in_header-->
+  <!--/radix_placeholder_site_in_header-->
+
+
+</head>
+
+<body>
+
+<!--radix_placeholder_front_matter-->
+
+<script id="distill-front-matter" type="text/json">
+{"title":"Political Marketing","description":"Trabajo sobre Scrap Web de los principales y potenciales políticos Argentinos. Se busca analizar la popularidad en base a seguidores, seguidos e interacciones. Se utilizo la librería de R {highcharter}.","authors":[{"author":"Maxi Galoto","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2022-02-10T00:00:00.000-03:00","citationText":"Galoto, 2022"}
+</script>
+
+<!--/radix_placeholder_front_matter-->
+<!--radix_placeholder_navigation_before_body-->
+<!--/radix_placeholder_navigation_before_body-->
+<!--radix_placeholder_site_before_body-->
+<!--/radix_placeholder_site_before_body-->
+
+<div class="d-title">
+<h1>Political Marketing</h1>
+<!--radix_placeholder_categories-->
+<div class="dt-tags">
+<div class="dt=tag">R</div>
+</div>
+<!--/radix_placeholder_categories-->
+<p><p>Trabajo sobre Scrap Web de los principales y potenciales políticos Argentinos. Se busca analizar la popularidad en base a seguidores, seguidos e interacciones. Se utilizo la librería de R {highcharter}.</p></p>
+</div>
+
+<div class="d-byline">
+  
+  Maxi Galoto
+  
+<br/>2022-02-10
+</div>
+
+<div class="d-article">
+<div>
+<p><img src="https://www.antevenio.com/wp-content/uploads/2018/03/destacada-2.jpg" alt="react" width="1" height="1" /></p>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<style type="text/css">
+.distill-site-nav {
+    color: white;
+    background-image: linear-gradient(200deg, black, blue);
+    border: solid 1px black;
+    border-radius: .3rem;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+
+</style>
+</div>
+<p>This work consists of automating the data extraction using Python of the followers of the main and potential politicians of Argentina on Instagram and Twitter in order to be able to analyze trends and draw conclusions regarding future elections. The data began to be collected from the swearing-in of the Chamber of Deputies in December 2021. The dashboard will be made in R using the flexdashboard library.</p>
+<h1 id="include">Include</h1>
+<p><ui></p>
+<li>
+Descriptive statistics
+</li>
+<li>
+Inferential statistics
+</li>
+<li>
+Display
+</li>
+<li>
+Automation
+</li>
+<p></ui></p>
+<h1 id="programmin-languages">Programmin languages</h1>
+<p><ui></p>
+<li>
+R (For the Dashboard)
+</li>
+<li>
+Python (ETL)
+</li>
+<p></ui></p>
+<h1 id="r-libraries">R libraries</h1>
+<p><ui></p>
+<li>
+{plotly}
+</li>
+<li>
+{highcharter}
+</li>
+<li>
+{tidyverse}
+</li>
+<p></ui></p>
+<h1 id="python-libraries">Python libraries</h1>
+<p><ui></p>
+<li>
+{selenium}
+</li>
+<li>
+{tweepy}
+</li>
+<li>
+{pandas}
+</li>
+<li>
+{datetime}
+</li>
+<li>
+{BeautifulSoup}
+</li>
+<p></ui></p>
+<h1 id="time-series-in-levels">Time Series in Levels</h1>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<p>To pass a time series to levels we execute the following code in python for each of the variables:</p>
+<p><b><span style="color:green">‘Variable’</span></b> + .div( + <b><span style="color:green">‘Variable’</span></b> + .iloc[0]).mul(100)</p>
+<p>This is the result:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-a580668452bfd423eb6a" style="width:100%;height:500px;" class="highchart html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a580668452bfd423eb6a">{"x":{"hc_opts":{"chart":{"reflow":true},"title":{"text":"Social Media Politics Argentina","style":{"fontSize":"25px","fontWeight":"bold"}},"yAxis":{"title":{"text":null}},"credits":{"enabled":true,"text":"@MGaloto","style":{"fontSize":"16px","color":"#0f0f0f"}},"exporting":{"enabled":false},"boost":{"enabled":false},"plotOptions":{"series":{"label":{"enabled":false},"turboThreshold":0},"treemap":{"layoutAlgorithm":"squarified"}},"xAxis":{"categories":["2021-12-06","2021-12-07","2021-12-08","2021-12-09","2021-12-10","2021-12-11","2021-12-12","2021-12-13","2021-12-14","2021-12-15","2021-12-16","2021-12-17","2021-12-18","2021-12-19","2021-12-20","2021-12-21","2021-12-23","2021-12-24","2021-12-26","2021-12-27","2021-12-29","2021-12-30","2021-12-31","2022-01-01","2022-01-03","2022-01-04","2022-01-05","2022-01-06","2022-01-07","2022-01-09","2022-01-10","2022-01-11","2022-01-12","2022-01-13","2022-01-16","2022-01-17","2022-01-18","2022-01-19","2022-01-20","2022-01-21","2022-01-23","2022-01-24","2022-01-25","2022-01-27","2022-01-31","2022-02-01","2022-02-02","2022-02-03","2022-02-06","2022-02-07","2022-02-08","2022-02-09","2022-02-10","2022-02-13","2022-02-14","2022-02-15","2022-02-16"]},"series":[{"data":[100,100.073596143508,100.103691469952,100.190156884457,100.226887928758,100.249141043189,100.272131459603,100.300484072266,100.345593548205,100.381654317976,100.402969048063,100.543391562316,100.637162969209,100.690114657161,100.783215789523,100.877389361135,100.989861427444,101.025922197214,101.11091300775,101.12451958073,101.182297245306,101.222848854434,101.247649012082,101.268427522545,101.336460387445,101.375269282793,102.099031721413,103.585901713624,104.18867959939,105.025115186678,105.180752932786,105.365614648448,105.835007902537,106.514465194654,106.899001693114,106.954567451737,107.0120770065,107.067575737671,107.094185636553,107.120393370717,107.165502846656,107.276902473715,107.421212580249,107.589585542446,107.760572575315,107.853405597865,108.242566990588,108.870815308534,109.443095703138,109.57896035058,109.717439068694,110.089240351063,110.681561954145,111.348082947814,111.453517131547,111.705004135594,111.778600279102],"name":"1"},{"data":[100,99.9987430358951,100.000062848205,100.00263962462,100.00779317745,100.025076433892,100.039531521098,100.040956080417,100.043134818199,100.046654317693,100.047806534789,100.047638939575,100.050529957016,100.056772878737,100.064251815161,100.068064606279,100.075669239113,100.087107612468,100.089495844267,100.087170460673,100.096136804621,100.094858891115,100.095717816586,100.095801614193,100.092554456922,100.088364576573,100.085871597765,100.084279443232,100.073029614493,100.066619097558,100.065529728667,100.063267193279,100.066242008327,100.068441695511,100.066828591576,100.066577198755,100.061863583362,100.057946045235,100.054698887964,100.04937773992,100.045334505382,100.038882089644,100.032387775102,100.026878082443,100.01881256277,100.005719186677,100.00083797607,99.9938618252879,99.9766204676493,99.9702309001162,99.9675912754959,99.9623748744607,99.9578707530849,99.9375079345859,99.9339046374853,99.9327943191926,99.9302175427776],"name":"2"},{"data":[100,100.002389986204,100.004261003975,100.007484071083,100.020116855303,100.041339932791,100.079757253881,100.086162416907,100.090122965473,100.093468946158,100.095995503002,100.099819480928,100.102673807308,100.106388528722,100.113148775412,100.118638915148,100.128062289323,100.132159408529,100.137267150473,100.136393098375,100.142142722328,100.145311161181,100.14496973458,100.145597959525,100.149968220012,100.150773986789,100.152535748048,100.15424288105,100.154201909859,100.155922699925,100.155745158093,100.155444702684,100.157766403568,100.159364280058,100.158203429617,100.158476570897,100.15892725401,100.163556998713,100.165796757212,100.168295999928,100.17363591196,100.17468750589,100.174878704786,100.203340026205,100.230094214622,100.234327904468,100.234792244645,100.234082077316,100.232538829082,100.233071454578,100.233836250164,100.233549451819,100.235857495639,100.23806994001,100.238657193763,100.240842324006,100.240432612086],"name":"3"},{"data":[100,100.009714129363,100.016028313449,100.025904344968,100.033675648459,100.038775566374,100.044765946148,100.048246842503,100.050837277,100.054318173355,100.060470455285,100.087670017502,100.0943080059,100.11397911786,100.134135936288,100.146521451226,100.16028313449,100.167730633669,100.172749600506,100.174287670989,100.187644598863,100.191368348452,100.192420712467,100.192015957077,100.201001526737,100.204401472014,100.208449025916,100.209582341008,100.211606117959,100.217758399889,100.218486959591,100.220348834385,100.224558290443,100.228282040032,100.23492002843,100.235648588132,100.237996169395,100.24228657653,100.244229402403,100.248357907382,100.252324510205,100.254753042546,100.257181574887,100.258638694292,100.279928827812,100.291181027658,100.29725235851,100.300409450553,100.307452194341,100.310933090696,100.313118769803,100.315709204299,100.320242464669,100.33125181128,100.334975560869,100.33659458243,100.339265968005],"name":"4"},{"data":[100,100.014424597351,100.023024751608,100.042591240129,100.071986476371,100.081633210246,100.098059959911,100.105522527626,100.114486709576,100.126499623459,100.131778025013,100.144336980436,100.152664113922,100.162902392799,100.170911002054,100.187155737873,100.206130681392,100.214730835648,100.229018922615,100.237528069948,100.487797109165,100.492119938024,100.495350683803,100.497989884581,100.503541306905,100.509183736153,100.519649532338,100.525792499664,100.532253991222,100.547907182039,100.549818327429,100.552093500513,100.561057682463,100.569566829797,100.597096424111,100.60087321143,100.607880744528,100.62016667918,100.629267371515,100.633044158834,100.64542110041,100.649425405038,100.655113337747,100.659436166606,100.693336245555,100.707760842906,100.716452004086,100.723914571801,100.785071224293,100.792078757391,100.798403738564,100.819107813627,100.825205277492,100.843952703702,100.853644941039,100.873074919174,100.874394519563],"name":"5"},{"data":[100,100.006516751874,100.010901479987,100.024256798642,100.052174241854,100.067058181319,100.085964807126,100.092843600771,100.099481033235,100.109417068499,100.114083384656,100.123375790106,100.13447840441,100.145741926167,100.15495387789,100.164889913154,100.175912073731,100.180658843614,100.194215296587,100.19731276507,100.217265289326,100.222535008434,100.226034745551,100.226718602229,100.242527759553,100.249124965153,100.254957860349,100.259865537686,100.259583949642,100.270083160995,100.272094504166,100.276278097961,100.280582372347,100.281346682752,100.297719016164,100.300132627969,100.302224424866,100.303954179993,100.307655051428,100.310189343823,100.315137248024,100.316545188244,100.320487420859,100.32133218499,100.326883492142,100.330463682987,100.331630262026,100.337141342314,100.355927287531,100.358099538155,100.362122224497,100.366265591429,100.372460528396,100.3885110469,100.390924658705,100.420209815274,100.430910160944],"name":"6"},{"data":[100,100.000782084831,100.00178762247,100.00533094558,100.007070685306,100.008299675754,100.012321826312,100.013933878718,100.014763846293,100.014668080804,100.014923455442,100.01806775568,100.025058636411,100.034683068103,100.039662873555,100.044036164241,100.049271344332,100.05420326704,100.06496092369,100.065583399372,100.069126722482,100.070770696718,100.071281445995,100.071249524165,100.072478514613,100.072781771997,100.075080143744,100.076069720468,100.075590893021,100.075191870148,100.074697081786,100.07493649551,100.081895454411,100.0830606012,100.086045292288,100.086492197906,100.087002947183,100.088072328482,100.090338778399,100.090993175911,100.093674609616,100.093036173019,100.092892524785,100.093355391318,100.097409463705,100.101639106157,100.101591223412,100.099404578069,100.10012281924,100.100266467474,100.105262233842,100.12088796954,100.123760934224,100.129235528039,100.129746277316,100.131055072339,100.130352792083],"name":"7"},{"data":[100,100.132928776957,100.222092305481,100.341956829175,100.37788352565,100.402052394188,100.433733208352,100.446797461616,100.471292936485,100.501993931654,100.539227053456,100.620552030022,100.679994382371,100.712328409199,100.735517458741,100.767524879237,100.844603973493,100.871712299015,100.890982072578,100.896534380215,100.949771212265,100.977859356781,100.992883248035,101.005294288635,101.012806234262,101.026523700188,101.040567772447,101.048732930737,101.054611844705,101.064736640985,101.0680027043,101.080087138569,101.097070667812,101.103929400775,101.153246956846,101.153573563177,101.164678178451,101.177089219052,101.191786503973,101.202237906584,101.224447137132,101.218568223164,101.22183428648,101.234898539743,101.252535281649,101.263966503255,101.257434376623,101.263313290591,101.274417905866,101.286502340134,101.293361073098,101.303812475709,101.310344602341,101.331574013894,101.337126321531,101.340065778515,101.338432746857],"name":"8"},{"data":[100,100.062569123459,100.102813113666,100.175369796738,100.191379267295,100.215173159315,100.246898348675,100.276567275761,100.410224323526,100.483662261859,100.552840799769,100.772420235383,100.881108384116,100.938977479522,101.017849825291,101.083650218037,101.209229092586,101.269741953772,101.351551817075,101.362714383702,101.513702784914,101.822435877664,101.958883567086,102.042162189156,102.297285586923,102.429033248292,102.542127673325,102.624084412504,102.681806632033,102.796957319339,102.815904307429,102.853798283608,102.916367407068,102.959989542438,103.08806530689,103.113474833553,103.145200022913,103.188087778899,103.238172452842,103.289432133798,103.363604451514,103.383432694864,103.42235480218,103.499170885676,103.635031071592,103.668959399101,103.698775202064,103.752531772924,103.872823115913,103.886629448319,103.900582656603,103.947142309506,103.994436341792,104.072427432301,104.091374420391,104.119574588711,104.131912162351],"name":"9"},{"data":[100,100.004919363084,100.008384305777,100.016212509641,100.022286853622,100.030328942837,100.037601044787,100.037472713576,100.041151541622,100.041750420606,100.042948178574,100.045771465213,100.050006395172,100.052530242319,100.058134038528,100.064465044931,100.076314293402,100.082516968594,100.088249096014,100.082944739297,100.09214180941,100.095863414526,100.094408994136,100.081062548204,100.096890064213,100.099713350852,100.106215465536,100.110022624793,100.113658675767,100.115883083423,100.117209172602,100.114385885962,100.117251949672,100.118064714008,100.127817886034,100.126620128066,100.128245656737,100.132309478415,100.134277223648,100.13885437017,100.143089300129,100.144372612237,100.145057045362,100.149762523094,100.167429453125,100.16956830664,100.171364943592,100.172733809841,100.148735873407,100.149334752391,100.151430828836,100.150960281062,100.154339669616,100.154040230123,100.153355796999,100.157505172817,100.156991847974],"name":"10"},{"data":[100,100.017494356332,100.029427592771,100.059202755535,100.105255779654,100.136652935721,100.183632813156,100.211901839283,100.235536598831,100.257028010087,100.270525311495,100.303254819203,100.331350060332,100.352146331602,100.377055514459,100.407004462219,100.442398673209,100.463137016146,100.494128673887,100.50304963705,100.54858130618,100.563758529223,100.574417342352,100.583570018844,100.61236039996,100.632577387907,100.654300512492,100.671389370499,100.682801251947,100.718948531256,100.729549416054,100.746869987389,100.773459091881,100.789447311575,100.869156696718,100.882653998127,100.901075207774,100.922624547363,100.938033483735,100.952341781794,100.983101726206,100.996772812612,101.022029565462,101.068082589582,101.135511168293,101.172006017595,101.191412008891,101.228022714858,101.293771371934,101.310280946619,101.323025179708,101.353205840798,101.377014385343,101.428512672692,101.458461620452,101.521603502579,101.532899527363],"name":"11"},{"data":[100,100.02144553638,100.036099986239,100.085960858322,100.153514297918,100.181572208015,100.212310810159,100.232684069719,100.257167723753,100.278613260133,100.290408305141,100.31971720486,100.343843433287,100.356532042312,100.372258768991,100.379228568314,100.398529551056,100.41175429849,100.426408748349,100.427481025168,100.463044872998,100.472516651565,100.477699322857,100.47841417407,100.496821592796,100.50951020182,100.522556236451,100.533993855854,100.542929496012,100.565089883604,100.570093842093,100.57670621581,100.592075516882,100.603691849088,100.629962631153,100.633000748807,100.648906188288,100.666062617392,100.67160271429,100.683933897708,100.697516070749,100.703592306056,100.712527946215,100.726467544861,100.7455898148,100.759529413447,100.769001192014,100.785800195512,100.807245731891,100.810998700758,100.817074936065,100.827797704255,100.846562548587,100.869795212999,100.880160555582,100.894993718245,100.898567974308],"name":"12"},{"data":[100,99.8958926309419,99.7451164412716,99.6140847526296,99.672036145258,99.7035760624849,99.7528091040099,99.776143514316,99.8505059207861,99.9446128282844,100.048720197342,100.307193665349,100.447456549277,100.521818955747,100.569513464724,100.704391484735,100.935940633157,101.011072305901,101.14748885846,101.174156755953,101.349549466386,101.430578847229,101.494684370048,101.542635301117,101.673410567667,101.727002784744,101.790339041289,101.854444564108,101.903677605633,102.051120308117,102.07983958234,102.121892805309,102.189588237406,102.224205219728,102.353954797914,102.376007097764,102.416521788185,102.472934648266,102.514475027052,102.545502100097,102.606017713638,102.62653148094,102.646275981968,102.683970029386,102.818335205215,102.877312286208,102.907313670887,102.953726069408,103.056807750101,103.078347205768,103.109374278813,103.190147237565,103.248355052284,103.345026180695,103.383489494387,103.422978496443,103.437850977737],"name":"13"},{"data":[100,99.9998511518244,99.9913668058149,100.010121675941,100.021062016848,100.031555813228,100.041230944643,100.042049609608,100.04301712275,100.043984635891,100.044282332243,100.048375657072,100.057083275345,100.059985814769,100.062813930105,100.066014165881,100.070926155676,100.072637909695,100.075317176856,100.07449851189,100.07315887831,100.072935606046,100.074424087803,100.077252203139,100.082908433812,100.085736549149,100.08804369587,100.090053146241,100.091392779822,100.091764900261,100.091467203909,100.091169507558,100.091616052085,100.092285868875,100.093327806104,100.093178957929,100.093699926543,100.091020659382,100.092732413402,100.093699926543,100.093253382017,100.093551078368,100.093104533841,100.092732413402,100.091392779822,100.094965136036,100.093923198807,100.090350842592,100.087820423607,100.08670406229,100.089978722153,100.105533356504,100.111040739001,100.115059639743,100.11617600106,100.118334299606,100.116324849235],"name":"14"},{"data":[100,100.038401103444,100.081112534825,100.15125332581,100.215516396879,100.24999902038,100.326409379274,100.356973522831,100.398901258224,100.458462153361,100.478838249066,100.530170336323,100.590514927449,100.650467670581,100.699840517866,100.744511189219,100.8079905643,100.876172115313,100.971783025929,100.981187377792,101.129305919648,101.166923327103,101.195528230689,101.23549672611,101.303678277123,101.346781556499,101.387141899914,101.413395715534,101.448270187029,101.49999412228,101.518802826008,101.539962617701,101.591686552952,101.62499363247,101.706106167296,101.72099639108,101.739805094808,101.771936630342,101.794271966019,101.817782845678,101.83424046144,101.870290476918,101.949051923778,101.964725843551,102.05524273024,102.088157961763,102.109317753457,102.11049329744,102.112452537412,102.119113953315,102.125383521224,102.139098201026,102.160649840714,102.166135712634,102.16574386464,102.177891152464,102.179458544441],"name":"15"},{"data":[100,99.9942652608027,99.9947063945871,100.002117442165,100.000882267569,99.9971767437798,99.9972649705367,99.9995588662156,100.00141162811,100.004323111087,100.005822965954,100.016763083808,100.02179200895,100.016586630294,100.01499854867,100.011204798124,100.037143464647,100.071551899831,100.079668761464,100.081080389574,100.105166294203,100.117253359895,100.136310339382,100.136310339382,100.151750021836,100.169836506997,100.180953078364,100.191628515947,100.195245812979,100.202921540827,100.204686075965,100.192687237029,100.188452352699,100.189775754052,100.227272125727,100.230889422759,100.235124307089,100.235565440874,100.235565440874,100.235300760603,100.218361223282,100.218008316254,100.213685205167,100.209450320837,100.19577517352,100.195334039736,100.199039563525,100.191363835676,100.175835926465,100.179453223497,100.183864561341,100.186246683777,100.193922411625,100.202127500015,100.202127500015,100.206891744887,100.207421105428],"name":"16"}],"subtitle":{"text":"Followers Trend Instagram + Twitter al 2022-02-17","style":{"fontSize":"16px","color":"#0f0f0f"}}},"theme":{"colors":["#0266C8","#F90101","#F2B50F","#00933B"],"chart":{"style":{"fontFamily":"Roboto","color":"#444444"}},"xAxis":{"gridLineWidth":1,"gridLineColor":"#F3F3F3","lineColor":"#F3F3F3","minorGridLineColor":"#F3F3F3","tickColor":"#F3F3F3","tickWidth":1},"yAxis":{"gridLineColor":"#F3F3F3","lineColor":"#F3F3F3","minorGridLineColor":"#F3F3F3","tickColor":"#F3F3F3","tickWidth":1},"legendBackgroundColor":"rgba(0, 0, 0, 0.5)","background2":"#505053","dataLabelsColor":"#B0B0B3","textColor":"#C0C0C0","contrastTextColor":"#F0F0F3","maskColor":"rgba(255,255,255,0.3)"},"conf_opts":{"global":{"Date":null,"VMLRadialGradientURL":"http =//code.highcharts.com/list(version)/gfx/vml-radial-gradient.png","canvasToolsURL":"http =//code.highcharts.com/list(version)/modules/canvas-tools.js","getTimezoneOffset":null,"timezoneOffset":0,"useUTC":true},"lang":{"contextButtonTitle":"Chart context menu","decimalPoint":".","downloadJPEG":"Download JPEG image","downloadPDF":"Download PDF document","downloadPNG":"Download PNG image","downloadSVG":"Download SVG vector image","drillUpText":"Back to {series.name}","invalidDate":null,"loading":"Loading...","months":["January","February","March","April","May","June","July","August","September","October","November","December"],"noData":"No data to display","numericSymbols":["k","M","G","T","P","E"],"printChart":"Print chart","resetZoom":"Reset zoom","resetZoomTitle":"Reset zoom level 1:1","shortMonths":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"thousandsSep":" ","weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]}},"type":"chart","fonts":"Roboto","debug":false},"evals":[],"jsHooks":[]}</script>
+</div>
+<h1 id="link-del-proyecto">Link del Proyecto</h1>
+<p><a href="https://rpubs.com/MGaloto/social_media_politics">Rpubs</a></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<!--radix_placeholder_article_footer-->
+<!--/radix_placeholder_article_footer-->
+</div>
+
+<div class="d-appendix">
+</div>
+
+
+<!--radix_placeholder_site_after_body-->
+<!--/radix_placeholder_site_after_body-->
+<!--radix_placeholder_appendices-->
+<div class="appendix-bottom"></div>
+<!--/radix_placeholder_appendices-->
+<!--radix_placeholder_navigation_after_body-->
+<!--/radix_placeholder_navigation_after_body-->
+
+</body>
+
+</html>

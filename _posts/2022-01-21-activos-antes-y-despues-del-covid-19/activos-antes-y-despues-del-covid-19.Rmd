@@ -1,0 +1,75 @@
+---
+title: "Activos: Antes y despues del Covid-19"
+description: |
+  Gráfico dinámico que muestra la trayectoria de 2 Activos, un Índice y 2 Divisas (Bitcoin, Oro, Nasdaq y USD/EUR ) antes y después del Shock Externo Covid-19. Se utilizo la librería {gganimate}. Los datos van desde el 2018 hasta mediados de 2020. El periodo es suficiente para ver el cambio de tendencia luego del Shock.
+author: Maxi Galoto
+date: 2022-01-21
+slug: almost-done
+categories:
+  - R
+output:
+  distill::distill_article:
+    self_contained: false
+
+---
+
+<div >
+<img src="https://miro.medium.com/max/1400/1*eMX1qziPN3jh0h2IX_RhZQ.jpeg" alt="react" width="1" height="1" />
+</div>
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{css my-header-colors, echo = FALSE}
+.distill-site-nav {
+    color: white;
+    background-image: linear-gradient(200deg, black, blue);
+    border: solid 1px black;
+    border-radius: .3rem;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+
+```
+
+_Durante el Shock Externo de la pandemia mundial podemos observar que las variables más elásticas fueron el **Bitcoin** y el **Nasdaq**_
+
+_Posterior al shock el índice **Nasdaq** siguió su curso con tendencia alcista, el **Bitcoin** llego a récord histórico, el **Oro** tuvo una leve suba y la relación entre las monedas se mantiene constante, cada una con una trayectoria de pérdida de poder adquisitivo producto de la inflación._
+
+
+***Variables***
+
+
+<ui>
+
+<li>
+Bitcoin
+</li>
+
+<li>
+Nasdaq
+</li>
+
+<li>
+Oro
+</li>
+
+<li>
+Usd/Eur
+</li>
+
+
+</ui>
+
+
+
+![Activos](C:/Users/maxig/Desktop/Carpetas/Trabajos en R/Netlify/Blog/_posts/2022-01-21-activos-antes-y-despues-del-covid-19/activos.gif)
+
+
+Publicado en: [Pagina de Rpubs](https://rpubs.com/MGaloto/Dinamica_Activos)
+
+
+

@@ -1,0 +1,1562 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+  <meta name="generator" content="distill" />
+
+  <style type="text/css">
+  /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
+  body {
+    visibility: hidden;
+  }
+  </style>
+
+ <!--radix_placeholder_import_source-->
+ <!--/radix_placeholder_import_source-->
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ad0000; } /* Alert */
+code span.an { color: #5e5e5e; } /* Annotation */
+code span.at { } /* Attribute */
+code span.bn { color: #ad0000; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007ba5; } /* ControlFlow */
+code span.ch { color: #20794d; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #5e5e5e; } /* Comment */
+code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+code span.dt { color: #ad0000; } /* DataType */
+code span.dv { color: #ad0000; } /* DecVal */
+code span.er { color: #ad0000; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #ad0000; } /* Float */
+code span.fu { color: #4758ab; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #5e5e5e; } /* Information */
+code span.kw { color: #007ba5; } /* Keyword */
+code span.op { color: #5e5e5e; } /* Operator */
+code span.ot { color: #007ba5; } /* Other */
+code span.pp { color: #ad0000; } /* Preprocessor */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
+code span.ss { color: #20794d; } /* SpecialString */
+code span.st { color: #20794d; } /* String */
+code span.va { color: #111111; } /* Variable */
+code span.vs { color: #20794d; } /* VerbatimString */
+code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+</style>
+
+
+  <!--radix_placeholder_meta_tags-->
+  <title>Pbi Covid-19</title>
+
+  <meta property="description" itemprop="description" content="Series temporales y graficos de barras de algunos países de LATAM, Euro y Asia en el año pandemico."/>
+
+
+  <!--  https://schema.org/Article -->
+  <meta property="article:published" itemprop="datePublished" content="2022-02-01"/>
+  <meta property="article:created" itemprop="dateCreated" content="2022-02-01"/>
+  <meta name="article:author" content="Maxi Galoto"/>
+
+  <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
+  <meta property="og:title" content="Pbi Covid-19"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:description" content="Series temporales y graficos de barras de algunos países de LATAM, Euro y Asia en el año pandemico."/>
+  <meta property="og:locale" content="en_US"/>
+
+  <!--  https://dev.twitter.com/cards/types/summary -->
+  <meta property="twitter:card" content="summary"/>
+  <meta property="twitter:title" content="Pbi Covid-19"/>
+  <meta property="twitter:description" content="Series temporales y graficos de barras de algunos países de LATAM, Euro y Asia en el año pandemico."/>
+
+  <!--/radix_placeholder_meta_tags-->
+  <!--radix_placeholder_rmarkdown_metadata-->
+
+  <script type="text/json" id="radix-rmarkdown-metadata">
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","slug","categories","output"]}},"value":[{"type":"character","attributes":{},"value":["Pbi Covid-19"]},{"type":"character","attributes":{},"value":["Series temporales y graficos de barras de algunos países de LATAM, Euro y Asia en el año pandemico.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Maxi Galoto"]}]}]},{"type":"character","attributes":{},"value":["2022-02-01"]},{"type":"character","attributes":{},"value":["almost-done"]},{"type":"character","attributes":{},"value":["R"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
+  </script>
+  <!--/radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["GDP_Variacion.xls","GDP1.xls","GDP2.xls","GDP2_Variacion.xls","pbi-covid-19_files/anchor-4.2.2/anchor.min.js","pbi-covid-19_files/bowser-1.9.3/bowser.min.js","pbi-covid-19_files/crosstalk-1.2.0/css/crosstalk.min.css","pbi-covid-19_files/crosstalk-1.2.0/js/crosstalk.js","pbi-covid-19_files/crosstalk-1.2.0/js/crosstalk.js.map","pbi-covid-19_files/crosstalk-1.2.0/js/crosstalk.min.js","pbi-covid-19_files/crosstalk-1.2.0/js/crosstalk.min.js.map","pbi-covid-19_files/crosstalk-1.2.0/scss/crosstalk.scss","pbi-covid-19_files/distill-2.2.21/template.v2.js","pbi-covid-19_files/header-attrs-2.11/header-attrs.js","pbi-covid-19_files/htmlwidgets-1.5.4/htmlwidgets.js","pbi-covid-19_files/jquery-3.6.0/jquery-3.6.0.js","pbi-covid-19_files/jquery-3.6.0/jquery-3.6.0.min.js","pbi-covid-19_files/jquery-3.6.0/jquery-3.6.0.min.map","pbi-covid-19_files/plotly-binding-4.10.0/plotly.js","pbi-covid-19_files/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css","pbi-covid-19_files/plotly-main-2.5.1/plotly-latest.min.js","pbi-covid-19_files/popper-2.6.0/popper.min.js","pbi-covid-19_files/tippy-6.2.7/tippy-bundle.umd.min.js","pbi-covid-19_files/tippy-6.2.7/tippy-light-border.css","pbi-covid-19_files/tippy-6.2.7/tippy.css","pbi-covid-19_files/tippy-6.2.7/tippy.umd.min.js","pbi-covid-19_files/typedarray-0.1/typedarray.min.js","pbi-covid-19_files/webcomponents-2.0.0/webcomponents.js"]}
+  </script>
+  <!--radix_placeholder_navigation_in_header-->
+  <!--/radix_placeholder_navigation_in_header-->
+  <!--radix_placeholder_distill-->
+
+  <style type="text/css">
+
+  body {
+    background-color: white;
+  }
+
+  .pandoc-table {
+    width: 100%;
+  }
+
+  .pandoc-table>caption {
+    margin-bottom: 10px;
+  }
+
+  .pandoc-table th:not([align]) {
+    text-align: left;
+  }
+
+  .pagedtable-footer {
+    font-size: 15px;
+  }
+
+  d-byline .byline {
+    grid-template-columns: 2fr 2fr;
+  }
+
+  d-byline .byline h3 {
+    margin-block-start: 1.5em;
+  }
+
+  d-byline .byline .authors-affiliations h3 {
+    margin-block-start: 0.5em;
+  }
+
+  .authors-affiliations .orcid-id {
+    width: 16px;
+    height:16px;
+    margin-left: 4px;
+    margin-right: 4px;
+    vertical-align: middle;
+    padding-bottom: 2px;
+  }
+
+  d-title .dt-tags {
+    margin-top: 1em;
+    grid-column: text;
+  }
+
+  .dt-tags .dt-tag {
+    text-decoration: none;
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0em 0.4em;
+    margin-right: 0.5em;
+    margin-bottom: 0.4em;
+    font-size: 70%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  d-article table.gt_table td,
+  d-article table.gt_table th {
+    border-bottom: none;
+  }
+
+  .html-widget {
+    margin-bottom: 2.0em;
+  }
+
+  .l-screen-inset {
+    padding-right: 16px;
+  }
+
+  .l-screen .caption {
+    margin-left: 10px;
+  }
+
+  .shaded {
+    background: rgb(247, 247, 247);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .shaded .html-widget {
+    margin-bottom: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .shaded .shaded-content {
+    background: white;
+  }
+
+  .text-output {
+    margin-top: 0;
+    line-height: 1.5em;
+  }
+
+  .hidden {
+    display: none !important;
+  }
+
+  d-article {
+    padding-top: 2.5rem;
+    padding-bottom: 30px;
+  }
+
+  d-appendix {
+    padding-top: 30px;
+  }
+
+  d-article>p>img {
+    width: 100%;
+  }
+
+  d-article h2 {
+    margin: 1rem 0 1.5rem 0;
+  }
+
+  d-article h3 {
+    margin-top: 1.5rem;
+  }
+
+  d-article iframe {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 2.0em;
+    width: 100%;
+  }
+
+  /* Tweak code blocks */
+
+  d-article div.sourceCode code,
+  d-article pre code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: auto;
+  }
+
+  d-article div.sourceCode {
+    background-color: white;
+  }
+
+  d-article div.sourceCode pre {
+    padding-left: 10px;
+    font-size: 12px;
+    border-left: 2px solid rgba(0,0,0,0.1);
+  }
+
+  d-article pre {
+    font-size: 12px;
+    color: black;
+    background: none;
+    margin-top: 0;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  d-article pre a {
+    border-bottom: none;
+  }
+
+  d-article pre a:hover {
+    border-bottom: none;
+    text-decoration: underline;
+  }
+
+  d-article details {
+    grid-column: text;
+    margin-bottom: 0.8em;
+  }
+
+  @media(min-width: 768px) {
+
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: visible !important;
+  }
+
+  d-article div.sourceCode pre {
+    padding-left: 18px;
+    font-size: 14px;
+  }
+
+  d-article pre {
+    font-size: 14px;
+  }
+
+  }
+
+  figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+
+  /* CSS for d-contents */
+
+  .d-contents {
+    grid-column: text;
+    color: rgba(0,0,0,0.8);
+    font-size: 0.9em;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+    padding-left: 0.25em;
+    justify-self: start;
+  }
+
+  @media(min-width: 1000px) {
+    .d-contents.d-contents-float {
+      height: 0;
+      grid-column-start: 1;
+      grid-column-end: 4;
+      justify-self: center;
+      padding-right: 3em;
+      padding-left: 2em;
+    }
+  }
+
+  .d-contents nav h3 {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+
+  .d-contents li {
+    list-style-type: none
+  }
+
+  .d-contents nav > ul {
+    padding-left: 0;
+  }
+
+  .d-contents ul {
+    padding-left: 1em
+  }
+
+  .d-contents nav ul li {
+    margin-top: 0.6em;
+    margin-bottom: 0.2em;
+  }
+
+  .d-contents nav a {
+    font-size: 13px;
+    border-bottom: none;
+    text-decoration: none
+    color: rgba(0, 0, 0, 0.8);
+  }
+
+  .d-contents nav a:hover {
+    text-decoration: underline solid rgba(0, 0, 0, 0.6)
+  }
+
+  .d-contents nav > ul > li > a {
+    font-weight: 600;
+  }
+
+  .d-contents nav > ul > li > ul {
+    font-weight: inherit;
+  }
+
+  .d-contents nav > ul > li > ul > li {
+    margin-top: 0.2em;
+  }
+
+
+  .d-contents nav ul {
+    margin-top: 0;
+    margin-bottom: 0.25em;
+  }
+
+  .d-article-with-toc h2:nth-child(2) {
+    margin-top: 0;
+  }
+
+
+  /* Figure */
+
+  .figure {
+    position: relative;
+    margin-bottom: 2.5em;
+    margin-top: 1.5em;
+  }
+
+  .figure img {
+    width: 100%;
+  }
+
+  .figure .caption {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 12px;
+    line-height: 1.5em;
+  }
+
+  .figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+
+  .figure .caption a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  .figure .caption b,
+  .figure .caption strong, {
+    font-weight: 600;
+    color: rgba(0, 0, 0, 1.0);
+  }
+
+  /* Citations */
+
+  d-article .citation {
+    color: inherit;
+    cursor: inherit;
+  }
+
+  div.hanging-indent{
+    margin-left: 1em; text-indent: -1em;
+  }
+
+  /* Citation hover box */
+
+  .tippy-box[data-theme~=light-border] {
+    background-color: rgba(250, 250, 250, 0.95);
+  }
+
+  .tippy-content > p {
+    margin-bottom: 0;
+    padding: 2px;
+  }
+
+
+  /* Tweak 1000px media break to show more text */
+
+  @media(min-width: 1000px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 80px [middle-start] 50px [text-start kicker-end] 65px 65px 65px 65px 65px 65px 65px 65px [text-end gutter-start] 65px [middle-end] 65px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 16px;
+    }
+
+    .grid {
+      grid-column-gap: 16px;
+    }
+
+    d-article {
+      font-size: 1.06rem;
+      line-height: 1.7em;
+    }
+    figure .caption, .figure .caption, figure figcaption {
+      font-size: 13px;
+    }
+  }
+
+  @media(min-width: 1180px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 32px;
+    }
+
+    .grid {
+      grid-column-gap: 32px;
+    }
+  }
+
+
+  /* Get the citation styles for the appendix (not auto-injected on render since
+     we do our own rendering of the citation appendix) */
+
+  d-appendix .citation-appendix,
+  .d-appendix .citation-appendix {
+    font-size: 11px;
+    line-height: 15px;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    padding-left: 18px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background: rgba(0, 0, 0, 0.02);
+    padding: 10px 18px;
+    border-radius: 3px;
+    color: rgba(150, 150, 150, 1);
+    overflow: hidden;
+    margin-top: -12px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  /* Include appendix styles here so they can be overridden */
+
+  d-appendix {
+    contain: layout style;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-top: 60px;
+    margin-bottom: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    color: rgba(0,0,0,0.5);
+    padding-top: 60px;
+    padding-bottom: 48px;
+  }
+
+  d-appendix h3 {
+    grid-column: page-start / text-start;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 1em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.65);
+  }
+
+  d-appendix h3 + * {
+    margin-top: 1em;
+  }
+
+  d-appendix ol {
+    padding: 0 0 0 15px;
+  }
+
+  @media (min-width: 768px) {
+    d-appendix ol {
+      padding: 0 0 0 30px;
+      margin-left: -30px;
+    }
+  }
+
+  d-appendix li {
+    margin-bottom: 1em;
+  }
+
+  d-appendix a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  d-appendix > * {
+    grid-column: text;
+  }
+
+  d-appendix > d-footnote-list,
+  d-appendix > d-citation-list,
+  d-appendix > distill-appendix {
+    grid-column: screen;
+  }
+
+  /* Include footnote styles here so they can be overridden */
+
+  d-footnote-list {
+    contain: layout style;
+  }
+
+  d-footnote-list > * {
+    grid-column: text;
+  }
+
+  d-footnote-list a.footnote-backlink {
+    color: rgba(0,0,0,0.3);
+    padding-left: 0.5em;
+  }
+
+
+
+  /* Anchor.js */
+
+  .anchorjs-link {
+    /*transition: all .25s linear; */
+    text-decoration: none;
+    border-bottom: none;
+  }
+  *:hover > .anchorjs-link {
+    margin-left: -1.125em !important;
+    text-decoration: none;
+    border-bottom: none;
+  }
+
+  /* Social footer */
+
+  .social_footer {
+    margin-top: 30px;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.67);
+  }
+
+  .disqus-comments {
+    margin-right: 30px;
+  }
+
+  .disqus-comment-count {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+  }
+
+  #disqus_thread {
+    margin-top: 30px;
+  }
+
+  .article-sharing a {
+    border-bottom: none;
+    margin-right: 8px;
+  }
+
+  .article-sharing a:hover {
+    border-bottom: none;
+  }
+
+  .sidebar-section.subscribe {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+
+  .subscribe p {
+    margin-bottom: 0.5em;
+  }
+
+
+  .article-footer .subscribe {
+    font-size: 15px;
+    margin-top: 45px;
+  }
+
+
+  .sidebar-section.custom {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+
+  .custom p {
+    margin-bottom: 0.5em;
+  }
+
+  /* Styles for listing layout (hide title) */
+  .layout-listing d-title, .layout-listing .d-title {
+    display: none;
+  }
+
+  /* Styles for posts lists (not auto-injected) */
+
+
+  .posts-with-sidebar {
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+
+  .posts-list .description h2,
+  .posts-list .description p {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  }
+
+  .posts-list .description h2 {
+    font-weight: 700;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .posts-list h2.post-tag {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding-bottom: 12px;
+  }
+  .posts-list {
+    margin-top: 60px;
+    margin-bottom: 24px;
+  }
+
+  .posts-list .post-preview {
+    text-decoration: none;
+    overflow: hidden;
+    display: block;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 24px 0;
+  }
+
+  .post-preview-last {
+    border-bottom: none !important;
+  }
+
+  .posts-list .posts-list-caption {
+    grid-column: screen;
+    font-weight: 400;
+  }
+
+  .posts-list .post-preview h2 {
+    margin: 0 0 6px 0;
+    line-height: 1.2em;
+    font-style: normal;
+    font-size: 24px;
+  }
+
+  .posts-list .post-preview p {
+    margin: 0 0 12px 0;
+    line-height: 1.4em;
+    font-size: 16px;
+  }
+
+  .posts-list .post-preview .thumbnail {
+    box-sizing: border-box;
+    margin-bottom: 24px;
+    position: relative;
+    max-width: 500px;
+  }
+  .posts-list .post-preview img {
+    width: 100%;
+    display: block;
+  }
+
+  .posts-list .metadata {
+    font-size: 12px;
+    line-height: 1.4em;
+    margin-bottom: 18px;
+  }
+
+  .posts-list .metadata > * {
+    display: inline-block;
+  }
+
+  .posts-list .metadata .publishedDate {
+    margin-right: 2em;
+  }
+
+  .posts-list .metadata .dt-authors {
+    display: block;
+    margin-top: 0.3em;
+    margin-right: 2em;
+  }
+
+  .posts-list .dt-tags {
+    display: block;
+    line-height: 1em;
+  }
+
+  .posts-list .dt-tags .dt-tag {
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0.3em 0.4em;
+    margin-right: 0.2em;
+    margin-bottom: 0.4em;
+    font-size: 60%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .posts-list img {
+    opacity: 1;
+  }
+
+  .posts-list img[data-src] {
+    opacity: 0;
+  }
+
+  .posts-more {
+    clear: both;
+  }
+
+
+  .posts-sidebar {
+    font-size: 16px;
+  }
+
+  .posts-sidebar h3 {
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .sidebar-section {
+    margin-bottom: 30px;
+  }
+
+  .categories ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .categories li {
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 0;
+  }
+
+  .categories li>a {
+    border-bottom: none;
+  }
+
+  .categories li>a:hover {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  }
+
+  .categories .active {
+    font-weight: 600;
+  }
+
+  .categories .category-count {
+    color: rgba(0, 0, 0, 0.4);
+  }
+
+
+  @media(min-width: 768px) {
+    .posts-list .post-preview h2 {
+      font-size: 26px;
+    }
+    .posts-list .post-preview .thumbnail {
+      float: right;
+      width: 30%;
+      margin-bottom: 0;
+    }
+    .posts-list .post-preview .description {
+      float: left;
+      width: 45%;
+    }
+    .posts-list .post-preview .metadata {
+      float: left;
+      width: 20%;
+      margin-top: 8px;
+    }
+    .posts-list .post-preview p {
+      margin: 0 0 12px 0;
+      line-height: 1.5em;
+      font-size: 16px;
+    }
+    .posts-with-sidebar .posts-list {
+      float: left;
+      width: 75%;
+    }
+    .posts-with-sidebar .posts-sidebar {
+      float: right;
+      width: 20%;
+      margin-top: 60px;
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+  }
+
+
+  /* Improve display for browsers without grid (IE/Edge <= 15) */
+
+  .downlevel {
+    line-height: 1.6em;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+  }
+
+  .downlevel .d-title {
+    padding-top: 6rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .downlevel .d-title h1 {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.1em;
+    margin: 0 0 0.5rem;
+  }
+
+  .downlevel .d-title p {
+    font-weight: 300;
+    font-size: 1.2rem;
+    line-height: 1.55em;
+    margin-top: 0;
+  }
+
+  .downlevel .d-byline {
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    font-size: 0.8rem;
+    line-height: 1.8em;
+  }
+
+  .downlevel .section-separator {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .downlevel .d-article {
+    font-size: 1.06rem;
+    line-height: 1.7em;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+  }
+
+
+  .downlevel .d-appendix {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: none;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.5);
+    padding-top: 40px;
+    padding-bottom: 48px;
+  }
+
+  .downlevel .footnotes ol {
+    padding-left: 13px;
+  }
+
+  .downlevel .base-grid,
+  .downlevel .distill-header,
+  .downlevel .d-title,
+  .downlevel .d-abstract,
+  .downlevel .d-article,
+  .downlevel .d-appendix,
+  .downlevel .distill-appendix,
+  .downlevel .d-byline,
+  .downlevel .d-footnote-list,
+  .downlevel .d-citation-list,
+  .downlevel .distill-footer,
+  .downlevel .appendix-bottom,
+  .downlevel .posts-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @media(min-width: 768px) {
+    .downlevel .base-grid,
+    .downlevel .distill-header,
+    .downlevel .d-title,
+    .downlevel .d-abstract,
+    .downlevel .d-article,
+    .downlevel .d-appendix,
+    .downlevel .distill-appendix,
+    .downlevel .d-byline,
+    .downlevel .d-footnote-list,
+    .downlevel .d-citation-list,
+    .downlevel .distill-footer,
+    .downlevel .appendix-bottom,
+    .downlevel .posts-container {
+    padding-left: 150px;
+    padding-right: 150px;
+    max-width: 900px;
+  }
+  }
+
+  .downlevel pre code {
+    display: block;
+    border-left: 2px solid rgba(0, 0, 0, .1);
+    padding: 0 0 0 20px;
+    font-size: 14px;
+  }
+
+  .downlevel code, .downlevel pre {
+    color: black;
+    background: none;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  .downlevel .posts-list .post-preview {
+    color: inherit;
+  }
+
+
+
+  </style>
+
+  <script type="application/javascript">
+
+  function is_downlevel_browser() {
+    if (bowser.isUnsupportedBrowser({ msie: "12", msedge: "16"},
+                                   window.navigator.userAgent)) {
+      return true;
+    } else {
+      return window.load_distill_framework === undefined;
+    }
+  }
+
+  // show body when load is complete
+  function on_load_complete() {
+
+    // add anchors
+    if (window.anchors) {
+      window.anchors.options.placement = 'left';
+      window.anchors.add('d-article > h2, d-article > h3, d-article > h4, d-article > h5');
+    }
+
+
+    // set body to visible
+    document.body.style.visibility = 'visible';
+
+    // force redraw for leaflet widgets
+    if (window.HTMLWidgets) {
+      var maps = window.HTMLWidgets.findAll(".leaflet");
+      $.each(maps, function(i, el) {
+        var map = this.getMap();
+        map.invalidateSize();
+        map.eachLayer(function(layer) {
+          if (layer instanceof L.TileLayer)
+            layer.redraw();
+        });
+      });
+    }
+
+    // trigger 'shown' so htmlwidgets resize
+    $('d-article').trigger('shown');
+  }
+
+  function init_distill() {
+
+    init_common();
+
+    // create front matter
+    var front_matter = $('<d-front-matter></d-front-matter>');
+    $('#distill-front-matter').wrap(front_matter);
+
+    // create d-title
+    $('.d-title').changeElementType('d-title');
+
+    // create d-byline
+    var byline = $('<d-byline></d-byline>');
+    $('.d-byline').replaceWith(byline);
+
+    // create d-article
+    var article = $('<d-article></d-article>');
+    $('.d-article').wrap(article).children().unwrap();
+
+    // move posts container into article
+    $('.posts-container').appendTo($('d-article'));
+
+    // create d-appendix
+    $('.d-appendix').changeElementType('d-appendix');
+
+    // flag indicating that we have appendix items
+    var appendix = $('.appendix-bottom').children('h3').length > 0;
+
+    // replace footnotes with <d-footnote>
+    $('.footnote-ref').each(function(i, val) {
+      appendix = true;
+      var href = $(this).attr('href');
+      var id = href.replace('#', '');
+      var fn = $('#' + id);
+      var fn_p = $('#' + id + '>p');
+      fn_p.find('.footnote-back').remove();
+      var text = fn_p.html();
+      var dtfn = $('<d-footnote></d-footnote>');
+      dtfn.html(text);
+      $(this).replaceWith(dtfn);
+    });
+    // remove footnotes
+    $('.footnotes').remove();
+
+    // move refs into #references-listing
+    $('#references-listing').replaceWith($('#refs'));
+
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      var id = $(this).attr('id');
+      $('.d-contents a[href="#' + id + '"]').parent().remove();
+      appendix = true;
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
+    });
+
+    // show d-appendix if we have appendix content
+    $("d-appendix").css('display', appendix ? 'grid' : 'none');
+
+    // localize layout chunks to just output
+    $('.layout-chunk').each(function(i, val) {
+
+      // capture layout
+      var layout = $(this).attr('data-layout');
+
+      // apply layout to markdown level block elements
+      var elements = $(this).children().not('details, div.sourceCode, pre, script');
+      elements.each(function(i, el) {
+        var layout_div = $('<div class="' + layout + '"></div>');
+        if (layout_div.hasClass('shaded')) {
+          var shaded_content = $('<div class="shaded-content"></div>');
+          $(this).wrap(shaded_content);
+          $(this).parent().wrap(layout_div);
+        } else {
+          $(this).wrap(layout_div);
+        }
+      });
+
+
+      // unwrap the layout-chunk div
+      $(this).children().unwrap();
+    });
+
+    // remove code block used to force  highlighting css
+    $('.distill-force-highlighting-css').parent().remove();
+
+    // remove empty line numbers inserted by pandoc when using a
+    // custom syntax highlighting theme
+    $('code.sourceCode a:empty').remove();
+
+    // load distill framework
+    load_distill_framework();
+
+    // wait for window.distillRunlevel == 4 to do post processing
+    function distill_post_process() {
+
+      if (!window.distillRunlevel || window.distillRunlevel < 4)
+        return;
+
+      // hide author/affiliations entirely if we have no authors
+      var front_matter = JSON.parse($("#distill-front-matter").html());
+      var have_authors = front_matter.authors && front_matter.authors.length > 0;
+      if (!have_authors)
+        $('d-byline').addClass('hidden');
+
+      // article with toc class
+      $('.d-contents').parent().addClass('d-article-with-toc');
+
+      // strip links that point to #
+      $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
+
+      // add orcid ids
+      $('.authors-affiliations').find('.author').each(function(i, el) {
+        var orcid_id = front_matter.authors[i].orcidID;
+        if (orcid_id) {
+          var a = $('<a></a>');
+          a.attr('href', 'https://orcid.org/' + orcid_id);
+          var img = $('<img></img>');
+          img.addClass('orcid-id');
+          img.attr('alt', 'ORCID ID');
+          img.attr('src','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==');
+          a.append(img);
+          $(this).append(a);
+        }
+      });
+
+      // hide elements of author/affiliations grid that have no value
+      function hide_byline_column(caption) {
+        $('d-byline').find('h3:contains("' + caption + '")').parent().css('visibility', 'hidden');
+      }
+
+      // affiliations
+      var have_affiliations = false;
+      for (var i = 0; i<front_matter.authors.length; ++i) {
+        var author = front_matter.authors[i];
+        if (author.affiliation !== "&nbsp;") {
+          have_affiliations = true;
+          break;
+        }
+      }
+      if (!have_affiliations)
+        $('d-byline').find('h3:contains("Affiliations")').css('visibility', 'hidden');
+
+      // published date
+      if (!front_matter.publishedDate)
+        hide_byline_column("Published");
+
+      // document object identifier
+      var doi = $('d-byline').find('h3:contains("DOI")');
+      var doi_p = doi.next().empty();
+      if (!front_matter.doi) {
+        // if we have a citation and valid citationText then link to that
+        if ($('#citation').length > 0 && front_matter.citationText) {
+          doi.html('Citation');
+          $('<a href="#citation"></a>')
+            .text(front_matter.citationText)
+            .appendTo(doi_p);
+        } else {
+          hide_byline_column("DOI");
+        }
+      } else {
+        $('<a></a>')
+           .attr('href', "https://doi.org/" + front_matter.doi)
+           .html(front_matter.doi)
+           .appendTo(doi_p);
+      }
+
+       // change plural form of authors/affiliations
+      if (front_matter.authors.length === 1) {
+        var grid = $('.authors-affiliations');
+        grid.children('h3:contains("Authors")').text('Author');
+        grid.children('h3:contains("Affiliations")').text('Affiliation');
+      }
+
+      // remove d-appendix and d-footnote-list local styles
+      $('d-appendix > style:first-child').remove();
+      $('d-footnote-list > style:first-child').remove();
+
+      // move appendix-bottom entries to the bottom
+      $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
+      $('.appendix-bottom').remove();
+
+      // hoverable references
+      $('span.citation[data-cites]').each(function() {
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
+        window.tippy(this, {
+          allowHTML: true,
+          content: refHtml,
+          maxWidth: 500,
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start'
+        });
+      });
+
+      // clear polling timer
+      clearInterval(tid);
+
+      // show body now that everything is ready
+      on_load_complete();
+    }
+
+    var tid = setInterval(distill_post_process, 50);
+    distill_post_process();
+
+  }
+
+  function init_downlevel() {
+
+    init_common();
+
+     // insert hr after d-title
+    $('.d-title').after($('<hr class="section-separator"/>'));
+
+    // check if we have authors
+    var front_matter = JSON.parse($("#distill-front-matter").html());
+    var have_authors = front_matter.authors && front_matter.authors.length > 0;
+
+    // manage byline/border
+    if (!have_authors)
+      $('.d-byline').remove();
+    $('.d-byline').after($('<hr class="section-separator"/>'));
+    $('.d-byline a').remove();
+
+    // remove toc
+    $('.d-contents').remove();
+
+    // move appendix elements
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('.d-appendix'));
+    });
+
+
+    // inject headers into references and footnotes
+    var refs_header = $('<h3></h3>');
+    refs_header.text('References');
+    $('#refs').prepend(refs_header);
+
+    var footnotes_header = $('<h3></h3');
+    footnotes_header.text('Footnotes');
+    $('.footnotes').children('hr').first().replaceWith(footnotes_header);
+
+    // move appendix-bottom entries to the bottom
+    $('.appendix-bottom').appendTo('.d-appendix').children().unwrap();
+    $('.appendix-bottom').remove();
+
+    // remove appendix if it's empty
+    if ($('.d-appendix').children().length === 0)
+      $('.d-appendix').remove();
+
+    // prepend separator above appendix
+    $('.d-appendix').before($('<hr class="section-separator" style="clear: both"/>'));
+
+    // trim code
+    $('pre>code').each(function(i, val) {
+      $(this).html($.trim($(this).html()));
+    });
+
+    // move posts-container right before article
+    $('.posts-container').insertBefore($('.d-article'));
+
+    $('body').addClass('downlevel');
+
+    on_load_complete();
+  }
+
+
+  function init_common() {
+
+    // jquery plugin to change element types
+    (function($) {
+      $.fn.changeElementType = function(newType) {
+        var attrs = {};
+
+        $.each(this[0].attributes, function(idx, attr) {
+          attrs[attr.nodeName] = attr.nodeValue;
+        });
+
+        this.replaceWith(function() {
+          return $("<" + newType + "/>", attrs).append($(this).contents());
+        });
+      };
+    })(jQuery);
+
+    // prevent underline for linked images
+    $('a > img').parent().css({'border-bottom' : 'none'});
+
+    // mark non-body figures created by knitr chunks as 100% width
+    $('.layout-chunk').each(function(i, val) {
+      var figures = $(this).find('img, .html-widget');
+      if ($(this).attr('data-layout') !== "l-body") {
+        figures.css('width', '100%');
+      } else {
+        figures.css('max-width', '100%');
+        figures.filter("[width]").each(function(i, val) {
+          var fig = $(this);
+          fig.css('width', fig.attr('width') + 'px');
+        });
+
+      }
+    });
+
+    // auto-append index.html to post-preview links in file: protocol
+    // and in rstudio ide preview
+    $('.post-preview').each(function(i, val) {
+      if (window.location.protocol === "file:")
+        $(this).attr('href', $(this).attr('href') + "index.html");
+    });
+
+    // get rid of index.html references in header
+    if (window.location.protocol !== "file:") {
+      $('.distill-site-header a[href]').each(function(i,val) {
+        $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+      });
+    }
+
+    // add class to pandoc style tables
+    $('tr.header').parent('thead').parent('table').addClass('pandoc-table');
+    $('.kable-table').children('table').addClass('pandoc-table');
+
+    // add figcaption style to table captions
+    $('caption').parent('table').addClass("figcaption");
+
+    // initialize posts list
+    if (window.init_posts_list)
+      window.init_posts_list();
+
+    // implmement disqus comment link
+    $('.disqus-comment-count').click(function() {
+      window.headroom_prevent_pin = true;
+      $('#disqus_thread').toggleClass('hidden');
+      if (!$('#disqus_thread').hasClass('hidden')) {
+        var offset = $(this).offset();
+        $(window).resize();
+        $('html, body').animate({
+          scrollTop: offset.top - 35
+        });
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    if (is_downlevel_browser())
+      init_downlevel();
+    else
+      window.addEventListener('WebComponentsReady', init_distill);
+  });
+
+  </script>
+
+  <!--/radix_placeholder_distill-->
+  <script src="pbi-covid-19_files/header-attrs-2.11/header-attrs.js"></script>
+  <script src="pbi-covid-19_files/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+  <script src="pbi-covid-19_files/plotly-binding-4.10.0/plotly.js"></script>
+  <script src="pbi-covid-19_files/typedarray-0.1/typedarray.min.js"></script>
+  <script src="pbi-covid-19_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+  <link href="pbi-covid-19_files/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+  <script src="pbi-covid-19_files/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+  <link href="pbi-covid-19_files/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+  <script src="pbi-covid-19_files/plotly-main-2.5.1/plotly-latest.min.js"></script>
+  <script src="pbi-covid-19_files/popper-2.6.0/popper.min.js"></script>
+  <link href="pbi-covid-19_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="pbi-covid-19_files/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="pbi-covid-19_files/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="pbi-covid-19_files/anchor-4.2.2/anchor.min.js"></script>
+  <script src="pbi-covid-19_files/bowser-1.9.3/bowser.min.js"></script>
+  <script src="pbi-covid-19_files/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="pbi-covid-19_files/distill-2.2.21/template.v2.js"></script>
+  <!--radix_placeholder_site_in_header-->
+  <!--/radix_placeholder_site_in_header-->
+
+
+</head>
+
+<body>
+
+<!--radix_placeholder_front_matter-->
+
+<script id="distill-front-matter" type="text/json">
+{"title":"Pbi Covid-19","description":"Series temporales y graficos de barras de algunos países de LATAM, Euro y Asia en el año pandemico.","authors":[{"author":"Maxi Galoto","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2022-02-01T00:00:00.000-03:00","citationText":"Galoto, 2022"}
+</script>
+
+<!--/radix_placeholder_front_matter-->
+<!--radix_placeholder_navigation_before_body-->
+<!--/radix_placeholder_navigation_before_body-->
+<!--radix_placeholder_site_before_body-->
+<!--/radix_placeholder_site_before_body-->
+
+<div class="d-title">
+<h1>Pbi Covid-19</h1>
+<!--radix_placeholder_categories-->
+<div class="dt-tags">
+<div class="dt=tag">R</div>
+</div>
+<!--/radix_placeholder_categories-->
+<p><p>Series temporales y graficos de barras de algunos países de LATAM, Euro y Asia en el año pandemico.</p></p>
+</div>
+
+<div class="d-byline">
+  
+  Maxi Galoto
+  
+<br/>2022-02-01
+</div>
+
+<div class="d-article">
+<div>
+<p><img src="https://hdwallpaperim.com/wp-content/uploads/2017/08/27/139372-world-God-748x421.jpg" alt="react" width="1" height="1" /></p>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<style type="text/css">
+.distill-site-nav {
+    color: white;
+    background-image: linear-gradient(200deg, black, blue);
+    border: solid 1px black;
+    border-radius: .3rem;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+
+</style>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<h3 id="ficha-técnica-del-estudio"><strong>Ficha técnica del estudio</strong></h3>
+<p><em>Podemos visualizar, en las series de tiempo de países de LATAM, la abrupta caída del PIB de Venezuela, parecería ser que hubo una gran devaluación del bolívar ya que estos valores están expresados en dolares.</em></p>
+<p><em>Si nos ponemos a analizar la evolución del PBI en las series temporales de Irlanda, España y Grecia dentro de Países Euro y Asia, a partir de la crisis del 2008 hay una divergencia entre las tendencias, por un lado Irlanda luego del shock recupera los niveles del PBI en el 2015, pero España y Grecia nunca lo recuperan y siguen en tendencia bajista, incluso en el año previo a la pandemia.</em></p>
+<p><em>Podemos ver mayor volatilidad en los Países de LATAM.</em></p>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-bb09c66f69215a5899eb" style="width:624px;height:384px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-bb09c66f69215a5899eb">{"x":{"visdat":{"3e7c52ae34e9":["function () ","plotlyVisDat"]},"cur_data":"3e7c52ae34e9","attrs":{"3e7c52ae34e9":{"x":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"y":{},"type":"scatter","mode":"lines","name":"Argentina","line":{"shape":"spline"},"inherit":true},"3e7c52ae34e9.1":{"x":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"y":[6.42536638367733,6.5555508248565,6.69630718024065,6.69861924164661,6.93812289615965,6.86795735670346,6.81780339252875,6.92663371704292,6.7687065778229,6.44158195165062,6.50888109127186,6.54921093151564,6.55345771738655,6.5639396872906,6.63604895611556,6.66969095175257,6.66465355591504,6.68591841065638,6.78104879961592,6.85736316618969,6.90626949998667,6.9560685424513,6.91114176898545,6.90533481190055,6.85527307457269,6.80708002287032,6.81073445796414,6.87461928793653,6.94149101580696,7.10568313768727,7.22448259330399,7.44729017250622,7.46977449690576,7.57838152832266,7.76061073364147,7.8670598340127,7.97528964460385,8.03329469752571,8.01828698613773,8.03159953066709,8.11705110419415,8.1743056641759,8.17528546210687,8.09233854128595],"type":"scatter","mode":"lines","name":"Bolivia","line":{"shape":"spline"},"visible":"legendonly","inherit":true},"3e7c52ae34e9.2":{"x":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"y":[7.35692218765922,7.46408403020951,7.55406638884571,7.57418697276082,7.66523001343296,7.70830615384614,7.35917462740037,7.36450041218003,7.40736752985107,7.57121156974241,7.64363028740334,7.740828233519,7.97539144241608,8.03924786006779,8.28787815796057,7.862081358711,7.93423015879248,8.16069294362029,8.46552414832402,8.54988566976715,8.57206176410542,8.53447346790838,8.15431985707798,8.22944531678932,8.05731372912526,7.94777866956862,8.02972937335821,8.19904157170322,8.47437693629906,8.68041068688412,8.90218763706596,9.08602615517296,9.05927505187125,9.3313398308372,9.4914216444682,9.42303142178841,9.41738095420484,9.40200053839911,9.08409675736161,9.07223817076556,9.20285102043552,9.10511698565292,9.07305179030352,9.01223965090676],"type":"scatter","mode":"lines","name":"Brasil","line":{"shape":"spline"},"inherit":true},"3e7c52ae34e9.3":{"x":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"y":[7.15330819487342,7.27374615451678,7.56903327505494,7.84100705631602,7.99954750456662,7.67624770470928,7.44392190115021,7.39303675324695,7.27536646538131,7.32505841677706,7.47324260899326,7.61423249122881,7.73567586719005,7.82185387743157,7.93864606281258,8.11677945698373,8.17051768591517,8.30008561992813,8.53842162575375,8.58481522736117,8.65615025265676,8.60274328025648,8.50871291204264,8.53206241923937,8.42827332256145,8.39981643681609,8.47063871835258,8.731474082238,8.93570944442714,9.15530854459641,9.25935475103364,9.28279866819694,9.2310158302334,9.45782795504939,9.591324261244,9.63897181147682,9.67047930503104,9.59362781433681,9.51592413599631,9.52905548256557,9.61576348510598,9.67563255974819,9.6088784680765,9.54284549747206],"type":"scatter","mode":"lines","name":"Chile","line":{"shape":"spline"},"inherit":true},"3e7c52ae34e9.4":{"x":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"y":[6.65124341591507,6.80684118937479,6.96776639013198,7.1241880328053,7.18794175942414,7.2346626095635,7.20697401487565,7.17332760515353,7.06051277197594,7.04135861194098,7.06131926977438,7.11657769366922,7.10513867623455,7.27609200045657,7.28392500886114,7.43668381340592,7.54620454016827,7.73405075946417,7.83988505911689,7.8711352098573,7.94710559937059,7.85011297374405,7.70071686664529,7.83220507052297,7.79962316876163,7.78181766426904,7.73254534111478,7.93114935351622,8.1357761443213,8.22713305002867,8.45830758089509,8.60749750455505,8.55511333957655,8.75411490228623,8.90043544893788,8.99345909309832,9.01412447567277,9.00138862897259,8.7284060185923,8.67774243508696,8.76040705427851,8.81238374421276,8.76852391821752,8.68720539703993],"type":"scatter","mode":"lines","name":"Colombia","line":{"shape":"spline"},"visible":"legendonly","inherit":true},"3e7c52ae34e9.5":{"x":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"y":[7.23921670460695,7.34957652944541,7.45854075876683,7.6116175454764,6.97401538007541,6.94022115439778,7.10130862230433,7.22543614005887,7.26688664101173,7.36039445456209,7.35965542009469,7.35148387791265,7.4546459291334,7.51261858880774,7.71371924769252,7.86135047473954,7.9473710556947,8.01176111220044,8.08558439187447,8.07045244597111,8.12419988825589,8.18308061607617,8.20345532098713,8.23559126708656,8.2801377197341,8.30019370162783,8.32594376934475,8.38603400444124,8.44565955678175,8.55670503424497,8.71140859589613,8.83332845832278,8.81884880491702,9.0047804592387,9.11843695948413,9.20162348592801,9.25818545458177,9.26361113651899,9.33248150109279,9.36447298684964,9.37709358258461,9.40196307375346,9.4127758986694,9.35979697387851],"type":"scatter","mode":"lines","name":"Costa Rica`","line":{"shape":"spline"},"visible":"legendonly","inherit":true},"3e7c52ae34e9.6":{"x":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"y":[6.43716209488085,6.64519283945175,6.59852336752182,6.87386911105686,6.99418366752632,7.08477386324828,7.18891658189789,7.29849359006711,7.39779505941281,7.53018740037917,7.65630270598175,7.7844344306101,7.87008184463263,7.95872778741791,8.0464821063543,8.10708870592949,8.15086785537624,8.22184102292811,8.25872801507979,8.32370999187732,8.36443641130345,8.43244423401458,8.46602876393083,8.47382215307054,8.4936632535309,8.47031978366361,8.49646825590031,8.55972196835052,8.5487353291624,8.61584308061481,8.69149209739775,8.77479934446513,8.83969068744801,8.84897826820821,8.86291704904711,8.83176948431286,8.85604494779734,8.89810652734515,8.9354343454714,8.99726702346534,8.89216078660903,8.9481803397706,9.00092324476558,8.92306980556071],"type":"scatter","mode":"lines","name":"Dominican","line":{"shape":"spline"},"visible":"legendonly","inherit":true},"3e7c52ae34e9.7":{"x":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"y":[7.30876471410677,7.36035925858802,7.50716724523633,7.71343388170536,7.88631126372786,7.77062429513834,7.59528034660662,7.55613074129123,7.54515748222419,7.40732729877982,7.28926455274093,7.19884863920906,7.23721233381613,7.30621558348159,7.3915436128779,7.43159884092689,7.45457761145323,7.61387431755259,7.66524110239561,7.67578598741883,7.76487793611317,7.73800422999749,7.36450492111228,7.27605788596883,7.54677101981671,7.68345058476262,7.79393801664038,7.89777148266767,8.00707960318435,8.11039208297623,8.17971465123157,8.35444347343232,8.3503391843693,8.44108730194787,8.55652078157888,8.64506648328272,8.70885942159222,8.76046739937867,8.72005103484533,8.70948047977714,8.73447982868567,8.74765952935222,8.72969210099044,8.61315828473449],"type":"scatter","mode":"lines","name":"Ecuador","line":{"shape":"spline"},"visible":"legendonly","inherit":true},"3e7c52ae34e9.8":{"x":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"y":[6.75067640010603,6.82992966823657,6.93447870225075,7.0417968931513,7.10436101316534,7.09028450906088,7.10061821195426,7.11858544331936,7.11727114899259,6.79379444918545,6.74549338946695,6.8193590147543,6.86183014061048,6.73969983015458,6.91944169234887,6.99756207779748,7.05993890406597,7.1650839615046,7.26170429073517,7.3049245101956,7.40792529409399,7.47070811120486,7.38987936750285,7.41715926766594,7.3622826141863,7.44444831871222,7.47610519980036,7.5441690384941,7.65042655328239,7.73540525564794,7.83645117964168,7.95454892817526,7.89923558181782,7.97210119588563,8.09610695687751,8.13411117727635,8.16700394061364,8.2373846595945,8.2927079686845,8.33646276798468,8.40098538525869,8.40579054117729,8.43814679320916,8.41190548200393],"type":"scatter","mode":"lines","name":"Guatemala","line":{"shape":"spline"},"visible":"legendonly","inherit":true},"3e7c52ae34e9.9":{"x":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"y":[6.21047615537939,6.797549487744,6.90146297158479,6.98361282201254,6.97182767803522,6.99484888085639,7.01254571195487,7.07583174508511,7.1171011531984,7.16038852777279,7.21736001077377,7.14050603765115,7.02845200825167,6.90121700367272,6.81537188183099,6.84865555671937,6.81706694141259,6.72935052797288,6.84232782745121,6.78862637684678,6.85536196405343,6.93094487898019,6.91046679718158,6.98514412550617,7.0327887415131,7.0335636009662,7.05460399451571,7.10481602922545,7.17632444061515,7.26546961864117,7.36710729080256,7.46126870092197,7.48980700334184,7.55189416569273,7.64411294348684,7.67058830941387,7.65092670300087,7.69895974175199,7.74162106563031,7.75901015057627,7.80536373728706,7.82635404605096,7.85357071180743,7.78239689235291],"type":"scatter","mode":"lines","name":"Honduras","line":{"shape":"spline"},"visible":"legendonly","inherit":true},"3e7c52ae34e9.10":{"x":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"y":[7.17113804456347,7.37103240731077,7.61824569599885,8.01545120294777,8.24355362535808,7.86249056003806,7.67216198404285,7.81529214169617,7.8513653159609,7.45813606947989,7.5298822868221,7.71778798011613,7.89652100931243,8.04310722668153,8.20575049229905,8.33582077287492,8.6394154765131,8.67495184452707,8.27594267540669,8.39210975012665,8.57341623236761,8.60907595842774,8.72537618563187,8.87595997591017,8.92858319900919,8.93500019641276,8.86437496750703,8.92058769622825,9.02131695800184,9.11253947548206,9.17395442001318,9.21199613088936,8.98756826498025,9.13468948140847,9.23047832091943,9.234225626094,9.28034983610735,9.29916747527613,9.1712507308243,9.07618201391644,9.13646234497315,9.17848986546162,9.20492914051483,9.11456670043443],"type":"scatter","mode":"lines","name":"México","line":{"shape":"spline"},"inherit":true},"3e7c52ae34e9.11":{"x":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"y":[6.62040377804494,6.54531878861488,6.17744286911069,6.5079400639541,6.5911625056808,6.57015603708542,6.65006587187215,6.74813458555127,6.57742368502181,6.62645700133848,6.8926904043077,6.4899059047791,5.51403213672419,5.48842714145633,5.85468436519912,6.01802753784139,5.97534394948534,6.74214266526772,6.79122758523827,6.81194072912696,6.81271458262965,6.85004342500626,6.88026792787586,6.9152287118022,6.94172336342883,6.90869078886177,6.91347138431419,6.9849645413665,7.05814757281626,7.11202801301325,7.19139898220597,7.31272605028952,7.27543619345596,7.31579734603187,7.41204065612422,7.47333529359828,7.50198366325879,7.56737837306197,7.6255217473767,7.65329219573928,7.67747354850628,7.61112598572936,7.55637765211513,7.51815643929493],"type":"scatter","mode":"lines","name":"Nicaragua","line":{"shape":"spline"},"visible":"legendonly","inherit":true},"3e7c52ae34e9.12":{"x":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"y":[7.30650945095109,7.4511123913206,7.55912208232691,7.75453675298863,7.85466737039739,7.93102519534555,7.93443290675152,7.95474454882418,7.98877716883569,8.00524052031042,7.9879194342485,7.82090090559521,7.80230289278474,7.86474510081335,7.93878141745135,8.04625512767755,8.11370197035598,8.15741412215589,8.15895016563645,8.16901128562447,8.22718293467763,8.28769625873936,8.31449322779018,8.30901817376805,8.30558781375655,8.32512223727409,8.35873736686937,8.43210417210356,8.50043657904361,8.584645331123,8.72683491721815,8.87546528866898,8.93275917568596,8.99739816687232,9.14401374374206,9.28007943736995,9.38337961671879,9.45689337487825,9.52005111972471,9.57108447966684,9.6257786233612,9.6545500336687,9.66338958613716,9.56907890666592],"type":"scatter","mode":"lines","name":"Panamá","line":{"shape":"spline"},"visible":"legendonly","inherit":true},"3e7c52ae34e9.13":{"x":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"y":[6.80156734197864,6.61872866633271,6.83813387867419,6.9406277590148,7.09316097140514,7.07558166027841,6.82346957949088,6.8145071840423,6.72975960602168,6.62477091110601,6.90828750629178,6.59287507162212,6.94790080958553,7.08722849827514,7.32959943150413,7.35628725335138,7.30521055978393,7.53995062850866,7.69348983116139,7.71068733096098,7.7434599694855,7.6793069174013,7.56241449268656,7.57844619767227,7.57120359783589,7.61146633483013,7.67119463865426,7.79029706847963,7.91187323848986,8.05653178321794,8.19037393623328,8.34773659762214,8.34196151226185,8.53352996794975,8.67749458753781,8.78400481598584,8.81829769405129,8.80580686811281,8.73698741135718,8.73311025606557,8.81142993931436,8.84523511367459,8.85047402428645,8.70440724815167],"type":"scatter","mode":"lines","name":"Perú","line":{"shape":"spline"},"inherit":true},"3e7c52ae34e9.14":{"x":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"y":[6.56900168384551,6.74467688215246,7.00661846089806,7.24283739033108,7.44921004783999,7.38319397493664,7.39978488560915,7.13945798165554,6.79446281080264,6.89201510518916,6.92792967700773,6.96929614647438,7.05352300977637,7.22705568658287,7.3848592509677,7.38412195451344,7.37235251357247,7.43061579274485,7.5480797654587,7.6022445177588,7.59779903924449,7.50273491346142,7.4349129474829,7.41674236470407,7.35567542310506,7.17077427222383,7.21921472931357,7.42624972488248,7.51949378953668,7.72801518800363,7.99861274434262,8.30439194274556,8.19549123147956,8.37929454791682,8.57978552493555,8.55315530820525,8.68724526210618,8.71652643096482,8.59539491759972,8.57911771489257,8.64480875442195,8.6665912726119,8.59689106510585,8.55617323182729],"type":"scatter","mode":"lines","name":"Paraguay","line":{"shape":"spline"},"inherit":true},"3e7c52ae34e9.15":{"x":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"y":[7.27255577920618,7.44277575961163,7.81599699500447,8.15650767386298,8.23345947818431,8.04154191043379,7.44785937087585,7.39075948860075,7.3596623995921,7.57055443440628,7.78982870700378,7.89228065456319,7.91289705222992,8.00315048096186,8.18263883867592,8.3144726366023,8.45977407903891,8.60499597932293,8.69702930482634,8.75108924955588,8.89971080698851,8.95074271698556,8.88879253024048,8.83565002477295,8.74583454618546,8.31652009449822,8.19538831578659,8.32374353294161,8.56158088004364,8.68064596425398,8.8574456299053,9.11504888627658,9.15397449155645,9.39199642625858,9.56357709518831,9.6271795271869,9.73941884705627,9.73103550815399,9.65590812938788,9.64128763652114,9.75974115765518,9.75718756500355,9.69215688836206,9.65663333229301],"type":"scatter","mode":"lines","name":"Uruguay","line":{"shape":"spline"},"inherit":true},"3e7c52ae34e9.16":{"x":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"y":[7.86060013993081,7.91461825005762,8.09272896719897,8.26711478912877,8.35522360266795,8.34969762979207,8.3208082894057,8.17633710489829,8.18249833047939,8.13098114183258,7.87634266144544,8.07740443818836,7.72795711572518,7.81414938946922,7.8864698427107,7.98553941607417,7.95785584794872,7.90852228596158,8.16893688566152,8.05556059614141,8.23186699089032,8.27428535172364,8.32533218361319,8.48509082057219,8.51452475150385,8.2163257981149,8.09334464573509,8.37232850601524,8.61340783914423,8.82957439748132,9.04245018934527,9.3442367853954,9.37289281589998,9.53425972756187,9.3015831924265,9.47158903940483,9.43001490949686,9.68374387217369,10.1284296934351,9.9779555800803,9.32345202311256,8.99564215957,8.60319198853933,8.3240070463415],"type":"scatter","mode":"lines","name":"Venezuela","line":{"shape":"spline"},"inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"title":"Pib Per capita en Logaritmos Paises LATAM","font":{"size":12,"color":"black"},"xaxis":{"domain":[0,1],"automargin":true,"title":"Año","color":"black","tickangle":-45,"type":"category","categoryorder":"array","categoryarray":["1977","1978","1979","1980","1981","1982","1983","1984","1985","1986","1987","1988","1989","1990","1991","1992","1993","1994","1995","1996","1997","1998","1999","2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"]},"yaxis":{"domain":[0,1],"automargin":true,"title":"Pib Per Capita","color":"black"},"paper_bgcolor":"white","plot_bgcolor":"white","hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displayModeBar":false},"data":[{"x":["1977","1978","1979","1980","1981","1982","1983","1984","1985","1986","1987","1988","1989","1990","1991","1992","1993","1994","1995","1996","1997","1998","1999","2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[7.66374029199956,7.67153075177858,7.83237984131409,7.92256384503509,7.92888230563569,7.98203988820416,8.17565390944155,7.8859718469903,7.98143497418405,8.19246579198129,8.17832325108817,8.29034057259728,7.77647952878994,8.37412687943814,8.65440585711938,8.82813332838325,8.84924396602305,8.92040772644475,8.91041137626317,8.95174508653181,9.01348903125508,9.0227456238345,8.95863480757152,8.95002713220583,8.8829983471427,7.86072663549318,8.11665774983439,8.36117575209409,8.53892558790682,8.6859248283223,8.88812873238338,9.10729640416737,9.01495025345974,9.24821059978407,9.46101069707598,9.47904329888385,9.47885909977084,9.42017967255805,9.53163083393179,9.45643785242639,9.58966968462546,9.36164397489327,9.20152985395789,9.08026576646485],"type":"scatter","mode":"lines","name":"Argentina","line":{"color":"rgba(31,119,180,1)","shape":"spline"},"marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["1977","1978","1979","1980","1981","1982","1983","1984","1985","1986","1987","1988","1989","1990","1991","1992","1993","1994","1995","1996","1997","1998","1999","2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[6.42536638367733,6.5555508248565,6.69630718024065,6.69861924164661,6.93812289615965,6.86795735670346,6.81780339252875,6.92663371704292,6.7687065778229,6.44158195165062,6.50888109127186,6.54921093151564,6.55345771738655,6.5639396872906,6.63604895611556,6.66969095175257,6.66465355591504,6.68591841065638,6.78104879961592,6.85736316618969,6.90626949998667,6.9560685424513,6.91114176898545,6.90533481190055,6.85527307457269,6.80708002287032,6.81073445796414,6.87461928793653,6.94149101580696,7.10568313768727,7.22448259330399,7.44729017250622,7.46977449690576,7.57838152832266,7.76061073364147,7.8670598340127,7.97528964460385,8.03329469752571,8.01828698613773,8.03159953066709,8.11705110419415,8.1743056641759,8.17528546210687,8.09233854128595],"type":"scatter","mode":"lines","name":"Bolivia","line":{"color":"rgba(255,127,14,1)","shape":"spline"},"visible":"legendonly","marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["1977","1978","1979","1980","1981","1982","1983","1984","1985","1986","1987","1988","1989","1990","1991","1992","1993","1994","1995","1996","1997","1998","1999","2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[7.35692218765922,7.46408403020951,7.55406638884571,7.57418697276082,7.66523001343296,7.70830615384614,7.35917462740037,7.36450041218003,7.40736752985107,7.57121156974241,7.64363028740334,7.740828233519,7.97539144241608,8.03924786006779,8.28787815796057,7.862081358711,7.93423015879248,8.16069294362029,8.46552414832402,8.54988566976715,8.57206176410542,8.53447346790838,8.15431985707798,8.22944531678932,8.05731372912526,7.94777866956862,8.02972937335821,8.19904157170322,8.47437693629906,8.68041068688412,8.90218763706596,9.08602615517296,9.05927505187125,9.3313398308372,9.4914216444682,9.42303142178841,9.41738095420484,9.40200053839911,9.08409675736161,9.07223817076556,9.20285102043552,9.10511698565292,9.07305179030352,9.01223965090676],"type":"scatter","mode":"lines","name":"Brasil","line":{"color":"rgba(44,160,44,1)","shape":"spline"},"marker":{"color":"rgba(44,160,44,1)","line":{"color":"rgba(44,160,44,1)"}},"error_y":{"color":"rgba(44,160,44,1)"},"error_x":{"color":"rgba(44,160,44,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["1977","1978","1979","1980","1981","1982","1983","1984","1985","1986","1987","1988","1989","1990","1991","1992","1993","1994","1995","1996","1997","1998","1999","2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[7.15330819487342,7.27374615451678,7.56903327505494,7.84100705631602,7.99954750456662,7.67624770470928,7.44392190115021,7.39303675324695,7.27536646538131,7.32505841677706,7.47324260899326,7.61423249122881,7.73567586719005,7.82185387743157,7.93864606281258,8.11677945698373,8.17051768591517,8.30008561992813,8.53842162575375,8.58481522736117,8.65615025265676,8.60274328025648,8.50871291204264,8.53206241923937,8.42827332256145,8.39981643681609,8.47063871835258,8.731474082238,8.93570944442714,9.15530854459641,9.25935475103364,9.28279866819694,9.2310158302334,9.45782795504939,9.591324261244,9.63897181147682,9.67047930503104,9.59362781433681,9.51592413599631,9.52905548256557,9.61576348510598,9.67563255974819,9.6088784680765,9.54284549747206],"type":"scatter","mode":"lines","name":"Chile","line":{"color":"rgba(214,39,40,1)","shape":"spline"},"marker":{"color":"rgba(214,39,40,1)","line":{"color":"rgba(214,39,40,1)"}},"error_y":{"color":"rgba(214,39,40,1)"},"error_x":{"color":"rgba(214,39,40,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["1977","1978","1979","1980","1981","1982","1983","1984","1985","1986","1987","1988","1989","1990","1991","1992","1993","1994","1995","1996","1997","1998","1999","2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[6.65124341591507,6.80684118937479,6.96776639013198,7.1241880328053,7.18794175942414,7.2346626095635,7.20697401487565,7.17332760515353,7.06051277197594,7.04135861194098,7.06131926977438,7.11657769366922,7.10513867623455,7.27609200045657,7.28392500886114,7.43668381340592,7.54620454016827,7.73405075946417,7.83988505911689,7.8711352098573,7.94710559937059,7.85011297374405,7.70071686664529,7.83220507052297,7.79962316876163,7.78181766426904,7.73254534111478,7.93114935351622,8.1357761443213,8.22713305002867,8.45830758089509,8.60749750455505,8.55511333957655,8.75411490228623,8.90043544893788,8.99345909309832,9.01412447567277,9.00138862897259,8.7284060185923,8.67774243508696,8.76040705427851,8.81238374421276,8.76852391821752,8.68720539703993],"type":"scatter","mode":"lines","name":"Colombia","line":{"color":"rgba(148,103,189,1)","shape":"spline"},"visible":"legendonly","marker":{"color":"rgba(148,103,189,1)","line":{"color":"rgba(148,103,189,1)"}},"error_y":{"color":"rgba(148,103,189,1)"},"error_x":{"color":"rgba(148,103,189,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["1977","1978","1979","1980","1981","1982","1983","1984","1985","1986","1987","1988","1989","1990","1991","1992","1993","1994","1995","1996","1997","1998","1999","2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[7.23921670460695,7.34957652944541,7.45854075876683,7.6116175454764,6.97401538007541,6.94022115439778,7.10130862230433,7.22543614005887,7.26688664101173,7.36039445456209,7.35965542009469,7.35148387791265,7.4546459291334,7.51261858880774,7.71371924769252,7.86135047473954,7.9473710556947,8.01176111220044,8.08558439187447,8.07045244597111,8.12419988825589,8.18308061607617,8.20345532098713,8.23559126708656,8.2801377197341,8.30019370162783,8.32594376934475,8.38603400444124,8.44565955678175,8.55670503424497,8.71140859589613,8.83332845832278,8.81884880491702,9.0047804592387,9.11843695948413,9.20162348592801,9.25818545458177,9.26361113651899,9.33248150109279,9.36447298684964,9.37709358258461,9.40196307375346,9.4127758986694,9.35979697387851],"type":"scatter","mode":"lines","name":"Costa Rica`","line":{"color":"rgba(140,86,75,1)","shape":"spline"},"visible":"legendonly","marker":{"color":"rgba(140,86,75,1)","line":{"color":"rgba(140,86,75,1)"}},"error_y":{"color":"rgba(140,86,75,1)"},"error_x":{"color":"rgba(140,86,75,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["1977","1978","1979","1980","1981","1982","1983","1984","1985","1986","1987","1988","1989","1990","1991","1992","1993","1994","1995","1996","1997","1998","1999","2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[6.43716209488085,6.64519283945175,6.59852336752182,6.87386911105686,6.99418366752632,7.08477386324828,7.18891658189789,7.29849359006711,7.39779505941281,7.53018740037917,7.65630270598175,7.7844344306101,7.87008184463263,7.95872778741791,8.0464821063543,8.10708870592949,8.15086785537624,8.22184102292811,8.25872801507979,8.32370999187732,8.36443641130345,8.43244423401458,8.46602876393083,8.47382215307054,8.4936632535309,8.47031978366361,8.49646825590031,8.55972196835052,8.5487353291624,8.61584308061481,8.69149209739775,8.77479934446513,8.83969068744801,8.84897826820821,8.86291704904711,8.83176948431286,8.85604494779734,8.89810652734515,8.9354343454714,8.99726702346534,8.89216078660903,8.9481803397706,9.00092324476558,8.92306980556071],"type":"scatter","mode":"lines","name":"Dominican","line":{"color":"rgba(227,119,194,1)","shape":"spline"},"visible":"legendonly","marker":{"color":"rgba(227,119,194,1)","line":{"color":"rgba(227,119,194,1)"}},"error_y":{"color":"rgba(227,119,194,1)"},"error_x":{"color":"rgba(227,119,194,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["1977","1978","1979","1980","1981","1982","1983","1984","1985","1986","1987","1988","1989","1990","1991","1992","1993","1994","1995","1996","1997","1998","1999","2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[7.30876471410677,7.36035925858802,7.50716724523633,7.71343388170536,7.88631126372786,7.77062429513834,7.59528034660662,7.55613074129123,7.54515748222419,7.40732729877982,7.28926455274093,7.19884863920906,7.23721233381613,7.30621558348159,7.3915436128779,7.43159884092689,7.45457761145323,7.61387431755259,7.66524110239561,7.67578598741883,7.76487793611317,7.73800422999749,7.36450492111228,7.27605788596883,7.54677101981671,7.68345058476262,7.79393801664038,7.89777148266767,8.00707960318435,8.11039208297623,8.17971465123157,8.35444347343232,8.3503391843693,8.44108730194787,8.55652078157888,8.64506648328272,8.70885942159222,8.76046739937867,8.72005103484533,8.70948047977714,8.73447982868567,8.74765952935222,8.72969210099044,8.61315828473449],"type":"scatter","mode":"lines","name":"Ecuador","line":{"color":"rgba(127,127,127,1)","shape":"spline"},"visible":"legendonly","marker":{"color":"rgba(127,127,127,1)","line":{"color":"rgba(127,127,127,1)"}},"error_y":{"color":"rgba(127,127,127,1)"},"error_x":{"color":"rgba(127,127,127,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["1977","1978","1979","1980","1981","1982","1983","1984","1985","1986","1987","1988","1989","1990","1991","1992","1993","1994","1995","1996","1997","1998","1999","2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[6.75067640010603,6.82992966823657,6.93447870225075,7.0417968931513,7.10436101316534,7.09028450906088,7.10061821195426,7.11858544331936,7.11727114899259,6.79379444918545,6.74549338946695,6.8193590147543,6.86183014061048,6.73969983015458,6.91944169234887,6.99756207779748,7.05993890406597,7.1650839615046,7.26170429073517,7.3049245101956,7.40792529409399,7.47070811120486,7.38987936750285,7.41715926766594,7.3622826141863,7.44444831871222,7.47610519980036,7.5441690384941,7.65042655328239,7.73540525564794,7.83645117964168,7.95454892817526,7.89923558181782,7.97210119588563,8.09610695687751,8.13411117727635,8.16700394061364,8.2373846595945,8.2927079686845,8.33646276798468,8.40098538525869,8.40579054117729,8.43814679320916,8.41190548200393],"type":"scatter","mode":"lines","name":"Guatemala","line":{"color":"rgba(188,189,34,1)","shape":"spline"},"visible":"legendonly","marker":{"color":"rgba(188,189,34,1)","line":{"color":"rgba(188,189,34,1)"}},"error_y":{"color":"rgba(188,189,34,1)"},"error_x":{"color":"rgba(188,189,34,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["1977","1978","1979","1980","1981","1982","1983","1984","1985","1986","1987","1988","1989","1990","1991","1992","1993","1994","1995","1996","1997","1998","1999","2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[6.21047615537939,6.797549487744,6.90146297158479,6.98361282201254,6.97182767803522,6.99484888085639,7.01254571195487,7.07583174508511,7.1171011531984,7.16038852777279,7.21736001077377,7.14050603765115,7.02845200825167,6.90121700367272,6.81537188183099,6.84865555671937,6.81706694141259,6.72935052797288,6.84232782745121,6.78862637684678,6.85536196405343,6.93094487898019,6.91046679718158,6.98514412550617,7.0327887415131,7.0335636009662,7.05460399451571,7.10481602922545,7.17632444061515,7.26546961864117,7.36710729080256,7.46126870092197,7.48980700334184,7.55189416569273,7.64411294348684,7.67058830941387,7.65092670300087,7.69895974175199,7.74162106563031,7.75901015057627,7.80536373728706,7.82635404605096,7.85357071180743,7.78239689235291],"type":"scatter","mode":"lines","name":"Honduras","line":{"color":"rgba(23,190,207,1)","shape":"spline"},"visible":"legendonly","marker":{"color":"rgba(23,190,207,1)","line":{"color":"rgba(23,190,207,1)"}},"error_y":{"color":"rgba(23,190,207,1)"},"error_x":{"color":"rgba(23,190,207,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["1977","1978","1979","1980","1981","1982","1983","1984","1985","1986","1987","1988","1989","1990","1991","1992","1993","1994","1995","1996","1997","1998","1999","2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[7.17113804456347,7.37103240731077,7.61824569599885,8.01545120294777,8.24355362535808,7.86249056003806,7.67216198404285,7.81529214169617,7.8513653159609,7.45813606947989,7.5298822868221,7.71778798011613,7.89652100931243,8.04310722668153,8.20575049229905,8.33582077287492,8.6394154765131,8.67495184452707,8.27594267540669,8.39210975012665,8.57341623236761,8.60907595842774,8.72537618563187,8.87595997591017,8.92858319900919,8.93500019641276,8.86437496750703,8.92058769622825,9.02131695800184,9.11253947548206,9.17395442001318,9.21199613088936,8.98756826498025,9.13468948140847,9.23047832091943,9.234225626094,9.28034983610735,9.29916747527613,9.1712507308243,9.07618201391644,9.13646234497315,9.17848986546162,9.20492914051483,9.11456670043443],"type":"scatter","mode":"lines","name":"México","line":{"color":"rgba(31,119,180,1)","shape":"spline"},"marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["1977","1978","1979","1980","1981","1982","1983","1984","1985","1986","1987","1988","1989","1990","1991","1992","1993","1994","1995","1996","1997","1998","1999","2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[6.62040377804494,6.54531878861488,6.17744286911069,6.5079400639541,6.5911625056808,6.57015603708542,6.65006587187215,6.74813458555127,6.57742368502181,6.62645700133848,6.8926904043077,6.4899059047791,5.51403213672419,5.48842714145633,5.85468436519912,6.01802753784139,5.97534394948534,6.74214266526772,6.79122758523827,6.81194072912696,6.81271458262965,6.85004342500626,6.88026792787586,6.9152287118022,6.94172336342883,6.90869078886177,6.91347138431419,6.9849645413665,7.05814757281626,7.11202801301325,7.19139898220597,7.31272605028952,7.27543619345596,7.31579734603187,7.41204065612422,7.47333529359828,7.50198366325879,7.56737837306197,7.6255217473767,7.65329219573928,7.67747354850628,7.61112598572936,7.55637765211513,7.51815643929493],"type":"scatter","mode":"lines","name":"Nicaragua","line":{"color":"rgba(255,127,14,1)","shape":"spline"},"visible":"legendonly","marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["1977","1978","1979","1980","1981","1982","1983","1984","1985","1986","1987","1988","1989","1990","1991","1992","1993","1994","1995","1996","1997","1998","1999","2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[7.30650945095109,7.4511123913206,7.55912208232691,7.75453675298863,7.85466737039739,7.93102519534555,7.93443290675152,7.95474454882418,7.98877716883569,8.00524052031042,7.9879194342485,7.82090090559521,7.80230289278474,7.86474510081335,7.93878141745135,8.04625512767755,8.11370197035598,8.15741412215589,8.15895016563645,8.16901128562447,8.22718293467763,8.28769625873936,8.31449322779018,8.30901817376805,8.30558781375655,8.32512223727409,8.35873736686937,8.43210417210356,8.50043657904361,8.584645331123,8.72683491721815,8.87546528866898,8.93275917568596,8.99739816687232,9.14401374374206,9.28007943736995,9.38337961671879,9.45689337487825,9.52005111972471,9.57108447966684,9.6257786233612,9.6545500336687,9.66338958613716,9.56907890666592],"type":"scatter","mode":"lines","name":"Panamá","line":{"color":"rgba(44,160,44,1)","shape":"spline"},"visible":"legendonly","marker":{"color":"rgba(44,160,44,1)","line":{"color":"rgba(44,160,44,1)"}},"error_y":{"color":"rgba(44,160,44,1)"},"error_x":{"color":"rgba(44,160,44,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["1977","1978","1979","1980","1981","1982","1983","1984","1985","1986","1987","1988","1989","1990","1991","1992","1993","1994","1995","1996","1997","1998","1999","2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[6.80156734197864,6.61872866633271,6.83813387867419,6.9406277590148,7.09316097140514,7.07558166027841,6.82346957949088,6.8145071840423,6.72975960602168,6.62477091110601,6.90828750629178,6.59287507162212,6.94790080958553,7.08722849827514,7.32959943150413,7.35628725335138,7.30521055978393,7.53995062850866,7.69348983116139,7.71068733096098,7.7434599694855,7.6793069174013,7.56241449268656,7.57844619767227,7.57120359783589,7.61146633483013,7.67119463865426,7.79029706847963,7.91187323848986,8.05653178321794,8.19037393623328,8.34773659762214,8.34196151226185,8.53352996794975,8.67749458753781,8.78400481598584,8.81829769405129,8.80580686811281,8.73698741135718,8.73311025606557,8.81142993931436,8.84523511367459,8.85047402428645,8.70440724815167],"type":"scatter","mode":"lines","name":"Perú","line":{"color":"rgba(214,39,40,1)","shape":"spline"},"marker":{"color":"rgba(214,39,40,1)","line":{"color":"rgba(214,39,40,1)"}},"error_y":{"color":"rgba(214,39,40,1)"},"error_x":{"color":"rgba(214,39,40,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["1977","1978","1979","1980","1981","1982","1983","1984","1985","1986","1987","1988","1989","1990","1991","1992","1993","1994","1995","1996","1997","1998","1999","2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[6.56900168384551,6.74467688215246,7.00661846089806,7.24283739033108,7.44921004783999,7.38319397493664,7.39978488560915,7.13945798165554,6.79446281080264,6.89201510518916,6.92792967700773,6.96929614647438,7.05352300977637,7.22705568658287,7.3848592509677,7.38412195451344,7.37235251357247,7.43061579274485,7.5480797654587,7.6022445177588,7.59779903924449,7.50273491346142,7.4349129474829,7.41674236470407,7.35567542310506,7.17077427222383,7.21921472931357,7.42624972488248,7.51949378953668,7.72801518800363,7.99861274434262,8.30439194274556,8.19549123147956,8.37929454791682,8.57978552493555,8.55315530820525,8.68724526210618,8.71652643096482,8.59539491759972,8.57911771489257,8.64480875442195,8.6665912726119,8.59689106510585,8.55617323182729],"type":"scatter","mode":"lines","name":"Paraguay","line":{"color":"rgba(148,103,189,1)","shape":"spline"},"marker":{"color":"rgba(148,103,189,1)","line":{"color":"rgba(148,103,189,1)"}},"error_y":{"color":"rgba(148,103,189,1)"},"error_x":{"color":"rgba(148,103,189,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["1977","1978","1979","1980","1981","1982","1983","1984","1985","1986","1987","1988","1989","1990","1991","1992","1993","1994","1995","1996","1997","1998","1999","2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[7.27255577920618,7.44277575961163,7.81599699500447,8.15650767386298,8.23345947818431,8.04154191043379,7.44785937087585,7.39075948860075,7.3596623995921,7.57055443440628,7.78982870700378,7.89228065456319,7.91289705222992,8.00315048096186,8.18263883867592,8.3144726366023,8.45977407903891,8.60499597932293,8.69702930482634,8.75108924955588,8.89971080698851,8.95074271698556,8.88879253024048,8.83565002477295,8.74583454618546,8.31652009449822,8.19538831578659,8.32374353294161,8.56158088004364,8.68064596425398,8.8574456299053,9.11504888627658,9.15397449155645,9.39199642625858,9.56357709518831,9.6271795271869,9.73941884705627,9.73103550815399,9.65590812938788,9.64128763652114,9.75974115765518,9.75718756500355,9.69215688836206,9.65663333229301],"type":"scatter","mode":"lines","name":"Uruguay","line":{"color":"rgba(140,86,75,1)","shape":"spline"},"marker":{"color":"rgba(140,86,75,1)","line":{"color":"rgba(140,86,75,1)"}},"error_y":{"color":"rgba(140,86,75,1)"},"error_x":{"color":"rgba(140,86,75,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["1977","1978","1979","1980","1981","1982","1983","1984","1985","1986","1987","1988","1989","1990","1991","1992","1993","1994","1995","1996","1997","1998","1999","2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[7.86060013993081,7.91461825005762,8.09272896719897,8.26711478912877,8.35522360266795,8.34969762979207,8.3208082894057,8.17633710489829,8.18249833047939,8.13098114183258,7.87634266144544,8.07740443818836,7.72795711572518,7.81414938946922,7.8864698427107,7.98553941607417,7.95785584794872,7.90852228596158,8.16893688566152,8.05556059614141,8.23186699089032,8.27428535172364,8.32533218361319,8.48509082057219,8.51452475150385,8.2163257981149,8.09334464573509,8.37232850601524,8.61340783914423,8.82957439748132,9.04245018934527,9.3442367853954,9.37289281589998,9.53425972756187,9.3015831924265,9.47158903940483,9.43001490949686,9.68374387217369,10.1284296934351,9.9779555800803,9.32345202311256,8.99564215957,8.60319198853933,8.3240070463415],"type":"scatter","mode":"lines","name":"Venezuela","line":{"color":"rgba(227,119,194,1)","shape":"spline"},"marker":{"color":"rgba(227,119,194,1)","line":{"color":"rgba(227,119,194,1)"}},"error_y":{"color":"rgba(227,119,194,1)"},"error_x":{"color":"rgba(227,119,194,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-386a7d6d84b83ddb58d1" style="width:624px;height:384px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-386a7d6d84b83ddb58d1">{"x":{"visdat":{"3e7c608b56db":["function () ","plotlyVisDat"]},"cur_data":"3e7c608b56db","attrs":{"3e7c608b56db":{"x":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"y":{},"type":"scatter","mode":"lines","name":"Australia","line":{"shape":"spline"},"inherit":true},"3e7c608b56db.1":{"x":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"y":[3.31360763095222,3.37675546612874,3.46598462810069,3.59003024750522,3.66565201040381,3.72309599660837,3.75422496158927,3.8331871394367,3.91410340785932,3.99094969441118,4.03621142456107,3.97244580233599,3.9736056498685,3.97943033528903,3.95381113927918,3.96246862762358,4.11670975342881,4.21465233289647,4.2449847518293,4.24226670575114,4.33607910158107,4.35045952575311,4.39585324078254,4.38168403619604,4.4090315028716,4.48181297651426,4.47434852556081,4.42660036553718,4.43714585629008,4.43415832018325,4.39030719134258,4.38983056505168,4.42163263963651,4.50816458634027,4.56610172961909,4.58436666629421,4.60890327604153,4.67076309538824,4.71356417164273,4.68090796406646,4.67078414910686,4.71075148327827,4.68634749511111,4.70515106196599,4.71363748903265,4.64520651660985,4.65587602643173,4.6749471305522,4.71141194262175,4.70002452951516,4.68219351082398],"type":"scatter","mode":"lines","name":"Austria","line":{"shape":"spline"},"visible":"legendonly","inherit":true},"3e7c608b56db.2":{"x":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"y":[3.44183506062972,3.48896338056957,3.58338378029169,3.69028135297881,3.75844239936832,3.82616407413335,3.85992132379701,3.92567026041224,4.0124056005926,4.07227254489085,4.10937611803841,4.02623910642304,3.97052637384717,3.94675843776759,3.92723013428944,3.94204867688964,4.0852920305009,4.18000688144355,4.21460793633578,4.21814309083349,4.31387513202482,4.32308001226517,4.36870738281508,4.3479919029012,4.38396886362196,4.45352972331561,4.43916771235289,4.39481819063611,4.40377992981284,4.40216290335794,4.36251140279616,4.36163638898665,4.39598234333439,4.48554637350207,4.54856599120382,4.56580033732905,4.58740456087546,4.64603982522853,4.68220730799166,4.64917459597354,4.64485080751093,4.67530645460509,4.65004624484663,4.66973202889929,4.67852329883232,4.61269707535722,4.62308487916681,4.64433330301024,4.6771938691695,4.6666530703663,4.64928011183418],"type":"scatter","mode":"lines","name":"Bélgica","line":{"shape":"spline"},"visible":"legendonly","inherit":true},"3e7c608b56db.3":{"x":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"y":[3.61510090863167,3.65515408432394,3.70668261944646,3.76631325244027,3.84714129796445,3.87570998188659,3.9449396578743,3.95031896187655,3.96017058410546,4.00189204391889,4.04807510005311,4.09122597761464,4.09627982161924,4.12791825682821,4.14232428815552,4.14967496754462,4.16020040550188,4.21242645306855,4.27731035591263,4.31629817661466,4.33139413013869,4.3378253777975,4.31972733965376,4.30365304155986,4.29962455018076,4.31415780281745,4.32689573018285,4.34047510639333,4.32272743352345,4.34860169190241,4.3850877070519,4.3769793163049,4.38480734134902,4.45179354218706,4.50709561491513,4.56089263251572,4.60749856549106,4.64991769903493,4.66941456794366,4.61147168575511,4.67726087034312,4.71786760560251,4.72155581451542,4.7212760708578,4.70719531464963,4.63944799409582,4.62650054122134,4.65445914037284,4.66703006547662,4.66583110859854,4.63590193414233],"type":"scatter","mode":"lines","name":"Canadá","line":{"shape":"spline"},"inherit":true},"3e7c608b56db.4":{"x":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"y":[2.05370441986059,2.07428449829346,2.12019066585721,2.19614957449222,2.20450007835752,2.2512531934022,2.21855005245275,2.26816321199752,2.19422672018211,2.26477805542999,2.28959948023679,2.29462376601365,2.30821196813823,2.3530154270564,2.39917853224706,2.46902460942539,2.45013839672161,2.40107634816674,2.45261080483981,2.49259545484713,2.50226958870679,2.52262957822378,2.56402739772185,2.57679020341331,2.67531290131893,2.78508533615618,2.85089960491532,2.89306464795387,2.91833469744847,2.94115702587401,2.98198725803599,3.02247301213777,3.06013413447128,3.1101327038518,3.17859370689842,3.24388541827302,3.3220599072525,3.43039276533998,3.54011723217016,3.58345229533061,3.65805464333856,3.74959195953661,3.80050526118375,3.84822892680286,3.88528201547154,3.90670896862996,3.91104769997176,3.94838551178309,3.99898591791603,4.00930767969171,4.02120566198359],"type":"scatter","mode":"lines","name":"China","line":{"shape":"spline"},"visible":"legendonly","inherit":true},"3e7c608b56db.5":{"x":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"y":[3.44109264800691,3.50408106166351,3.58092286061013,3.70301223083415,3.75120807264632,3.79493109941016,3.82183156041757,3.88552822023043,3.97690191357767,4.05234849716764,4.08415815687498,4.00898631415874,3.99623742149714,3.99406825043756,3.96909750311758,3.97449185275807,4.12910413422659,4.22213123025623,4.253611348449,4.2495499677563,4.34838200338566,4.36843114946915,4.42223238280751,4.40692541732062,4.43259423748628,4.50048826762308,4.48409854417555,4.43078511520839,4.43598856602301,4.42693258637598,4.37357268078145,4.37305704148585,4.39928820622434,4.4806331484451,4.53204126604587,4.5379118456136,4.5601870640875,4.6189598156909,4.65731550702089,4.6179005334331,4.61838215725726,4.66880301208539,4.64205241828084,4.66544743730247,4.68087911351836,4.613701574672,4.62435963544562,4.64780113751391,4.67931122569583,4.66714945904166,4.66014083570316],"type":"scatter","mode":"lines","name":"Alemania`","line":{"shape":"spline"},"inherit":true},"3e7c608b56db.6":{"x":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"y":[3.53963494415285,3.5849535033328,3.66785427368706,3.78670672882811,3.83063678012842,3.90304181382934,3.9438697722289,3.99050987547485,4.07283855820263,4.13836583045686,4.14251107480254,4.08213167994758,4.07204512741453,4.07400749550521,4.06306748627889,4.08824598548144,4.23555593821553,4.32920922770792,4.35270425988066,4.34046503079048,4.42961416287431,4.43154673182134,4.47084633615773,4.44087722049684,4.47705725850139,4.54840619325559,4.55206823322145,4.51634945262794,4.52333203040876,4.52427659100102,4.48775398189037,4.4878684845016,4.52151326642459,4.60701275492916,4.66756126393697,4.68841826994117,4.71622878011534,4.76705975363469,4.80835996847039,4.76464886637225,4.76373786768487,4.79066261185103,4.76721160106054,4.78668892539949,4.79622026481588,4.72635921771762,4.73770139477986,4.76049861535923,4.78957039546385,4.77969093026702,4.78468029381593],"type":"scatter","mode":"lines","name":"Dinamarca","line":{"shape":"spline"},"visible":"legendonly","inherit":true},"3e7c608b56db.7":{"x":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"y":[3.08360628143173,3.13422988426759,3.23269342836071,3.35171001454624,3.4393207961251,3.50648303910275,3.51578282705332,3.55961827543182,3.63913165927053,3.76119196634183,3.79299214298139,3.73006861007322,3.7126251788674,3.65113260624745,3.65224527108497,3.67206604827349,3.81381463656445,3.91590685638839,3.98691157418855,4.02865140283857,4.14003253477336,4.17061085399187,4.20715454533682,4.12515285278686,4.12759996822205,4.18954541020179,4.20707085687068,4.16822624985855,4.1873613975556,4.19632356779576,4.16770317461161,4.18626970839035,4.23110069084121,4.33169938246445,4.39552353367983,4.42192125490509,4.45278758769152,4.51255060568883,4.54858913048317,4.50572604165777,4.48433856398782,4.5001876937641,4.45216116871892,4.46328885416785,4.46925559667064,4.4104738526811,4.42333343224256,4.44871538036722,4.48250943855279,4.47077413600571,4.43228226623434],"type":"scatter","mode":"lines","name":"España","line":{"shape":"spline"},"visible":"legendonly","inherit":true},"3e7c608b56db.8":{"x":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"y":[3.45594849698008,3.50092721704214,3.58597434102644,3.69633567646371,3.72658390468259,3.82546365569348,3.83675546684156,3.87694069475263,3.96683489043804,4.04842754313745,4.10426052141504,4.04551783306845,4.02106224126067,3.99971419154874,3.97403689373305,3.98959785321342,4.13162656655954,4.21225280697561,4.24748217934531,4.24783361514934,4.33833366926375,4.33596040830495,4.37682710151328,4.34986217309444,4.37100354780885,4.42959431698002,4.42929726383772,4.38433452902233,4.39749286972279,4.3922255327733,4.34955005440543,4.35089810047301,4.38340843813208,4.47082766019095,4.52816132110798,4.54108207936999,4.56162158471508,4.61813633521656,4.65642517029937,4.61883666569403,4.60893590880469,4.6413821455215,4.61145458234701,4.62933757145675,4.63358219657733,4.56393395040038,4.56864018921667,4.58754550315453,4.61832443625594,4.60616737692357,4.58686925009544],"type":"scatter","mode":"lines","name":"Francia","line":{"shape":"spline"},"inherit":true},"3e7c608b56db.9":{"x":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"y":[3.370613799774,3.42321334387702,3.481504616981,3.53482237211604,3.56417620657762,3.63344276256332,3.61680809574445,3.67037945525804,3.77647876311141,3.89235966861613,4.00139021097912,3.98223984608649,3.961234870299,3.93909567454963,3.91271053261898,3.93712738016437,4.02576090712398,4.1178870443933,4.20377154084391,4.21056682877431,4.28093028393869,4.29886893442698,4.31148198782167,4.26455857492753,4.2946698360465,4.36405722421323,4.38619983564874,4.42682902518612,4.45084923735171,4.45736266501332,4.44957508120975,4.44275602746568,4.4768695617497,4.53635574087952,4.60432171779489,4.62255466395377,4.64809226872668,4.70281752505249,4.67455815072655,4.58812488712506,4.59700121570668,4.62374135931373,4.62786856525265,4.63750284350269,4.67625634428434,4.6535910145115,4.61329570106163,4.60535594157076,4.63339576800882,4.62689868409292,4.60513947031193],"type":"scatter","mode":"lines","name":"Reino Unido","line":{"shape":"spline"},"inherit":true},"3e7c608b56db.10":{"x":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"y":[3.17446336698956,3.21809572510951,3.27867948659444,3.3984287049224,3.45159434572702,3.49875644528832,3.53026950971673,3.58954464247363,3.67160171954536,3.75632791380036,3.77038521764382,3.73080387842454,3.74657462453291,3.70069322911539,3.68597142119313,3.68248003152542,3.75254820081391,3.81722708486495,3.88070088998272,3.89468583783636,3.98227961280946,4.00810469900781,4.04830420670542,4.01711614028025,4.04498181986576,4.11258235767482,4.13827474803446,4.12800591535891,4.12943651021837,4.12205817431516,4.08073301718661,4.09823446117032,4.14953665877708,4.26664505272396,4.34153550137197,4.35317997436938,4.39447195531618,4.45980436535922,4.50511308919284,4.47291683422492,4.42635845742954,4.40569690112044,4.34074526646704,4.33744233810127,4.33448946635402,4.25647955479581,4.25249848279863,4.268630136291,4.2959187131083,4.28218660774549,4.24738872197009],"type":"scatter","mode":"lines","name":"Grecia","line":{"shape":"spline"},"inherit":true},"3e7c608b56db.11":{"x":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"y":[2.05089956385549,2.07409655863791,2.08984107162056,2.15769451512886,2.21345961475332,2.19875649878567,2.20707422209436,2.2700111727677,2.3132203216561,2.35024999360881,2.42582406225682,2.43212006593259,2.43792699266305,2.46424820422409,2.44195886515131,2.47192969918249,2.49201395225917,2.53201102896283,2.54918632424212,2.53921777177014,2.56532423603349,2.48152232457955,2.50099613724045,2.47879584967063,2.53920530279091,2.57260035144743,2.60200578226986,2.61856454533765,2.616264283255,2.6454210514019,2.64671163654465,2.65472796452632,2.67300872348626,2.73777021494277,2.79780349214529,2.85422161365058,2.90674074012006,3.01213452121622,2.99935778647039,3.04216616071321,3.13276022541506,3.16378852107519,3.15953183311395,3.16125131130913,3.19697317343193,3.20563883216434,3.23868684026519,3.29681147018457,3.3003595982414,3.32237467417109,3.2789151306777],"type":"scatter","mode":"lines","name":"India","line":{"shape":"spline"},"visible":"legendonly","inherit":true},"3e7c608b56db.12":{"x":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"y":[3.32363649400644,3.36278580013764,3.42669621426036,3.50586218531957,3.55884601408039,3.61352405439494,3.60563892088094,3.66309755320981,3.74900141957465,3.84449493279025,3.92721216964496,3.88211642412165,3.87832203367246,3.89390458356124,3.88872498483949,3.90258409581003,4.05365514080888,4.15334919244385,4.1971333215012,4.21449050143537,4.31860136432782,4.34156370096412,4.36630104865062,4.27274093924891,4.28640326652892,4.31522600005083,4.36326599848745,4.3390407210558,4.34865794502449,4.34237578071464,4.30292787851407,4.31139814464905,4.34772302762259,4.43879028148967,4.49498503494266,4.5057350722636,4.52506630300964,4.5777521288787,4.61042957173829,4.56913689892362,4.5563087752871,4.586576753292,4.54473171278463,4.55083929595667,4.55045358082745,4.48044139829916,4.49051629831426,4.50956102641998,4.53918498011249,4.52590977667121,4.50073310516372],"type":"scatter","mode":"lines","name":"Italia","line":{"shape":"spline"},"visible":"legendonly","inherit":true},"3e7c608b56db.13":{"x":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"y":[3.3130488896609,3.35642319873448,3.47232369347009,3.59930933777031,3.63887090446566,3.66973009890025,3.71580472011895,3.80176628512755,3.94550265500381,3.95921148578646,3.97604507960141,4.0153672283741,3.98116634589961,4.0179182490476,4.04055961282916,4.06358448318832,4.23333280757521,4.31699698073013,4.39896386495393,4.39485034066256,4.4043455307941,4.46112331987331,4.49713685166775,4.55244875001488,4.59329153525111,4.63777925688804,4.58474865113106,4.5443374602432,4.50382835334541,4.55662274813137,4.58582201231965,4.52951332493957,4.50905930976053,4.54168394768152,4.57621141492756,4.5707489325576,4.54942004557132,4.54746983478974,4.59482660106338,4.61124708186083,4.64843492164456,4.68275858957119,4.68666733584274,4.60696627379116,4.58103224926438,4.53812701851095,4.58840413974294,4.58417864196835,4.59283629025369,4.60328580363602,4.60215769659496],"type":"scatter","mode":"lines","name":"Japón","line":{"shape":"spline"},"visible":"legendonly","inherit":true},"3e7c608b56db.14":{"x":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"y":[3.64831522270051,3.66197811250454,3.75435834830382,3.88703908458241,3.96767931836918,3.95462978109075,3.99234315502982,4.03566910884787,4.13013592710606,4.19701271281551,4.23334753413846,4.15609138254556,4.11510477652704,4.10755654874615,4.09879657598554,4.11132833927931,4.27391885966812,4.36613454826019,4.41677933543486,4.44022191491285,4.53964236131376,4.5682890146571,4.61242083651741,4.61782920295276,4.6578385130953,4.72289090576977,4.72075396219637,4.67248898208448,4.67746518527768,4.71310734479388,4.68784984148609,4.68286157519679,4.72370715466015,4.81588234508656,4.8791896762843,4.90465981577166,4.95298466995546,5.02538162579735,5.05802283683634,5.0136740973502,5.02104577651202,5.06356417450127,5.02836387076899,5.05547440419492,5.07490288284975,5.00593727855514,5.01819432133198,5.03084778967787,5.06668847749732,5.05950725671523,5.06398450983949],"type":"scatter","mode":"lines","name":"Luxemburgo","line":{"shape":"spline"},"inherit":true},"3e7c608b56db.15":{"x":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"y":[3.46643354471294,3.52873867980479,3.6132550784648,3.72799446325942,3.80895184409251,3.8654302541117,3.8990369754543,3.96221814434027,4.04841809003804,4.1071605402464,4.13962291130641,4.06146936314942,4.04425190394415,4.02858585264654,3.9990069463314,3.99677995745513,4.13937054178117,4.22296500571613,4.24906380030145,4.24049163012002,4.32819321202126,4.33710430791215,4.37847125990189,4.36403311210856,4.391751982653,4.46624662978891,4.46249996194805,4.42651999813645,4.44538323878288,4.45121974458544,4.41746191238765,4.42932061146952,4.46544293209798,4.55232997459285,4.60597692589664,4.62303266660523,4.65189170585862,4.71377137555024,4.76075772566012,4.72027532408454,4.70714448108426,4.73367341630767,4.69960366091374,4.71753788025673,4.72288204298339,4.65490039055797,4.66283196622568,4.68623388937341,4.72442849611109,4.71846049163102,4.71853537972103],"type":"scatter","mode":"lines","name":"Países Bajos","line":{"shape":"spline"},"visible":"legendonly","inherit":true},"3e7c608b56db.16":{"x":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"y":[3.51933167987235,3.57244740495193,3.64479057902563,3.75508088055403,3.83324450390333,3.91404955266783,3.95071534374153,4.01140636481654,4.05928471329356,4.11549525762512,4.19789340192562,4.19068198220476,4.18255427507046,4.17398758831145,4.17578673407824,4.19737851192439,4.27607710635202,4.35229634068993,4.38394601995308,4.38526828854167,4.45090996089155,4.45631945791864,4.48464123225815,4.44659409411187,4.4671023709862,4.54252298719515,4.57196460831149,4.56382542866292,4.54143395378156,4.56075585031884,4.58128344108326,4.58594230480019,4.63432077972534,4.70014007310169,4.76045140543084,4.82484458233936,4.87010131598328,4.93013344408315,4.98652136345487,4.90296889468263,4.94296884039409,5.00260040865062,5.00656932723843,5.01247214099582,4.98685761199827,4.87131319098372,4.84794609378605,4.87792827977599,4.91522993276783,4.87981861552271,4.8279794220826],"type":"scatter","mode":"lines","name":"Noruega","line":{"shape":"spline"},"visible":"legendonly","inherit":true},"3e7c608b56db.17":{"x":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"y":[3.31762371154217,3.44293712041852,3.51780914567418,3.63580497921774,3.66375466024567,3.6203203295847,3.64086299109658,3.69465680280796,3.77356597071308,3.82400462255219,3.87315592460283,3.8928671566137,3.88402891033995,3.8807171246918,3.82696582073297,3.88084589125918,3.97439902592845,4.09099536853775,4.1385917829794,4.12425588822587,4.13554675550168,4.0874290654545,4.07162942628594,4.11708379413634,4.18413224423325,4.24055973573916,4.27402929846408,4.24239697974145,4.1684516819084,4.18532180242166,4.13484947920251,4.14247884482741,4.22722287031405,4.34071587378943,4.40517955911709,4.44327966202602,4.42577205877924,4.51161577638735,4.49489119173588,4.45039326903584,4.52733048403763,4.58419126714204,4.60177088037838,4.63323255536092,4.64907087890967,4.58693287667944,4.60293306688958,4.6333966928289,4.63654877358553,4.6232427582423,4.62109100507945],"type":"scatter","mode":"lines","name":"Nueva Zelandia","line":{"shape":"spline"},"visible":"legendonly","inherit":true},"3e7c608b56db.18":{"x":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"y":[2.97038507576977,3.02716105146942,3.11469979128829,3.24253870540324,3.3011208070789,3.32789763771743,3.33711646954498,3.35552258825946,3.39046051647377,3.44022005591893,3.52741936128091,3.51134519922275,3.48854360505941,3.43703530069642,3.40187378037142,3.43219825528429,3.58680647056899,3.68159089323353,3.75002191321187,3.78221319030811,3.89678065645854,3.95225882559722,4.03384845295753,3.97930504536054,3.99901389749757,4.07119549502254,4.08582879120055,4.06354002615291,4.08633157872266,4.0959040430195,4.06061299208931,4.06909846092459,4.10975805841786,4.1976382085257,4.25601982353422,4.27353658025702,4.29716600765888,4.35759365131276,4.39528348816201,4.36285548818902,4.35215724836012,4.36524293490072,4.31312638792533,4.33539855599875,4.34388695553852,4.28425848153441,4.30056073057169,4.3311710480086,4.37201024295849,4.36706742447931,4.35102046964717],"type":"scatter","mode":"lines","name":"Portugal","line":{"shape":"spline"},"visible":"legendonly","inherit":true},"3e7c608b56db.19":{"x":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"y":[2.9665190120115,3.02995631992154,3.10187593693991,3.22671839764969,3.36953227861697,3.396183924166,3.4407423156321,3.45428616393677,3.50432208363955,3.59112401813465,3.69268295915334,3.7479231799718,3.7837345601695,3.82172549318756,3.85903722551521,3.84520763886703,3.8325044652095,3.87731543129821,3.95009412595445,4.01680523288552,4.07414899204347,4.16143928039926,4.20779356119007,4.26221437596646,4.33350835154667,4.39645062895715,4.4188583706783,4.42120847228234,4.33903980682352,4.33837848165282,4.3775307551321,4.33646013503701,4.34556365831669,4.3753005282649,4.44104339945309,4.47656012087196,4.52852018273224,4.59585913977609,4.6021410802305,4.59025324319024,4.67428194237415,4.73151163865358,4.74465660951503,4.75562659529128,4.76013987987204,4.74543878045591,4.75471653006204,4.78658431692183,4.8239893807915,4.81717325636138,4.77668485900315],"type":"scatter","mode":"lines","name":"Singapur","line":{"shape":"spline"},"inherit":true},"3e7c608b56db.20":{"x":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"y":[3.67543160641024,3.71034686316544,3.78011045078217,3.86339516269819,3.90794393624717,4.00506491489132,4.03616064943909,4.05875311751229,4.10107720170973,4.17252015894624,4.23294106201345,4.19274665560182,4.13795424786298,4.10065409338238,4.11723883289184,4.13566867399212,4.25481430989056,4.33830822857113,4.38978064252197,4.40929423379775,4.48563161254436,4.50273844187786,4.51588685496296,4.38783963859286,4.41636777110045,4.48119837912094,4.51850036020946,4.48162157827864,4.48567213558791,4.49053545975077,4.47165707885338,4.43533236310694,4.47565949924746,4.57196255686667,4.63166363218514,4.63786045388683,4.66832628717584,4.72997432885651,4.74936950132984,4.67160747775578,4.72320145975831,4.78358745465859,4.76371110109855,4.78623267836577,4.77829859929112,4.71219061861301,4.71571224501906,4.73071372542807,4.73710561907861,4.71338007674159,4.71538247496625],"type":"scatter","mode":"lines","name":"Suecia","line":{"shape":"spline"},"inherit":true},"3e7c608b56db.21":{"x":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"y":[2.69013435943272,2.6581114716002,2.74696168209276,2.83663425735588,2.96745400108158,3.05552189856055,3.10583589374299,3.15453711081126,3.19023203953835,3.31790050020595,3.19430537677771,3.19840242183135,3.14687389600873,3.11735604169903,3.09580531643866,3.13621358994459,3.17917141903471,3.23195213957442,3.24188624460275,3.30575097934229,3.44628087850665,3.43706967925773,3.45368060740418,3.50245273666403,3.35609038920056,3.46207839535539,3.48486152857899,3.49753581295582,3.65318717994144,3.61449336210116,3.63723728532843,3.49733346448106,3.56678574194433,3.67761644314144,3.78544601934311,3.87252314617208,3.90858456941095,3.99086619119674,4.03906385119812,3.9592071585946,4.0311164789704,4.05768722698679,4.07172126861178,4.10087973631407,4.08486179733455,4.04164053829287,4.03721142421854,4.02488233332762,3.97557867042101,3.96030874985629,3.93136474979134],"type":"scatter","mode":"lines","name":"Turquía","line":{"shape":"spline"},"visible":"legendonly","inherit":true},"3e7c608b56db.22":{"x":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"y":[3.17223730503615,3.2315203765082,3.31822858303246,3.38464890954561,3.40093878128311,3.47332140138174,3.4653889033631,3.53499145888699,3.64351942387089,3.73486487931341,3.80437369293691,3.77721596149368,3.78969379548628,3.7720405762911,3.75533505270539,3.77906793444117,3.90920518409713,3.98152029932454,4.03009553070919,4.04834733248673,4.14716605673906,4.14889299420467,4.19636544735042,4.16611497903009,4.20154521237106,4.28242859155356,4.31878765196417,4.35298143929185,4.38514016419745,4.41986809939315,4.41906591787793,4.45085848877374,4.51242106195772,4.61384879108095,4.67801671230165,4.70664395528122,4.7346643591715,4.78772380256329,4.78684583915399,4.71607623420936,4.68751259966597,4.71505444740346,4.6894386620652,4.71245842987959,4.74497294381535,4.79239252171022,4.79929742874202,4.84765359960656,4.8992607508939,4.90729755648911,4.92331036508429],"type":"scatter","mode":"lines","name":"Irlanda","line":{"shape":"spline"},"inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"title":"Pib Per capita en Logaritmos Paises Euro y Asia","font":{"size":12,"color":"black"},"xaxis":{"domain":[0,1],"automargin":true,"title":"Año","color":"black","tickangle":-45,"type":"category","categoryorder":"array","categoryarray":["1970","1971","1972","1973","1974","1975","1976","1977","1978","1979","1980","1981","1982","1983","1984","1985","1986","1987","1988","1989","1990","1991","1992","1993","1994","1995","1996","1997","1998","1999","2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"]},"yaxis":{"domain":[0,1],"automargin":true,"title":"Pib Per Capita","color":"black"},"paper_bgcolor":"white","plot_bgcolor":"white","hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displayModeBar":false},"data":[{"x":["1970","1971","1972","1973","1974","1975","1976","1977","1978","1979","1980","1981","1982","1983","1984","1985","1986","1987","1988","1989","1990","1991","1992","1993","1994","1995","1996","1997","1998","1999","2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[3.51849330469217,3.54281949035987,3.59591352146282,3.67793787484989,3.8111166875231,3.84474476644831,3.8737127866516,3.89014540557423,3.91603246664652,3.967619261869,4.00836143745673,4.07312214099,4.10607260655134,4.06140228046036,4.09453910975758,4.05833920007167,4.05554037642334,4.06537880092896,4.15395240159074,4.25038477841085,4.2603457195534,4.27466104492613,4.26881472095689,4.24636400626035,4.25638423755926,4.3079158090495,4.3396764908328,4.37048712424161,4.32876609967778,4.31245314874791,4.33604421035918,4.28983102674938,4.30281741378143,4.37008785764136,4.48331160631099,4.53146924567653,4.5568440998316,4.61236052577011,4.69549618228095,4.63116320500815,4.7161880932623,4.79600392123522,4.83258649057395,4.8334665423045,4.7959549956047,4.7540096505854,4.69871918293449,4.73261862446795,4.75857101185037,4.74081415809453,4.71443164801208],"type":"scatter","mode":"lines","name":"Australia","line":{"color":"rgba(31,119,180,1)","shape":"spline"},"marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["1970","1971","1972","1973","1974","1975","1976","1977","1978","1979","1980","1981","1982","1983","1984","1985","1986","1987","1988","1989","1990","1991","1992","1993","1994","1995","1996","1997","1998","1999","2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[3.31360763095222,3.37675546612874,3.46598462810069,3.59003024750522,3.66565201040381,3.72309599660837,3.75422496158927,3.8331871394367,3.91410340785932,3.99094969441118,4.03621142456107,3.97244580233599,3.9736056498685,3.97943033528903,3.95381113927918,3.96246862762358,4.11670975342881,4.21465233289647,4.2449847518293,4.24226670575114,4.33607910158107,4.35045952575311,4.39585324078254,4.38168403619604,4.4090315028716,4.48181297651426,4.47434852556081,4.42660036553718,4.43714585629008,4.43415832018325,4.39030719134258,4.38983056505168,4.42163263963651,4.50816458634027,4.56610172961909,4.58436666629421,4.60890327604153,4.67076309538824,4.71356417164273,4.68090796406646,4.67078414910686,4.71075148327827,4.68634749511111,4.70515106196599,4.71363748903265,4.64520651660985,4.65587602643173,4.6749471305522,4.71141194262175,4.70002452951516,4.68219351082398],"type":"scatter","mode":"lines","name":"Austria","line":{"color":"rgba(255,127,14,1)","shape":"spline"},"visible":"legendonly","marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["1970","1971","1972","1973","1974","1975","1976","1977","1978","1979","1980","1981","1982","1983","1984","1985","1986","1987","1988","1989","1990","1991","1992","1993","1994","1995","1996","1997","1998","1999","2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[3.44183506062972,3.48896338056957,3.58338378029169,3.69028135297881,3.75844239936832,3.82616407413335,3.85992132379701,3.92567026041224,4.0124056005926,4.07227254489085,4.10937611803841,4.02623910642304,3.97052637384717,3.94675843776759,3.92723013428944,3.94204867688964,4.0852920305009,4.18000688144355,4.21460793633578,4.21814309083349,4.31387513202482,4.32308001226517,4.36870738281508,4.3479919029012,4.38396886362196,4.45352972331561,4.43916771235289,4.39481819063611,4.40377992981284,4.40216290335794,4.36251140279616,4.36163638898665,4.39598234333439,4.48554637350207,4.54856599120382,4.56580033732905,4.58740456087546,4.64603982522853,4.68220730799166,4.64917459597354,4.64485080751093,4.67530645460509,4.65004624484663,4.66973202889929,4.67852329883232,4.61269707535722,4.62308487916681,4.64433330301024,4.6771938691695,4.6666530703663,4.64928011183418],"type":"scatter","mode":"lines","name":"Bélgica","line":{"color":"rgba(44,160,44,1)","shape":"spline"},"visible":"legendonly","marker":{"color":"rgba(44,160,44,1)","line":{"color":"rgba(44,160,44,1)"}},"error_y":{"color":"rgba(44,160,44,1)"},"error_x":{"color":"rgba(44,160,44,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["1970","1971","1972","1973","1974","1975","1976","1977","1978","1979","1980","1981","1982","1983","1984","1985","1986","1987","1988","1989","1990","1991","1992","1993","1994","1995","1996","1997","1998","1999","2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[3.61510090863167,3.65515408432394,3.70668261944646,3.76631325244027,3.84714129796445,3.87570998188659,3.9449396578743,3.95031896187655,3.96017058410546,4.00189204391889,4.04807510005311,4.09122597761464,4.09627982161924,4.12791825682821,4.14232428815552,4.14967496754462,4.16020040550188,4.21242645306855,4.27731035591263,4.31629817661466,4.33139413013869,4.3378253777975,4.31972733965376,4.30365304155986,4.29962455018076,4.31415780281745,4.32689573018285,4.34047510639333,4.32272743352345,4.34860169190241,4.3850877070519,4.3769793163049,4.38480734134902,4.45179354218706,4.50709561491513,4.56089263251572,4.60749856549106,4.64991769903493,4.66941456794366,4.61147168575511,4.67726087034312,4.71786760560251,4.72155581451542,4.7212760708578,4.70719531464963,4.63944799409582,4.62650054122134,4.65445914037284,4.66703006547662,4.66583110859854,4.63590193414233],"type":"scatter","mode":"lines","name":"Canadá","line":{"color":"rgba(214,39,40,1)","shape":"spline"},"marker":{"color":"rgba(214,39,40,1)","line":{"color":"rgba(214,39,40,1)"}},"error_y":{"color":"rgba(214,39,40,1)"},"error_x":{"color":"rgba(214,39,40,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["1970","1971","1972","1973","1974","1975","1976","1977","1978","1979","1980","1981","1982","1983","1984","1985","1986","1987","1988","1989","1990","1991","1992","1993","1994","1995","1996","1997","1998","1999","2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[2.05370441986059,2.07428449829346,2.12019066585721,2.19614957449222,2.20450007835752,2.2512531934022,2.21855005245275,2.26816321199752,2.19422672018211,2.26477805542999,2.28959948023679,2.29462376601365,2.30821196813823,2.3530154270564,2.39917853224706,2.46902460942539,2.45013839672161,2.40107634816674,2.45261080483981,2.49259545484713,2.50226958870679,2.52262957822378,2.56402739772185,2.57679020341331,2.67531290131893,2.78508533615618,2.85089960491532,2.89306464795387,2.91833469744847,2.94115702587401,2.98198725803599,3.02247301213777,3.06013413447128,3.1101327038518,3.17859370689842,3.24388541827302,3.3220599072525,3.43039276533998,3.54011723217016,3.58345229533061,3.65805464333856,3.74959195953661,3.80050526118375,3.84822892680286,3.88528201547154,3.90670896862996,3.91104769997176,3.94838551178309,3.99898591791603,4.00930767969171,4.02120566198359],"type":"scatter","mode":"lines","name":"China","line":{"color":"rgba(148,103,189,1)","shape":"spline"},"visible":"legendonly","marker":{"color":"rgba(148,103,189,1)","line":{"color":"rgba(148,103,189,1)"}},"error_y":{"color":"rgba(148,103,189,1)"},"error_x":{"color":"rgba(148,103,189,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["1970","1971","1972","1973","1974","1975","1976","1977","1978","1979","1980","1981","1982","1983","1984","1985","1986","1987","1988","1989","1990","1991","1992","1993","1994","1995","1996","1997","1998","1999","2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[3.44109264800691,3.50408106166351,3.58092286061013,3.70301223083415,3.75120807264632,3.79493109941016,3.82183156041757,3.88552822023043,3.97690191357767,4.05234849716764,4.08415815687498,4.00898631415874,3.99623742149714,3.99406825043756,3.96909750311758,3.97449185275807,4.12910413422659,4.22213123025623,4.253611348449,4.2495499677563,4.34838200338566,4.36843114946915,4.42223238280751,4.40692541732062,4.43259423748628,4.50048826762308,4.48409854417555,4.43078511520839,4.43598856602301,4.42693258637598,4.37357268078145,4.37305704148585,4.39928820622434,4.4806331484451,4.53204126604587,4.5379118456136,4.5601870640875,4.6189598156909,4.65731550702089,4.6179005334331,4.61838215725726,4.66880301208539,4.64205241828084,4.66544743730247,4.68087911351836,4.613701574672,4.62435963544562,4.64780113751391,4.67931122569583,4.66714945904166,4.66014083570316],"type":"scatter","mode":"lines","name":"Alemania`","line":{"color":"rgba(140,86,75,1)","shape":"spline"},"marker":{"color":"rgba(140,86,75,1)","line":{"color":"rgba(140,86,75,1)"}},"error_y":{"color":"rgba(140,86,75,1)"},"error_x":{"color":"rgba(140,86,75,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["1970","1971","1972","1973","1974","1975","1976","1977","1978","1979","1980","1981","1982","1983","1984","1985","1986","1987","1988","1989","1990","1991","1992","1993","1994","1995","1996","1997","1998","1999","2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[3.53963494415285,3.5849535033328,3.66785427368706,3.78670672882811,3.83063678012842,3.90304181382934,3.9438697722289,3.99050987547485,4.07283855820263,4.13836583045686,4.14251107480254,4.08213167994758,4.07204512741453,4.07400749550521,4.06306748627889,4.08824598548144,4.23555593821553,4.32920922770792,4.35270425988066,4.34046503079048,4.42961416287431,4.43154673182134,4.47084633615773,4.44087722049684,4.47705725850139,4.54840619325559,4.55206823322145,4.51634945262794,4.52333203040876,4.52427659100102,4.48775398189037,4.4878684845016,4.52151326642459,4.60701275492916,4.66756126393697,4.68841826994117,4.71622878011534,4.76705975363469,4.80835996847039,4.76464886637225,4.76373786768487,4.79066261185103,4.76721160106054,4.78668892539949,4.79622026481588,4.72635921771762,4.73770139477986,4.76049861535923,4.78957039546385,4.77969093026702,4.78468029381593],"type":"scatter","mode":"lines","name":"Dinamarca","line":{"color":"rgba(227,119,194,1)","shape":"spline"},"visible":"legendonly","marker":{"color":"rgba(227,119,194,1)","line":{"color":"rgba(227,119,194,1)"}},"error_y":{"color":"rgba(227,119,194,1)"},"error_x":{"color":"rgba(227,119,194,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["1970","1971","1972","1973","1974","1975","1976","1977","1978","1979","1980","1981","1982","1983","1984","1985","1986","1987","1988","1989","1990","1991","1992","1993","1994","1995","1996","1997","1998","1999","2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[3.08360628143173,3.13422988426759,3.23269342836071,3.35171001454624,3.4393207961251,3.50648303910275,3.51578282705332,3.55961827543182,3.63913165927053,3.76119196634183,3.79299214298139,3.73006861007322,3.7126251788674,3.65113260624745,3.65224527108497,3.67206604827349,3.81381463656445,3.91590685638839,3.98691157418855,4.02865140283857,4.14003253477336,4.17061085399187,4.20715454533682,4.12515285278686,4.12759996822205,4.18954541020179,4.20707085687068,4.16822624985855,4.1873613975556,4.19632356779576,4.16770317461161,4.18626970839035,4.23110069084121,4.33169938246445,4.39552353367983,4.42192125490509,4.45278758769152,4.51255060568883,4.54858913048317,4.50572604165777,4.48433856398782,4.5001876937641,4.45216116871892,4.46328885416785,4.46925559667064,4.4104738526811,4.42333343224256,4.44871538036722,4.48250943855279,4.47077413600571,4.43228226623434],"type":"scatter","mode":"lines","name":"España","line":{"color":"rgba(127,127,127,1)","shape":"spline"},"visible":"legendonly","marker":{"color":"rgba(127,127,127,1)","line":{"color":"rgba(127,127,127,1)"}},"error_y":{"color":"rgba(127,127,127,1)"},"error_x":{"color":"rgba(127,127,127,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["1970","1971","1972","1973","1974","1975","1976","1977","1978","1979","1980","1981","1982","1983","1984","1985","1986","1987","1988","1989","1990","1991","1992","1993","1994","1995","1996","1997","1998","1999","2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[3.45594849698008,3.50092721704214,3.58597434102644,3.69633567646371,3.72658390468259,3.82546365569348,3.83675546684156,3.87694069475263,3.96683489043804,4.04842754313745,4.10426052141504,4.04551783306845,4.02106224126067,3.99971419154874,3.97403689373305,3.98959785321342,4.13162656655954,4.21225280697561,4.24748217934531,4.24783361514934,4.33833366926375,4.33596040830495,4.37682710151328,4.34986217309444,4.37100354780885,4.42959431698002,4.42929726383772,4.38433452902233,4.39749286972279,4.3922255327733,4.34955005440543,4.35089810047301,4.38340843813208,4.47082766019095,4.52816132110798,4.54108207936999,4.56162158471508,4.61813633521656,4.65642517029937,4.61883666569403,4.60893590880469,4.6413821455215,4.61145458234701,4.62933757145675,4.63358219657733,4.56393395040038,4.56864018921667,4.58754550315453,4.61832443625594,4.60616737692357,4.58686925009544],"type":"scatter","mode":"lines","name":"Francia","line":{"color":"rgba(188,189,34,1)","shape":"spline"},"marker":{"color":"rgba(188,189,34,1)","line":{"color":"rgba(188,189,34,1)"}},"error_y":{"color":"rgba(188,189,34,1)"},"error_x":{"color":"rgba(188,189,34,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["1970","1971","1972","1973","1974","1975","1976","1977","1978","1979","1980","1981","1982","1983","1984","1985","1986","1987","1988","1989","1990","1991","1992","1993","1994","1995","1996","1997","1998","1999","2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[3.370613799774,3.42321334387702,3.481504616981,3.53482237211604,3.56417620657762,3.63344276256332,3.61680809574445,3.67037945525804,3.77647876311141,3.89235966861613,4.00139021097912,3.98223984608649,3.961234870299,3.93909567454963,3.91271053261898,3.93712738016437,4.02576090712398,4.1178870443933,4.20377154084391,4.21056682877431,4.28093028393869,4.29886893442698,4.31148198782167,4.26455857492753,4.2946698360465,4.36405722421323,4.38619983564874,4.42682902518612,4.45084923735171,4.45736266501332,4.44957508120975,4.44275602746568,4.4768695617497,4.53635574087952,4.60432171779489,4.62255466395377,4.64809226872668,4.70281752505249,4.67455815072655,4.58812488712506,4.59700121570668,4.62374135931373,4.62786856525265,4.63750284350269,4.67625634428434,4.6535910145115,4.61329570106163,4.60535594157076,4.63339576800882,4.62689868409292,4.60513947031193],"type":"scatter","mode":"lines","name":"Reino Unido","line":{"color":"rgba(23,190,207,1)","shape":"spline"},"marker":{"color":"rgba(23,190,207,1)","line":{"color":"rgba(23,190,207,1)"}},"error_y":{"color":"rgba(23,190,207,1)"},"error_x":{"color":"rgba(23,190,207,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["1970","1971","1972","1973","1974","1975","1976","1977","1978","1979","1980","1981","1982","1983","1984","1985","1986","1987","1988","1989","1990","1991","1992","1993","1994","1995","1996","1997","1998","1999","2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[3.17446336698956,3.21809572510951,3.27867948659444,3.3984287049224,3.45159434572702,3.49875644528832,3.53026950971673,3.58954464247363,3.67160171954536,3.75632791380036,3.77038521764382,3.73080387842454,3.74657462453291,3.70069322911539,3.68597142119313,3.68248003152542,3.75254820081391,3.81722708486495,3.88070088998272,3.89468583783636,3.98227961280946,4.00810469900781,4.04830420670542,4.01711614028025,4.04498181986576,4.11258235767482,4.13827474803446,4.12800591535891,4.12943651021837,4.12205817431516,4.08073301718661,4.09823446117032,4.14953665877708,4.26664505272396,4.34153550137197,4.35317997436938,4.39447195531618,4.45980436535922,4.50511308919284,4.47291683422492,4.42635845742954,4.40569690112044,4.34074526646704,4.33744233810127,4.33448946635402,4.25647955479581,4.25249848279863,4.268630136291,4.2959187131083,4.28218660774549,4.24738872197009],"type":"scatter","mode":"lines","name":"Grecia","line":{"color":"rgba(31,119,180,1)","shape":"spline"},"marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["1970","1971","1972","1973","1974","1975","1976","1977","1978","1979","1980","1981","1982","1983","1984","1985","1986","1987","1988","1989","1990","1991","1992","1993","1994","1995","1996","1997","1998","1999","2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[2.05089956385549,2.07409655863791,2.08984107162056,2.15769451512886,2.21345961475332,2.19875649878567,2.20707422209436,2.2700111727677,2.3132203216561,2.35024999360881,2.42582406225682,2.43212006593259,2.43792699266305,2.46424820422409,2.44195886515131,2.47192969918249,2.49201395225917,2.53201102896283,2.54918632424212,2.53921777177014,2.56532423603349,2.48152232457955,2.50099613724045,2.47879584967063,2.53920530279091,2.57260035144743,2.60200578226986,2.61856454533765,2.616264283255,2.6454210514019,2.64671163654465,2.65472796452632,2.67300872348626,2.73777021494277,2.79780349214529,2.85422161365058,2.90674074012006,3.01213452121622,2.99935778647039,3.04216616071321,3.13276022541506,3.16378852107519,3.15953183311395,3.16125131130913,3.19697317343193,3.20563883216434,3.23868684026519,3.29681147018457,3.3003595982414,3.32237467417109,3.2789151306777],"type":"scatter","mode":"lines","name":"India","line":{"color":"rgba(255,127,14,1)","shape":"spline"},"visible":"legendonly","marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["1970","1971","1972","1973","1974","1975","1976","1977","1978","1979","1980","1981","1982","1983","1984","1985","1986","1987","1988","1989","1990","1991","1992","1993","1994","1995","1996","1997","1998","1999","2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[3.32363649400644,3.36278580013764,3.42669621426036,3.50586218531957,3.55884601408039,3.61352405439494,3.60563892088094,3.66309755320981,3.74900141957465,3.84449493279025,3.92721216964496,3.88211642412165,3.87832203367246,3.89390458356124,3.88872498483949,3.90258409581003,4.05365514080888,4.15334919244385,4.1971333215012,4.21449050143537,4.31860136432782,4.34156370096412,4.36630104865062,4.27274093924891,4.28640326652892,4.31522600005083,4.36326599848745,4.3390407210558,4.34865794502449,4.34237578071464,4.30292787851407,4.31139814464905,4.34772302762259,4.43879028148967,4.49498503494266,4.5057350722636,4.52506630300964,4.5777521288787,4.61042957173829,4.56913689892362,4.5563087752871,4.586576753292,4.54473171278463,4.55083929595667,4.55045358082745,4.48044139829916,4.49051629831426,4.50956102641998,4.53918498011249,4.52590977667121,4.50073310516372],"type":"scatter","mode":"lines","name":"Italia","line":{"color":"rgba(44,160,44,1)","shape":"spline"},"visible":"legendonly","marker":{"color":"rgba(44,160,44,1)","line":{"color":"rgba(44,160,44,1)"}},"error_y":{"color":"rgba(44,160,44,1)"},"error_x":{"color":"rgba(44,160,44,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["1970","1971","1972","1973","1974","1975","1976","1977","1978","1979","1980","1981","1982","1983","1984","1985","1986","1987","1988","1989","1990","1991","1992","1993","1994","1995","1996","1997","1998","1999","2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[3.3130488896609,3.35642319873448,3.47232369347009,3.59930933777031,3.63887090446566,3.66973009890025,3.71580472011895,3.80176628512755,3.94550265500381,3.95921148578646,3.97604507960141,4.0153672283741,3.98116634589961,4.0179182490476,4.04055961282916,4.06358448318832,4.23333280757521,4.31699698073013,4.39896386495393,4.39485034066256,4.4043455307941,4.46112331987331,4.49713685166775,4.55244875001488,4.59329153525111,4.63777925688804,4.58474865113106,4.5443374602432,4.50382835334541,4.55662274813137,4.58582201231965,4.52951332493957,4.50905930976053,4.54168394768152,4.57621141492756,4.5707489325576,4.54942004557132,4.54746983478974,4.59482660106338,4.61124708186083,4.64843492164456,4.68275858957119,4.68666733584274,4.60696627379116,4.58103224926438,4.53812701851095,4.58840413974294,4.58417864196835,4.59283629025369,4.60328580363602,4.60215769659496],"type":"scatter","mode":"lines","name":"Japón","line":{"color":"rgba(214,39,40,1)","shape":"spline"},"visible":"legendonly","marker":{"color":"rgba(214,39,40,1)","line":{"color":"rgba(214,39,40,1)"}},"error_y":{"color":"rgba(214,39,40,1)"},"error_x":{"color":"rgba(214,39,40,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["1970","1971","1972","1973","1974","1975","1976","1977","1978","1979","1980","1981","1982","1983","1984","1985","1986","1987","1988","1989","1990","1991","1992","1993","1994","1995","1996","1997","1998","1999","2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[3.64831522270051,3.66197811250454,3.75435834830382,3.88703908458241,3.96767931836918,3.95462978109075,3.99234315502982,4.03566910884787,4.13013592710606,4.19701271281551,4.23334753413846,4.15609138254556,4.11510477652704,4.10755654874615,4.09879657598554,4.11132833927931,4.27391885966812,4.36613454826019,4.41677933543486,4.44022191491285,4.53964236131376,4.5682890146571,4.61242083651741,4.61782920295276,4.6578385130953,4.72289090576977,4.72075396219637,4.67248898208448,4.67746518527768,4.71310734479388,4.68784984148609,4.68286157519679,4.72370715466015,4.81588234508656,4.8791896762843,4.90465981577166,4.95298466995546,5.02538162579735,5.05802283683634,5.0136740973502,5.02104577651202,5.06356417450127,5.02836387076899,5.05547440419492,5.07490288284975,5.00593727855514,5.01819432133198,5.03084778967787,5.06668847749732,5.05950725671523,5.06398450983949],"type":"scatter","mode":"lines","name":"Luxemburgo","line":{"color":"rgba(148,103,189,1)","shape":"spline"},"marker":{"color":"rgba(148,103,189,1)","line":{"color":"rgba(148,103,189,1)"}},"error_y":{"color":"rgba(148,103,189,1)"},"error_x":{"color":"rgba(148,103,189,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["1970","1971","1972","1973","1974","1975","1976","1977","1978","1979","1980","1981","1982","1983","1984","1985","1986","1987","1988","1989","1990","1991","1992","1993","1994","1995","1996","1997","1998","1999","2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[3.46643354471294,3.52873867980479,3.6132550784648,3.72799446325942,3.80895184409251,3.8654302541117,3.8990369754543,3.96221814434027,4.04841809003804,4.1071605402464,4.13962291130641,4.06146936314942,4.04425190394415,4.02858585264654,3.9990069463314,3.99677995745513,4.13937054178117,4.22296500571613,4.24906380030145,4.24049163012002,4.32819321202126,4.33710430791215,4.37847125990189,4.36403311210856,4.391751982653,4.46624662978891,4.46249996194805,4.42651999813645,4.44538323878288,4.45121974458544,4.41746191238765,4.42932061146952,4.46544293209798,4.55232997459285,4.60597692589664,4.62303266660523,4.65189170585862,4.71377137555024,4.76075772566012,4.72027532408454,4.70714448108426,4.73367341630767,4.69960366091374,4.71753788025673,4.72288204298339,4.65490039055797,4.66283196622568,4.68623388937341,4.72442849611109,4.71846049163102,4.71853537972103],"type":"scatter","mode":"lines","name":"Países Bajos","line":{"color":"rgba(140,86,75,1)","shape":"spline"},"visible":"legendonly","marker":{"color":"rgba(140,86,75,1)","line":{"color":"rgba(140,86,75,1)"}},"error_y":{"color":"rgba(140,86,75,1)"},"error_x":{"color":"rgba(140,86,75,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["1970","1971","1972","1973","1974","1975","1976","1977","1978","1979","1980","1981","1982","1983","1984","1985","1986","1987","1988","1989","1990","1991","1992","1993","1994","1995","1996","1997","1998","1999","2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[3.51933167987235,3.57244740495193,3.64479057902563,3.75508088055403,3.83324450390333,3.91404955266783,3.95071534374153,4.01140636481654,4.05928471329356,4.11549525762512,4.19789340192562,4.19068198220476,4.18255427507046,4.17398758831145,4.17578673407824,4.19737851192439,4.27607710635202,4.35229634068993,4.38394601995308,4.38526828854167,4.45090996089155,4.45631945791864,4.48464123225815,4.44659409411187,4.4671023709862,4.54252298719515,4.57196460831149,4.56382542866292,4.54143395378156,4.56075585031884,4.58128344108326,4.58594230480019,4.63432077972534,4.70014007310169,4.76045140543084,4.82484458233936,4.87010131598328,4.93013344408315,4.98652136345487,4.90296889468263,4.94296884039409,5.00260040865062,5.00656932723843,5.01247214099582,4.98685761199827,4.87131319098372,4.84794609378605,4.87792827977599,4.91522993276783,4.87981861552271,4.8279794220826],"type":"scatter","mode":"lines","name":"Noruega","line":{"color":"rgba(227,119,194,1)","shape":"spline"},"visible":"legendonly","marker":{"color":"rgba(227,119,194,1)","line":{"color":"rgba(227,119,194,1)"}},"error_y":{"color":"rgba(227,119,194,1)"},"error_x":{"color":"rgba(227,119,194,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["1970","1971","1972","1973","1974","1975","1976","1977","1978","1979","1980","1981","1982","1983","1984","1985","1986","1987","1988","1989","1990","1991","1992","1993","1994","1995","1996","1997","1998","1999","2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[3.31762371154217,3.44293712041852,3.51780914567418,3.63580497921774,3.66375466024567,3.6203203295847,3.64086299109658,3.69465680280796,3.77356597071308,3.82400462255219,3.87315592460283,3.8928671566137,3.88402891033995,3.8807171246918,3.82696582073297,3.88084589125918,3.97439902592845,4.09099536853775,4.1385917829794,4.12425588822587,4.13554675550168,4.0874290654545,4.07162942628594,4.11708379413634,4.18413224423325,4.24055973573916,4.27402929846408,4.24239697974145,4.1684516819084,4.18532180242166,4.13484947920251,4.14247884482741,4.22722287031405,4.34071587378943,4.40517955911709,4.44327966202602,4.42577205877924,4.51161577638735,4.49489119173588,4.45039326903584,4.52733048403763,4.58419126714204,4.60177088037838,4.63323255536092,4.64907087890967,4.58693287667944,4.60293306688958,4.6333966928289,4.63654877358553,4.6232427582423,4.62109100507945],"type":"scatter","mode":"lines","name":"Nueva Zelandia","line":{"color":"rgba(127,127,127,1)","shape":"spline"},"visible":"legendonly","marker":{"color":"rgba(127,127,127,1)","line":{"color":"rgba(127,127,127,1)"}},"error_y":{"color":"rgba(127,127,127,1)"},"error_x":{"color":"rgba(127,127,127,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["1970","1971","1972","1973","1974","1975","1976","1977","1978","1979","1980","1981","1982","1983","1984","1985","1986","1987","1988","1989","1990","1991","1992","1993","1994","1995","1996","1997","1998","1999","2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[2.97038507576977,3.02716105146942,3.11469979128829,3.24253870540324,3.3011208070789,3.32789763771743,3.33711646954498,3.35552258825946,3.39046051647377,3.44022005591893,3.52741936128091,3.51134519922275,3.48854360505941,3.43703530069642,3.40187378037142,3.43219825528429,3.58680647056899,3.68159089323353,3.75002191321187,3.78221319030811,3.89678065645854,3.95225882559722,4.03384845295753,3.97930504536054,3.99901389749757,4.07119549502254,4.08582879120055,4.06354002615291,4.08633157872266,4.0959040430195,4.06061299208931,4.06909846092459,4.10975805841786,4.1976382085257,4.25601982353422,4.27353658025702,4.29716600765888,4.35759365131276,4.39528348816201,4.36285548818902,4.35215724836012,4.36524293490072,4.31312638792533,4.33539855599875,4.34388695553852,4.28425848153441,4.30056073057169,4.3311710480086,4.37201024295849,4.36706742447931,4.35102046964717],"type":"scatter","mode":"lines","name":"Portugal","line":{"color":"rgba(188,189,34,1)","shape":"spline"},"visible":"legendonly","marker":{"color":"rgba(188,189,34,1)","line":{"color":"rgba(188,189,34,1)"}},"error_y":{"color":"rgba(188,189,34,1)"},"error_x":{"color":"rgba(188,189,34,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["1970","1971","1972","1973","1974","1975","1976","1977","1978","1979","1980","1981","1982","1983","1984","1985","1986","1987","1988","1989","1990","1991","1992","1993","1994","1995","1996","1997","1998","1999","2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[2.9665190120115,3.02995631992154,3.10187593693991,3.22671839764969,3.36953227861697,3.396183924166,3.4407423156321,3.45428616393677,3.50432208363955,3.59112401813465,3.69268295915334,3.7479231799718,3.7837345601695,3.82172549318756,3.85903722551521,3.84520763886703,3.8325044652095,3.87731543129821,3.95009412595445,4.01680523288552,4.07414899204347,4.16143928039926,4.20779356119007,4.26221437596646,4.33350835154667,4.39645062895715,4.4188583706783,4.42120847228234,4.33903980682352,4.33837848165282,4.3775307551321,4.33646013503701,4.34556365831669,4.3753005282649,4.44104339945309,4.47656012087196,4.52852018273224,4.59585913977609,4.6021410802305,4.59025324319024,4.67428194237415,4.73151163865358,4.74465660951503,4.75562659529128,4.76013987987204,4.74543878045591,4.75471653006204,4.78658431692183,4.8239893807915,4.81717325636138,4.77668485900315],"type":"scatter","mode":"lines","name":"Singapur","line":{"color":"rgba(23,190,207,1)","shape":"spline"},"marker":{"color":"rgba(23,190,207,1)","line":{"color":"rgba(23,190,207,1)"}},"error_y":{"color":"rgba(23,190,207,1)"},"error_x":{"color":"rgba(23,190,207,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["1970","1971","1972","1973","1974","1975","1976","1977","1978","1979","1980","1981","1982","1983","1984","1985","1986","1987","1988","1989","1990","1991","1992","1993","1994","1995","1996","1997","1998","1999","2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[3.67543160641024,3.71034686316544,3.78011045078217,3.86339516269819,3.90794393624717,4.00506491489132,4.03616064943909,4.05875311751229,4.10107720170973,4.17252015894624,4.23294106201345,4.19274665560182,4.13795424786298,4.10065409338238,4.11723883289184,4.13566867399212,4.25481430989056,4.33830822857113,4.38978064252197,4.40929423379775,4.48563161254436,4.50273844187786,4.51588685496296,4.38783963859286,4.41636777110045,4.48119837912094,4.51850036020946,4.48162157827864,4.48567213558791,4.49053545975077,4.47165707885338,4.43533236310694,4.47565949924746,4.57196255686667,4.63166363218514,4.63786045388683,4.66832628717584,4.72997432885651,4.74936950132984,4.67160747775578,4.72320145975831,4.78358745465859,4.76371110109855,4.78623267836577,4.77829859929112,4.71219061861301,4.71571224501906,4.73071372542807,4.73710561907861,4.71338007674159,4.71538247496625],"type":"scatter","mode":"lines","name":"Suecia","line":{"color":"rgba(31,119,180,1)","shape":"spline"},"marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["1970","1971","1972","1973","1974","1975","1976","1977","1978","1979","1980","1981","1982","1983","1984","1985","1986","1987","1988","1989","1990","1991","1992","1993","1994","1995","1996","1997","1998","1999","2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[2.69013435943272,2.6581114716002,2.74696168209276,2.83663425735588,2.96745400108158,3.05552189856055,3.10583589374299,3.15453711081126,3.19023203953835,3.31790050020595,3.19430537677771,3.19840242183135,3.14687389600873,3.11735604169903,3.09580531643866,3.13621358994459,3.17917141903471,3.23195213957442,3.24188624460275,3.30575097934229,3.44628087850665,3.43706967925773,3.45368060740418,3.50245273666403,3.35609038920056,3.46207839535539,3.48486152857899,3.49753581295582,3.65318717994144,3.61449336210116,3.63723728532843,3.49733346448106,3.56678574194433,3.67761644314144,3.78544601934311,3.87252314617208,3.90858456941095,3.99086619119674,4.03906385119812,3.9592071585946,4.0311164789704,4.05768722698679,4.07172126861178,4.10087973631407,4.08486179733455,4.04164053829287,4.03721142421854,4.02488233332762,3.97557867042101,3.96030874985629,3.93136474979134],"type":"scatter","mode":"lines","name":"Turquía","line":{"color":"rgba(255,127,14,1)","shape":"spline"},"visible":"legendonly","marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["1970","1971","1972","1973","1974","1975","1976","1977","1978","1979","1980","1981","1982","1983","1984","1985","1986","1987","1988","1989","1990","1991","1992","1993","1994","1995","1996","1997","1998","1999","2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[3.17223730503615,3.2315203765082,3.31822858303246,3.38464890954561,3.40093878128311,3.47332140138174,3.4653889033631,3.53499145888699,3.64351942387089,3.73486487931341,3.80437369293691,3.77721596149368,3.78969379548628,3.7720405762911,3.75533505270539,3.77906793444117,3.90920518409713,3.98152029932454,4.03009553070919,4.04834733248673,4.14716605673906,4.14889299420467,4.19636544735042,4.16611497903009,4.20154521237106,4.28242859155356,4.31878765196417,4.35298143929185,4.38514016419745,4.41986809939315,4.41906591787793,4.45085848877374,4.51242106195772,4.61384879108095,4.67801671230165,4.70664395528122,4.7346643591715,4.78772380256329,4.78684583915399,4.71607623420936,4.68751259966597,4.71505444740346,4.6894386620652,4.71245842987959,4.74497294381535,4.79239252171022,4.79929742874202,4.84765359960656,4.8992607508939,4.90729755648911,4.92331036508429],"type":"scatter","mode":"lines","name":"Irlanda","line":{"color":"rgba(44,160,44,1)","shape":"spline"},"marker":{"color":"rgba(44,160,44,1)","line":{"color":"rgba(44,160,44,1)"}},"error_y":{"color":"rgba(44,160,44,1)"},"error_x":{"color":"rgba(44,160,44,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<p><b>Debemos tener en cuenta que los valores están expresados en dólares, por lo tanto, en la variación del producto bruto interno respecto al 2019 no solo se incluye el impacto del Covid-19 sino que también puede haber una devaluación o apreciación de la moneda.</b></p>
+<h3 id="paises-latam"><strong>Paises LATAM</strong></h3>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-2b6441b4c279ca8b4f92" style="width:624px;height:384px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2b6441b4c279ca8b4f92">{"x":{"visdat":{"3e7cd06858":["function () ","plotlyVisDat"]},"cur_data":"3e7cd06858","attrs":{"3e7cd06858":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"name":"Paises","type":"bar","text":["-14.83 %","-11.52 %","-23.61 %","-10.24 %","-8.01 %","-12.82 %","-12.72 %"],"textposition":"auto","marker":{"color":["#3aafe1","#23c26a","#d6d24b","#d93b3b","#2825e8","#f07d90","#85e9f2"],"line":{"color":"rgb(8,48,107)","width":1.5}},"inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"title":"Variacion % Pib Per Capita en USD 2020","barmode":"group","xaxis":{"domain":[0,1],"automargin":true,"title":"Paises","type":"category","categoryorder":"array","categoryarray":["Argentina","Bolivia","Brasil","Chile","Paraguay","Perú","Uruguay"]},"yaxis":{"domain":[0,1],"automargin":true,"title":"%"},"annotations":[{"x":1,"y":-0.1,"text":"Datos del Banco Mundial a dolar oficial","showarrow":false,"xref":"paper","yref":"paper","xanchor":"right","yanchor":"auto","xshift":0,"yshift":0,"font":{"size":13.5,"color":"grey"}},{"x":1,"y":-0.1,"text":"Datos del Banco Mundial a dolar oficial","showarrow":false,"xref":"paper","yref":"paper","xanchor":"right","yanchor":"auto","xshift":0,"yshift":0,"font":{"size":13.5,"color":"grey"}}],"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displayModeBar":false},"data":[{"x":["Argentina","Bolivia","Brasil","Chile","Paraguay","Perú","Uruguay"],"y":[-14.83,-11.52,-23.61,-10.24,-8.01,-12.82,-12.72],"name":"Paises","type":"bar","text":["-14.83 %","-11.52 %","-23.61 %","-10.24 %","-8.01 %","-12.82 %","-12.72 %"],"textposition":["auto","auto","auto","auto","auto","auto","auto"],"marker":{"color":["#3aafe1","#23c26a","#d6d24b","#d93b3b","#2825e8","#f07d90","#85e9f2"],"line":{"color":"rgb(8,48,107)","width":1.5}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<h3 id="paises-euro-y-asia"><strong>Paises Euro y Asia</strong></h3>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-9e8ab50274b1ee2c9f9e" style="width:624px;height:384px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-9e8ab50274b1ee2c9f9e">{"x":{"visdat":{"3e7c4baf6cea":["function () ","plotlyVisDat"]},"cur_data":"3e7c4baf6cea","attrs":{"3e7c4baf6cea":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"name":"Paises","type":"bar","text":["-11.25 %","-9.52 %","-8.9 %","-8.48 %","-7.7 %","2.78 %","3.76 %"],"textposition":"auto","marker":{"color":["#3aafe1","#23c26a","#d6d24b","#d93b3b","#2825e8","#f07d90","#85e9f2"],"line":{"color":"rgb(8,48,107)","width":1.5}},"inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"title":"Variacion % Pib Per Capita en USD 2020","barmode":"group","xaxis":{"domain":[0,1],"automargin":true,"title":"Paises","type":"category","categoryorder":"array","categoryarray":["China","España","Grecia","India","Irlanda","Noruega","Singapur"]},"yaxis":{"domain":[0,1],"automargin":true,"title":"%"},"annotations":[{"x":1,"y":-0.1,"text":"Datos del Banco Mundial a dolar oficial","showarrow":false,"xref":"paper","yref":"paper","xanchor":"right","yanchor":"auto","xshift":0,"yshift":0,"font":{"size":13.5,"color":"grey"}},{"x":1,"y":-0.1,"text":"Datos del Banco Mundial a dolar oficial","showarrow":false,"xref":"paper","yref":"paper","xanchor":"right","yanchor":"auto","xshift":0,"yshift":0,"font":{"size":13.5,"color":"grey"}}],"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displayModeBar":false},"data":[{"x":["Noruega","India","Singapur","España","Grecia","China","Irlanda"],"y":[-11.25,-9.52,-8.9,-8.48,-7.7,2.78,3.76],"name":"Paises","type":"bar","text":["-11.25 %","-9.52 %","-8.9 %","-8.48 %","-7.7 %","2.78 %","3.76 %"],"textposition":["auto","auto","auto","auto","auto","auto","auto"],"marker":{"color":["#3aafe1","#23c26a","#d6d24b","#d93b3b","#2825e8","#f07d90","#85e9f2"],"line":{"color":"rgb(8,48,107)","width":1.5}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<p>Dashboard publicado en: <a href="https://rpubs.com/MGaloto/PBI_Logs">RPubs</a></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<!--radix_placeholder_article_footer-->
+<!--/radix_placeholder_article_footer-->
+</div>
+
+<div class="d-appendix">
+</div>
+
+
+<!--radix_placeholder_site_after_body-->
+<!--/radix_placeholder_site_after_body-->
+<!--radix_placeholder_appendices-->
+<div class="appendix-bottom"></div>
+<!--/radix_placeholder_appendices-->
+<!--radix_placeholder_navigation_after_body-->
+<!--/radix_placeholder_navigation_after_body-->
+
+</body>
+
+</html>

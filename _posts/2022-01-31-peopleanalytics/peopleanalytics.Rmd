@@ -1,0 +1,156 @@
+---
+title: "People Analytics"
+description: |
+  Trabajo hecho en R usando la librería flexdashboard y plotly sobre People Analytics. Se automatiza la lectura de los datos en un dashboard y se concluye en base a los resultados analizados en la última parte del dash.
+author: Maxi Galoto
+date: 2022-01-31
+slug: almost-done
+categories:
+  - R
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+<div>
+<img src="https://miro.medium.com/max/1024/1*Yb0EWWZd1mZUTkdJZOJS-Q.png" alt="react" width="1" height="1" />
+</div>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+```{css my-header-colors, echo = FALSE}
+.distill-site-nav {
+    color: white;
+    background-image: linear-gradient(200deg, black, blue);
+    border: solid 1px black;
+    border-radius: .3rem;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+
+```
+
+
+
+<b>People Analytics es un método de investigación basado en datos</b> cuyo objetivo es estudiar a las personas que forman parte de una empresa, de tal modo que con los datos extraídos y un análisis inteligente de ellos se pueden establecer conclusiones objetivas, válidas y fiables.
+
+Por ello, este método es uno de los más seguros para ayudar a los líderes y directivos a tomar decisiones importantes que puedan afectar a la plantilla y, por lo tanto, a la organización.
+
+Una de las grandes bazas de esta metodología de investigación es que no solo aporta información sobre el presente: analizando los datos se pueden hacer predicciones sobre el estado de la empresa en el futuro, permitiendo tomar medidas preventivas que ayudan a ahorrar tiempo y dinero.
+
+
+## TreeMap
+
+En la visualización y la computación de información, el mapeo de árboles es un método para mostrar datos jerárquicos utilizando figuras anidadas, generalmente rectángulos.
+
+```{r,  warning=FALSE}
+library(tidyverse)
+library(ggplot2)
+library(plotly)
+library(treemap)
+library(readxl)
+library(factoextra)
+
+df = read_excel('df_rrhh_2.xlsx')
+
+
+
+df_doble_eje = df %>% select(empleado, sector_res, total_faltas, hs_extra_50, hs_extra_100) %>% group_by(sector_res) %>% 
+  summarise(faltas = sum(total_faltas),
+            hs_extra_al_50 = sum(hs_extra_50),
+            hs_extra_al_100 = sum(hs_extra_100),
+            n = n())
+
+
+
+
+
+p <- plot_ly(
+  df_doble_eje,
+  labels = ~ sector_res,
+  parents = NA,
+  values = ~ n,
+  type = 'treemap',
+  hoverinfo = 'text',
+ 
+        textinfo = 'label+value',
+        insidetextfont = list(color = 'white'),
+  text = ~paste('Empleados:', n, '\nFaltas:' ,faltas, '\nHs Extra 50:', hs_extra_al_50, '\nHs Extra 100:', hs_extra_al_100) 
+  
+)
+
+p 
+
+
+```
+
+
+## Matriz de Distancia
+
+Una matriz de distancias es una matriz cuyos elementos representan las distancias entre los puntos, tomados por pares, de un conjunto. Se trata, por lo tanto, de una matriz simétrica de tamaño NxN conteniendo números reales no negativos como elementos.
+
+
+
+```{r, include=FALSE}
+
+
+df_matrix<-df_doble_eje %>% mutate(index= sector_res )
+
+rownames(df_matrix) = df_doble_eje$sector_res
+
+
+df_matrix$sector_res = NULL
+df_matrix$index = NULL
+df_matrix$n = NULL
+
+
+
+
+
+
+df_matrix = df %>% group_by(emple) %>% summarise(faltas = sum(total_faltas),
+                                                      hs_extra_al_100 = sum(hs_extra_100),
+                                                      hs_extra_al_50 = sum(hs_extra_50),
+                                                      enfermedad = sum(licencia_enfermedad))
+
+emplados = df_matrix$emple
+
+df_matrix$emple = NULL
+
+#normalizar las puntuaciones
+
+
+df_matrix <- scale(df_matrix)
+
+
+
+rownames(df_matrix) = emplados
+
+
+matrix_distancia = fviz_dist(get_dist(df_matrix, method = "euclidean") , gradient = list(low = "red", mid = "white", high = "blue")) + 
+  labs(title = 'Matriz de Distancia por empleado', subtitle = "Azul = Menor Relacion, Rojo = Mayor Relacion",
+    caption = "Matriz escalada de faltas y horas extra por emples")
+  theme_light()
+
+
+
+
+
+```
+
+
+```{r}
+
+ggplotly(matrix_distancia) %>%  config(displayModeBar = F)
+
+```
+
+
+Publicado en: [Pagina de Rpubs](https://rpubs.com/MGaloto/People_Analytics)
+
+
+Codigo en: [GitHub](https://github.com/MGaloto/People_Analytics)

@@ -1,0 +1,59 @@
+---
+title: "Descenso del Gradiente"
+description: |
+  Algoritmo de máximos y mínimos locales.
+author: Maxi Galoto
+date: 2022-01-21
+slug: almost-done
+categories:
+  - R
+output:
+  distill::distill_article:
+    self_contained: false
+    
+
+    
+---
+
+
+
+
+<div>
+<img src="https://miro.medium.com/max/1400/1*3nRmO1y9eCK23FQY1mWKhg.jpeg" alt="react" width="1" height="1" />
+</div>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{css my-header-colors, echo = FALSE}
+.distill-site-nav {
+    color: white;
+    background-image: linear-gradient(200deg, black, blue);
+    border: solid 1px black;
+    border-radius: .3rem;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+
+```
+
+_Se utiliza uno de los algoritmos iniciales de IA para buscar máximos y mínimos locales de una función polinómica de tercer grado. El código toma datos macroeconómicos de Argentina. El trabajo busca encontrar la presión tributaria que hace mínima y máxima la recaudación en términos reales para los últimos 60 años en Argentina._
+
+
+_Se puede observar un mínimo local y un máximo local. Comparto el código y el dashboard final más abajo._
+
+
+
+
+![Dolar](C:/Users/maxig/Desktop/Carpetas/Trabajos en R/Netlify/Blog/_posts/welcome/curvafinalrecortada.gif)
+
+
+
+
+
+Publicado en: [Pagina de Rpubs](https://rpubs.com/MGaloto/Argentina_Laffer)
+
+
+Codigo en: [Pagina de GitHub](https://github.com/MGaloto/descenso_gradiente)

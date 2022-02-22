@@ -1,0 +1,219 @@
+---
+title: "Political Marketing"
+description: |
+  Trabajo sobre Scrap Web de los principales y potenciales políticos Argentinos. Se busca analizar la popularidad en base a seguidores, seguidos e interacciones. Se utilizo la librería de R {highcharter}.
+author: Maxi Galoto
+date: 2022-02-10
+slug: almost-done
+categories:
+  - R
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+<div >
+<img src="https://www.antevenio.com/wp-content/uploads/2018/03/destacada-2.jpg" alt="react" width="1" height="1" />
+</div>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{css my-header-colors, echo = FALSE}
+.distill-site-nav {
+    color: white;
+    background-image: linear-gradient(200deg, black, blue);
+    border: solid 1px black;
+    border-radius: .3rem;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+
+```
+
+
+This work consists of automating the data extraction using Python of the followers of the main and potential politicians of Argentina on Instagram and Twitter in order to be able to analyze trends and draw conclusions regarding future elections. The data began to be collected from the swearing-in of the Chamber of Deputies in December 2021. The dashboard will be made in R using the flexdashboard library.
+
+
+# Include
+
+<ui>
+
+<li>
+Descriptive statistics
+</li>
+
+<li>
+Inferential statistics
+</li>
+
+<li>
+Display
+</li>
+
+<li>
+Automation
+</li>
+
+
+</ui>
+
+
+# Programmin languages
+
+<ui>
+
+<li>
+R (For the Dashboard)
+</li>
+
+<li>
+Python (ETL)
+</li>
+
+
+</ui>
+
+
+# R libraries
+
+<ui>
+
+<li>
+{plotly}
+</li>
+
+<li>
+{highcharter}
+</li>
+
+<li>
+{tidyverse}
+</li>
+
+
+</ui>
+
+
+
+# Python libraries
+
+<ui>
+
+<li>
+{selenium}
+</li>
+
+<li>
+{tweepy}
+</li>
+
+<li>
+{pandas}
+</li>
+
+<li>
+{datetime}
+</li>
+
+<li>
+{BeautifulSoup}
+</li>
+
+</ui>
+
+
+# Time Series in Levels
+
+
+```{r}
+
+
+library(dplyr)  
+library(plotly)
+library(readxl)
+library(ggplot2)
+library(viridisLite)
+library(dplyr)
+library(tidyverse)
+library(ggthemes)
+library(lubridate)
+library(highcharter)
+
+df_100_total = read_excel('total_seguidores_100.xlsx')
+
+# Politics Names vector 
+
+
+df_100_total = df_100_total[,1:17]
+
+names = c()
+x = 0
+n_col = ncol(df_100_total) - 1
+
+
+while (x < n_col) {
+  
+  names = c(names,paste0("Pol_", x + 1))
+  
+  x = x + 1
+}
+
+
+colnames(df_100_total) = c('date', names)
+
+
+```
+To pass a time series to levels we execute the following code in python for each of the variables:
+
+
+<b><span style = "color:green">'Variable'</span></b> + .div( + <b><span style = "color:green">'Variable'</span></b> + .iloc[0]).mul(100)
+
+
+
+
+This is the result:
+
+```{r}
+
+
+tt <- highchart() %>% 
+  hc_xAxis(categories = df_100_total$date) %>% 
+  hc_add_series(name = "1", data = df_100_total$Pol_1) %>% 
+  hc_add_series(name = "2", data = df_100_total$Pol_2) %>% 
+  hc_add_series(name = "3", data = df_100_total$Pol_3) %>% 
+  hc_add_series(name = "4", data = df_100_total$Pol_4) %>% 
+  hc_add_series(name = "5", data = df_100_total$Pol_5) %>% 
+  hc_add_series(name = "6", data = df_100_total$Pol_6) %>% 
+  hc_add_series(name = "7", data = df_100_total$Pol_7) %>% 
+  hc_add_series(name = "8", data = df_100_total$Pol_8) %>% 
+  hc_add_series(name = "9", data = df_100_total$Pol_9) %>% 
+  hc_add_series(name = "10", data = df_100_total$Pol_10) %>% 
+  hc_add_series(name = "11", data = df_100_total$Pol_11) %>% 
+  hc_add_series(name = "12", data = df_100_total$Pol_12) %>% 
+  hc_add_series(name = "13", data = df_100_total$Pol_13) %>% 
+  hc_add_series(name = "14", data = df_100_total$Pol_14) %>% 
+  hc_add_series(name = "15", data = df_100_total$Pol_15) %>% 
+  hc_add_series(name = "16", data = df_100_total$Pol_16) %>% 
+  hc_add_theme(hc_theme_google()) %>% 
+  hc_title(text = 'Social Media Politics Argentina',
+           style = list(fontSize = '25px', fontWeight = 'bold')) %>% 
+  hc_subtitle(text = paste('Followers Trend Instagram + Twitter al', today()),
+              style = list(fontSize = '16px', color = "#0f0f0f")) %>% 
+  hc_credits(enabled = TRUE, text = '@MGaloto',
+             style = list(fontSize = '16px', color = "#0f0f0f"))
+tt
+
+
+
+```
+
+
+# Link del Proyecto
+
+
+
+[Rpubs](https://rpubs.com/MGaloto/social_media_politics)
+

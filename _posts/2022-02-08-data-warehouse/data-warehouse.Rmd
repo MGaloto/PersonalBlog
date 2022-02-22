@@ -1,0 +1,69 @@
+---
+title: "Base de Datos"
+description: |
+  El siguiente trabajo consiste en la creación de una base de datos desde 0 de una empresa de medicina prepaga. Se utilizará Mysql, Python y por último R para publicar todos los pasos del armado del Warehouse.
+author: Maxi Galoto
+date: 2022-02-08
+slug: almost-done
+categories:
+  - R
+  - Python
+  - MySql
+output:
+  distill::distill_article:
+    self_contained: false
+
+---
+
+<div >
+<img src="https://www.powerdata.es/hs-fs/hubfs/images/Data%20Warehouse-1.jpg?width=700&name=Data%20Warehouse-1.jpg" alt="react" width="1" height="1" />
+</div>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+```{css my-header-colors, echo = FALSE}
+.distill-site-nav {
+    color: white;
+    background-image: linear-gradient(200deg, black, blue);
+    border: solid 1px black;
+    border-radius: .3rem;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+
+```
+
+
+
+# My Sql
+
+Creando una Base de datos en MySql desde Python.
+
+<a href="https://www.mysql.com/" rel="nofollow"><img src="https://www.redeszone.net/app/uploads-redeszone.net/2017/02/mysql.png" align="center" width="500in"></a>
+
+# Data Warehouse
+
+Proyecto base de datos de una empresa de medicina prepaga. Se utilizará My Sql para la creación de la base de datos, las tablas y todo lo necesario para comenzar a completarlas. Se realizan triggers, vistas, funciones, permisos y demás. 
+
+# Link del Proyecto
+
+<div>
+<img src="https://cdn.conceptosclaros.com/wp-content/uploads/2016/07/RStudio-Ball.png" width="300in"/>
+</div>
+
+
+[Rpubs](https://rpubs.com/MGaloto/mysql_database)
+
+# Link del Código
+
+
+<div>
+<img src="https://newsignature.com/wp-content/uploads/2020/08/github-logo-crop.png" width="400in" />
+</div>
+
+
+[GitHub](https://github.com/MGaloto/mysql_creando_database)

@@ -1,0 +1,45 @@
+---
+title: "Dolar Paralelo Argentina"
+description: |
+  Serie Temporal Dinamica del Dolar Paralelo desde 2002. Se utilizo la libreria de R {gganimate}.
+author: Maxi Galoto
+date: 2022-01-18
+slug: almost-done
+categories:
+  - R
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+<div>
+<img src="https://cdn.wallpapersafari.com/3/95/hwzSbK.jpg" alt="react" width="1" height="1" />
+</div>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+```{css my-header-colors, echo = FALSE}
+.distill-site-nav {
+    color: white;
+    background-image: linear-gradient(200deg, black, blue);
+    border: solid 1px black;
+    border-radius: .3rem;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+
+```
+
+
+_Se puede observar un fuerte incremento del tipo de cambio luego del Shock Externo del Covid-19. Si bien la tendencia del dólar es alcista hace tiempo, este gráfico nos muestra una relación casi exponencial respecto al tiempo._
+
+
+![Dolar](C:/Users/maxig/Desktop/Carpetas/Trabajos en R/Netlify/Blog/_posts/2022-01-18-my-second-post/dolar.gif)
+
+
+Publicado en: [Pagina de Rpubs](https://rpubs.com/MGaloto/dolarparalelo)
+

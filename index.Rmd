@@ -1,0 +1,22 @@
+---
+title: "Maxi Galoto"
+site: distill::distill_website
+listing: posts
+---
+
+
+
+```{css my-header-colors, echo = FALSE}
+.distill-site-nav {
+    color: white;
+    background-image: linear-gradient(200deg, black, blue);
+    border: solid 1px black;
+    border-radius: .3rem;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+
+```
+
+
