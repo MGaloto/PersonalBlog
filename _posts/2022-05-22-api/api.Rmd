@@ -1,0 +1,140 @@
+---
+title: "API"
+description: |
+  Desarrollo de Pipe Line utilizando Python y las librerias Selenium, BeautifoulSoup y Flask para Extraer, Transformar y Cargar datos desde la Web hacia una API en el Local Server.
+author: Maxi Galoto
+date: 2022-05-22
+slug: almost-done
+categories:
+  - Python
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+<div >
+<img src="https://canonress.org/wp-content/uploads/2020/11/Que-es-y-como-funciona-una-API.jpg" alt="react" width="1" height="1" />
+</div>
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = FALSE)
+
+```
+
+```{css my-header-colors, echo = FALSE}
+
+.distill-site-nav {
+    color: white;
+    background-image: url('https://i.gifer.com/WGkW.gif');
+    border: solid 1px black;
+    border-radius: .3rem;
+    font-size: 15px;
+    font-weight: 300;
+    background-size: cover;
+    background-position: 100%;
+}
+
+```
+
+
+
+
+### **API**
+
+Una API representa la capacidad de comunicación entre componentes de software. Se trata del conjunto de llamadas a ciertas bibliotecas que ofrecen acceso a ciertos servicios desde los procesos y representa un método para conseguir abstracción en la programación, generalmente (aunque no necesariamente) entre los niveles o capas inferiores y los superiores del software. Uno de los principales propósitos de una API consiste en proporcionar un conjunto de funciones de uso general, por ejemplo, para dibujar ventanas o iconos en la pantalla. De esta forma, los programadores se benefician de las ventajas de las API haciendo uso de su funcionalidad, evitándose el trabajo de programar todo desde el principio. Las API asimismo son abstractas: el software que proporciona una cierta API generalmente es llamado la implementación de esa API.
+
+<p align="center">
+<img src="https://images.squarespace-cdn.com/content/v1/5fab0f557dc65768bf97748a/1614800201272-S6TXOHB3WZ1HKPA1UB92/What-is-an-API.png" alt="react" width="700" height="340" />
+</p>
+
+
+### **Ficha Técnica**
+
+El siguiente trabajo consiste en el desarrollo de un Pipeline de Datos para automatizar la extraccion, transoformacion y carga de datos de las siguientes paginas:
+
+[Whed](https://whed.net/results_institutions.php)
+
+[Study Portals](https://studyportals.com/)
+
+
+
+Una vez finalizado se prueba una *API* en el servidor local para los contenidos obtenidos
+
+
+Librerías:
+
+<ui>
+<li>
+Selenium
+</li>
+<li>
+Beautifoulsoup
+</li>
+<li>
+Request
+</li>
+<li>
+Json
+</li>
+<li>
+Flask
+</li>
+</ui>
+
+<br>
+</br>
+
+Ejemplo de un contenido:
+
+```json
+{
+    "Area": [
+      "TECH"
+    ],
+    "Pais": "United States",
+    "Ciudad": "Newark",
+    "Calles": "104 Hullihen Hall",
+    "Institucion": "Private",
+    "Idioma": "English",
+    "Subtitulos": null,
+    "Calificacion": "M.Sc.",
+    "Nivel": "master",
+    "Part Time": "Unknown",
+    "Full Time": "1 years",
+    "Cursada": [
+      "On Campus"
+    ],
+    "Duracion": "Unknown",
+    "Titulo": "Mechanical Engineering",
+    "Universidad": "University of Delaware",
+    "Descripcion Programa": "The Department of Mechanical Engineering at the University of Delaware offers graduate programs leading to the degrees of Master of Science in Mechanical Engineering (MSME) and Doctor of Philosophy (PhD) in mechanical engineering. ",
+    "Descripcion Universidad": "Founded 1833.",
+    "Categoria": [
+      "Engineering",
+      "Mechanical Engineering"
+    ],
+    "Deadline": null,
+    "Requerimientos": null,
+    "Tutition Free": "26303 EUR / year",
+    "Valoracones": null,
+    "Link University": "http://www.udel.edu",
+    "logo": "//storage-prtl-co.imgix.net/endor/organisations/20014/logos/1607075563_bath-logo.png",
+    "Multimedia": null
+  }
+
+```
+CODIGO:
+
+[Github](https://github.com/MGaloto/api_university)
+
+API:
+
+
+
+<p align="center">
+  <img 
+    width="800"
+    height="600"
+    src="api.png">
+</p>

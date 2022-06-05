@@ -117,7 +117,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["curvafinalrecortada.gif","laffer.jpeg","welcome_files/anchor-4.2.2/anchor.min.js","welcome_files/bowser-1.9.3/bowser.min.js","welcome_files/distill-2.2.21/template.v2.js","welcome_files/header-attrs-2.11/header-attrs.js","welcome_files/jquery-3.6.0/jquery-3.6.0.js","welcome_files/jquery-3.6.0/jquery-3.6.0.min.js","welcome_files/jquery-3.6.0/jquery-3.6.0.min.map","welcome_files/popper-2.6.0/popper.min.js","welcome_files/tippy-6.2.7/tippy-bundle.umd.min.js","welcome_files/tippy-6.2.7/tippy-light-border.css","welcome_files/tippy-6.2.7/tippy.css","welcome_files/tippy-6.2.7/tippy.umd.min.js","welcome_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["curvafinalrecortada.gif","form.png","gst.png","laffer.jpeg","polinomio.png","scatterline.png","welcome_files/anchor-4.2.2/anchor.min.js","welcome_files/bowser-1.9.3/bowser.min.js","welcome_files/distill-2.2.21/template.v2.js","welcome_files/header-attrs-2.11/header-attrs.js","welcome_files/jquery-3.6.0/jquery-3.6.0.js","welcome_files/jquery-3.6.0/jquery-3.6.0.min.js","welcome_files/jquery-3.6.0/jquery-3.6.0.min.map","welcome_files/popper-2.6.0/popper.min.js","welcome_files/tippy-6.2.7/tippy-bundle.umd.min.js","welcome_files/tippy-6.2.7/tippy-light-border.css","welcome_files/tippy-6.2.7/tippy.css","welcome_files/tippy-6.2.7/tippy.umd.min.js","welcome_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1493,22 +1493,235 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <style type="text/css">
 .distill-site-nav {
     color: white;
-    background-image: linear-gradient(200deg, black, blue);
+    background-image: url('https://i.gifer.com/WGkW.gif');
     border: solid 1px black;
     border-radius: .3rem;
     font-size: 15px;
     font-weight: 300;
+    background-size: cover;
+    background-position: 100%;
+
 }
+
 
 
 </style>
 </div>
-<p><em>Se utiliza uno de los algoritmos iniciales de IA para buscar máximos y mínimos locales de una función polinómica de tercer grado. El código toma datos macroeconómicos de Argentina. El trabajo busca encontrar la presión tributaria que hace mínima y máxima la recaudación en términos reales para los últimos 60 años en Argentina.</em></p>
+<h2 id="introducción"><em>Introducción:</em></h2>
+<p>La curva de Laffer representa la relación existente entre los ingresos fiscales y las tasas impositivas, mostrando cómo varía la recaudación fiscal al modificar las tasas.</p>
+<p>Esta curva, difundida por el economista Arthur Laffer, plantea que subir la tasa del impuesto no necesariamente aumenta la recaudación, ya que la base tributaria tiende a disminuir. En el punto en el que la tasa impositiva es cero, los ingresos fiscales serán nulos, ya que no se aplica ningún impuesto. Mientras que, por el contrario, si la tasa impositiva es del 100%, los ingresos fiscales también serán nulos, ya que nadie aceptaría producir un bien cuyos ingresos generados fueran destinados en su totalidad, a pagar impuestos.</p>
+<p><em>Se utiliza uno de los algoritmos de IA para buscar máximos y mínimos locales de una función polinómica de tercer grado. El código toma datos macroeconómicos de Argentina desde 1961. La estimación busca encontrar la presión tributaria que hace máxima la recaudación en términos reales para los últimos 60 años en Argentina.</em></p>
+<h2 id="hipótesis"><em>Hipótesis:</em></h2>
+<p>A lo largo de los años de análisis existe un punto donde la presión tributaria hace que la recaudación en términos reales alcance un máximo. Es decir, a partir de ese punto, a mayor presión tributaria menor sera la recaudación en términos reales.</p>
+<h2 id="metodología"><em>Metodología:</em></h2>
+<p>Para poder avanzar con la investigación se recolectan datos macroeconómicos anuales de ingresos corrientes, inflación y gasto público total sobre el PBI nominal. La variable ingresos corrientes fue transformada a valores reales tomando como año base el 2015. A partir de allí, se estimo un polinomio que mejor se ajusta a la relación entre las dos variables analizadas: recaudación en términos reales y presión tributaria.</p>
+<p>Cabe aclarar que se utilizo como presión tributaria el gasto público total sobre el PBI, ya que que el mismo, en ciertos periodos, es independiente a la recaudación. Esto debido a que, el Estado, puede tomar deuda y/o financiarse vía Banco Central y al fin y al cabo, ese gasto público deberá ser financiado con mayores impuestos ya sean directos, indirectos o inflacionarios.</p>
+<p>En otras palabras, el proceso llevao a cabo es el siguiente:</p>
+<ul>
+<li><p>Recolección de datos Macroeconómicos.</p></li>
+<li><p>Transformación de variables a valores reales: Año Base: 2015.</p></li>
+<li><p>Se utilizara para la variable recaudación los ingresos corrientes ya que son los que mas están relacionados a la actividad económica, la presión tributaria sera el gasto total incluido nación, municipios y provincias sobre el PBI Nominal.</p></li>
+<li><p>Visualización y Análisis del comportamiento de las variables.</p></li>
+<li><p>Se estimara un polinomio que mejor ajuste a los datos.</p></li>
+<li><p>Elección y aplicación del algoritmo del método del gradiente para encontrar el máximo local donde la presión tributaria maximiza la recaudación en términos reales durante los últimos 60 años en Argentina.</p></li>
+</ul>
+<p><strong><em>Método del Gradiente:</em></strong></p>
+<p>Dada la naturaleza de la hipótesis que busca encontrar el punto máximo que existió en materia de recaudación en función de la presión impositiva exigida, se considera que el método de optimización que más se ajusta a la resolución de la problemática planteada, es el método de gradiente.</p>
+<p>El método del gradiente es un algoritmo de optimización iterativo para encontrar el mínimo o el máximo local de una función.</p>
+<p>Para encontrar el mínimo local de una función usando el descenso de gradiente, debemos dar pasos proporcionales al negativo del gradiente de la función en el punto actual.</p>
+<p>Si damos pasos proporcionales al positivo del gradiente, nos acercaremos a un máximo local de la función, y el procedimiento se llama ascenso en gradiente.</p>
+<p>El descenso de gradiente fue propuesto originalmente por Augustin Louis Cauchy en 1847. También se conoce como descenso más empinado.</p>
+<p>Para entender la búsqueda local, encontraremos muy útil considerar la forma o el paisaje del espacio de estados. El paisaje tiene «posición» y «elevación».</p>
+<p>Si la elevación corresponde al costo, entonces el objetivo es encontrar el valle más bajo (un mínimo local); si la elevación corresponde a una función objetivo, entonces el objetivo es encontrar el pico más alto (un máximo local).</p>
+<p>Los algoritmos de búsqueda local exploran este paisaje. Un algoritmo de búsqueda local completo siempre encuentra un objetivo si es que existe.</p>
+<p>Se puede entrenar el algoritmo asignándole un valor inicial, una tasa de aprendizaje y un objetivo en donde debería dejar de iterar cuando encuentre el mínimo o máximo local. Dados los parámetros establecidos, cuando comienza la iteracion se llegara a un mínimo local si la derivada parcial de la variable dependiente respecto a la independiente es igual a cero y la segunda derivada parcial es positiva (mayor a cero). Se da lo contrario cuando alcanza un máximo local, es decir, la primera derivada tiene que ser igual a cero y la segunda derivada menor a 0.</p>
+<p>En resumen:</p>
+<ul>
+<li>El descenso de gradiente minimiza las funciones diferenciables que dan como resultado un número y tienen cualquier cantidad de variables de entrada.</li>
+</ul>
+<p>En otras palabras, la fórmula indica dar un pequeño paso en la dirección del gradiente negativo.</p>
+<ul>
+<li><p>El descenso de gradiente no puede determinar si un mínimo encontrado es local o global.</p></li>
+<li><p>El coeficiente α controla si el algoritmo converge a un mínimo rápida o lentamente, o si diverge.</p></li>
+<li><p>Muchos problemas del mundo real se reducen al minimizar una función.</p></li>
+</ul>
+<h2 id="desarrollo"><em>Desarrollo:</em></h2>
+<p>Para el trabajo se utilizan los datos de Ingresos Corrientes de la administración publica nacional y el cociente entre gasto publico total (Nación, Provincias y Municipios) y producto bruto interno. La fuente es Orlando Ferreres - Dos Siglos de Economía Argentina, Fundación Norte y Sur.</p>
+<p><em>Descripción de las variables del conjunto de datos:</em></p>
+<table>
+<thead>
+<tr class="header">
+<th><span class="math display">\[ \textbf{Variable}\]</span></th>
+<th><span class="math display">\[ \textbf{Descripcion}\]</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math display">\[ año\]</span></td>
+<td><span class="math display">\[Año\]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[ inflacion\]</span></td>
+<td><span class="math display">\[Tasa  \: de\: Inflacion\: Anual  \]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[ recaudacion\]</span></td>
+<td><span class="math display">\[Ingresos \: Reales\]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[ recaudacion\: en\: mill\]</span></td>
+<td><span class="math display">\[Ingresos \: Reales \: en \: Millones\]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[ gastopbi\]</span></td>
+<td><span class="math display">\[Gasto  \: Publico \: Total \: / \: PBI\:Nominal\]</span></td>
+</tr>
+</tbody>
+</table>
+<p><em>Administración Nacional:</em></p>
+<table>
+<thead>
+<tr class="header">
+<th><span class="math display">\[ \textbf{Administracion Nacional. Agentes Recaudadores}\]</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math display">\[   - Tesoro\: Nacional\]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[ - Rec\: Afect \]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[ - Organismos \:Desc\]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[ - Inst \:de \:Seg \:Social\]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[   - Ex\: Cajas \:Provinciales \]</span></td>
+</tr>
+</tbody>
+</table>
+<p><em>Componentes de Ingresos Corrientes:</em></p>
+<table>
+<thead>
+<tr class="header">
+<th><span class="math display">\[ \textbf{Ingresos Corrientes}\]</span></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math display">\[   - Ingresos \:Tributarios\]</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[ - Aportes \:y \:Contrib.\: a \:la \:Seg.\: Social \]</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[ - Ingresos \: no \:Tributarios \]</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[ - Vtas\: de\: Bs\: y\: Serv\: de\: la\: Adm \:Pub \:Nac \]</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[   - Ingresos \:de\:Operacion \]</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[   - Rentas \:de\: la\: Propiedad\: Netas \]</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[   - Transferencias\: Corrientes \]</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[   - Otros\: Ingresos \]</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[   - Superavit\: Operativo\:  Emp \: Pub \]</span></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><em>Coeficientes del Polinomio estimado:</em></p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-1"></span>
+<img src="polinomio.png" alt="Relacion" width="25%" />
+<p class="caption">
+Figure 1: Relacion
+</p>
+</div>
+</div>
+<table>
+<thead>
+<tr class="header">
+<th><span class="math display">\[ \textbf{Coeficiente}\]</span></th>
+<th><span class="math display">\[ \textbf{Valor}\]</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math display">\[Beta\:0\]</span></td>
+<td><span class="math display">\[+4134\]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[ Beta\:1\]</span></td>
+<td><span class="math display">\[-500.2 \]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[ Beta\:2\]</span></td>
+<td><span class="math display">\[+20.48\]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[ Beta\:3\]</span></td>
+<td><span class="math display">\[-0.2459\]</span></td>
+</tr>
+</tbody>
+</table>
+<h2 id="algoritmo-del-gradiente"><em>Algoritmo del Gradiente:</em></h2>
+<p>En el software R mediante la librería Flexdashboard se desarrollo una puesta en escena del algoritmo calculado en Python. En el siguiente link podemos acceder a la visualización del polinomio estimado, los coeficientes, el algoritmo que interactua sobre el gráfico, el código de Python y los datos utilizados para el análisis.</p>
+<p><a href="https://rpubs.com/MGaloto/Argentina_Laffer">https://rpubs.com/Algoritmo_Gradiente</a></p>
+<h2 id="relación-entre-variables"><em>Relación entre variables:</em></h2>
+<p>En el gráfico <em>Relación</em> podemos observar series temporales de la presión tributaria y la recaudación en términos reales.</p>
+<p>Cambien se señalaron las ultimas crisis de mayor magnitud para los años analizados. Se puede visualizar que la recaudación en términos reales en aquellas crisis ha sido muy baja producto de la caída de la actividad económica.</p>
+<p>En el ultimo año hay una gran diferencia entre las series temporales ya que la actividad económica ha sufrido una gran contracción respecto al 2019 producto del shock externo del Covid-19 y a la vez, el gasto publico se ha incrementado, principalmente financiado con emisión monetaria.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-2"></span>
+<img src="gst.png" alt="Relacion" width="85%" />
+<p class="caption">
+Figure 2: Relacion
+</p>
+</div>
+</div>
+<p>En el gráfico Estimado podemos ver la relación entre las variables de análisis. Los colores de cada punto hacen referencia al año del dato, claramente se ven menores valores de recaudación en términos reales y presión positiva en los primeros años.</p>
+<p>Le agregamos la curva estimada en Python que mejor ajusta a los datos, esta curva la estaremos utilizando para el método del gradiente y así encontrar el mínimo y el máximo local.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-3"></span>
+<img src="scatterline.png" alt="Estimado" width="85%" />
+<p class="caption">
+Figure 3: Estimado
+</p>
+</div>
+</div>
+<h2 id="conclusiones"><em>Conclusiones:</em></h2>
+<p>Tras analizar 60 años de historia económica nacional visto y considerando una tendencia creciente y sostenida en el tiempo sobre la presión tributaria y también tomando en cuenta la presión tributaria de otros países de la región podemos concluir al menos 4 cosas:</p>
+<ul>
+<li><p>La recaudación máxima en términos reales se alcanza cuando la presión tributaria es de aproximadamente 38% del PBI. Mientras que el mínimo de recaudación se encuentra cuando la presión tributaria es del 18%.</p></li>
+<li><p>De sostenerse esta tendencia la recaudación será cada vez menor ya que, el sector privado buscará eludir impuestos pudiendo llegar a resultados como ser la disminución en el nivel de producción.</p></li>
+<li><p>Dada la evidencia empírica podríamos concluir que los sectores que componen la economía (privados y públicos) necesitan llegar a un acuerdo sobre en qué partidas se puede trabajar para darle más oxígeno a la economía y que una reducción de la presión impositiva pueda a la vez incrementar los ingresos del sector público.</p></li>
+<li><p>Según la teoría de Laffer y su curva que relaciona las variables de análisis no se observa en nuestro trabajo un perfecto comportamiento de la misma ya que podemos ver un mínimo local, por lo tanto, concluimos que el comportamiento de las variables según Laffer se puede observar con una limitada similitud en nuestro trabajo de análisis para el caso Argentino que va desde 1961 a 2020.</p></li>
+</ul>
 <p><em>Se puede observar un mínimo local y un máximo local. Comparto el código y el dashboard final más abajo.</em></p>
 <figure>
 <img src="curvafinalrecortada.gif" alt="Dolar" /><figcaption aria-hidden="true">Dolar</figcaption>
 </figure>
-<p>Publicado en: <a href="https://rpubs.com/MGaloto/Argentina_Laffer">Pagina de Rpubs</a></p>
 <p>Codigo en: <a href="https://github.com/MGaloto/descenso_gradiente">Pagina de GitHub</a></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
@@ -1518,6 +1731,15 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <div class="d-appendix">
 </div>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 
 <!--radix_placeholder_site_after_body-->
 <!--/radix_placeholder_site_after_body-->

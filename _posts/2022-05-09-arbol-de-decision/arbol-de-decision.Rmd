@@ -1,0 +1,46 @@
+---
+title: "Arbol de Decision"
+description: |
+  Limpieza y estimacion de los parametros del modelo de Arbol de Decision para el Data Set Titanic.
+author: Maxi Galoto
+date: 2022-05-09
+slug: almost-done
+categories:
+  - R
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+<div >
+<img src="https://i.ytimg.com/vi/ZVR2Way4nwQ/maxresdefault.jpg" alt="react" width="1" height="1" />
+</div>
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = FALSE)
+
+```
+
+```{css my-header-colors, echo = FALSE}
+
+.distill-site-nav {
+    color: white;
+    background-image: url('https://i.gifer.com/WGkW.gif');
+    border: solid 1px black;
+    border-radius: .3rem;
+    font-size: 15px;
+    font-weight: 300;
+    background-size: cover;
+    background-position: 100%;
+}
+
+```
+
+
+Dashboard publicado en: [RPubs](https://rpubs.com/MGaloto/class_tree)
+
+Codigo publicado en: [Github](https://github.com/MGaloto/decision_tree)
+
+
+

@@ -1,0 +1,83 @@
+---
+title: "Regresion Lineal"
+description: |
+  Analisis Exploratorio y visualizaciones utilizando datos de una inmobiliaria para estimar los parametros que nos ayuden a predecir el valor por metro cuadrado en dolares por propiedad.
+author: Maxi Galoto
+date: 2022-05-22
+slug: almost-done
+categories:
+  - Python
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+<div >
+<img src="https://www.salesforce.com/content/dam/blogs/br/diferenca-machine-e-deep-learning-min.jpg" alt="react" width="1" height="1" />
+</div>
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = FALSE)
+
+```
+
+```{css my-header-colors, echo = FALSE}
+
+.distill-site-nav {
+    color: white;
+    background-image: url('https://i.gifer.com/WGkW.gif');
+    border: solid 1px black;
+    border-radius: .3rem;
+    font-size: 15px;
+    font-weight: 300;
+    background-size: cover;
+    background-position: 100%;
+}
+
+```
+
+
+
+### **Regresión Lineal**
+
+
+El Data Set de la inmobiliaria Properatti contiene observaciones de distintos tipos de propiedades en toda la Argentina, hay varios datos faltantes como también observaciones atípicas.
+
+El trabajo se realizo en Python utilizando Jupyter Notebook y las siguientes librerías:
+
+<ui>
+
+<li>
+{Matplotlib}
+</li>
+
+<li>
+{Seaborn}
+</li>
+
+<li>
+{Scikit-Learn}
+</li>
+
+
+</ui>
+
+
+### **3D Plot**
+
+
+
+<div>
+<img src="plot3d.gif" width="600" height="500"/>
+</div>
+
+
+### **Distribucion de Precios**
+
+<div>
+<img src="distr.png" width="600" height="500"/>
+</div>
+
+Codigo publicado en: [Github](https://github.com/MGaloto/cleandata)
+

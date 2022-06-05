@@ -1495,30 +1495,120 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <style type="text/css">
 .distill-site-nav {
     color: white;
-    background-image: linear-gradient(200deg, black, blue);
+    background-image: url('https://i.gifer.com/WGkW.gif');
     border: solid 1px black;
     border-radius: .3rem;
     font-size: 15px;
     font-weight: 300;
+    background-size: cover;
+    background-position: 100%;
+
 }
+
+.posts-list .post-preview .thumbnail {
+    box-sizing: border-box;
+    margin-bottom: 24px;
+    position: relative;
+    max-width: 250px;
+    border: solid 1px black;
+    border-radius: .3rem;
+}
+
 
 
 </style>
 </div>
 <h1 id="my-sql">My Sql</h1>
-<p>Creando una Base de datos en MySql desde Python.</p>
-<p><a href="https://www.mysql.com/" rel="nofollow"><img src="https://www.redeszone.net/app/uploads-redeszone.net/2017/02/mysql.png" align="center" width="500in"></a></p>
-<h1 id="data-warehouse">Data Warehouse</h1>
-<p>Proyecto base de datos de una empresa de medicina prepaga. Se utilizará My Sql para la creación de la base de datos, las tablas y todo lo necesario para comenzar a completarlas. Se realizan triggers, vistas, funciones, permisos y demás.</p>
+<h2 id="creando-una-base-de-datos-en-mysql-desde-python.">Creando una Base de datos en MySql desde Python.</h2>
+<p>Base de datos de una <em>Empresa de Medicina Prepaga</em> donde se va a hacer foco en un modelo de esquema <a href="https://es.wikipedia.org/wiki/Esquema_en_copo_de_nieve">copo de nieve</a>.</p>
+<p>La empresa de medicina prepaga tiene varios centros donde cada uno de ellos tiene una especialidad particular. La estructura de la base de datos nos ayuda a almacenar los datos de forma eficiente y de ellos podemos obtener la siguiente información:</p>
+<ul>
+<li>
+Cobros de afiliados y pagos a proveedores por centro médico.
+</li>
+<li>
+Diagnósticos y consultas de los afiliados por centro y medico atendido.
+</li>
+<li>
+Fechas de las consultas y los turnos.
+</li>
+<li>
+Insumos por proveedor, por tipo y por centro médico.
+</li>
+<li>
+Datos de nuestros médicos y afiliados.
+</li>
+<li>
+Distintos medios por los cuales se llevan a cabo las operaciones de cobros y pagos.
+</li>
+<li>
+Resultados netos de caja por periodo y por centro médico.
+</li>
+</ul>
+<p>El objetivo es introducirnos en el mundo de las bases de datos relacionales, entender las distintas funcionalidades que nos proveen para el armado de una base de datos y otras sentencias que nos ayuden al armado final de la base de datos de una empresa de medicina prepaga.</p>
+<h1 id="items-del-trabajo">Items del Trabajo</h1>
+<ui>
+<li>
+1 - Introduccion
+</li>
+<li>
+2 - My Sql
+</li>
+<li>
+3 - Descripcion del proyecto
+</li>
+<li>
+4 - Descripción de las tablas
+</li>
+<li>
+5 - Diagrama Entidad de Relacion
+</li>
+<li>
+6 - Inserción de datos
+</li>
+<li>
+7 - Incersion de Datos desde Python
+</li>
+<li>
+8 - Inner Join
+</li>
+<li>
+9 - Vistas
+</li>
+<li>
+10 - Funciones
+</li>
+<li>
+11 - Stored Procedures
+</li>
+<li>
+12 - Triggers
+</li>
+<li>
+13 - Permisos
+</li>
+<li>
+14 - Backup
+</li>
+<li>
+15 - Business Intelligence
+</li>
+<li>
+16 - Codigo My Sql desde Python
+</li>
+<p></ui></p>
+<h1 id="contenido-del-repositorio">Contenido del Repositorio</h1>
+<ui>
+<li>
+Codigo .sql
+</li>
+<li>
+Codigo Python
+</li>
+<p><ui></p>
 <h1 id="link-del-proyecto">Link del Proyecto</h1>
-<div>
-<p><img src="https://cdn.conceptosclaros.com/wp-content/uploads/2016/07/RStudio-Ball.png" width="300in"/></p>
-</div>
 <p><a href="https://rpubs.com/MGaloto/mysql_database">Rpubs</a></p>
 <h1 id="link-del-código">Link del Código</h1>
-<div>
-<p><img src="https://newsignature.com/wp-content/uploads/2020/08/github-logo-crop.png" width="400in" /></p>
-</div>
 <p><a href="https://github.com/MGaloto/mysql_creando_database">GitHub</a></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->

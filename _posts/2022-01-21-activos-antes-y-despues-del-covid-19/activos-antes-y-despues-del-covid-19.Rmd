@@ -25,11 +25,21 @@ knitr::opts_chunk$set(echo = FALSE)
 ```{css my-header-colors, echo = FALSE}
 .distill-site-nav {
     color: white;
-    background-image: linear-gradient(200deg, black, blue);
+    background-image: url('https://i.gifer.com/WGkW.gif');
     border: solid 1px black;
     border-radius: .3rem;
     font-size: 15px;
     font-weight: 300;
+    background-size: cover;
+    background-position: 100%;
+
+}
+
+.posts-list .post-preview .thumbnail {
+    box-sizing: border-box;
+    margin-bottom: 24px;
+    position: relative;
+    max-width: 0px;
 }
 
 
@@ -66,7 +76,7 @@ Usd/Eur
 
 
 
-![Activos](C:/Users/maxig/Desktop/Carpetas/Trabajos en R/Netlify/Blog/_posts/2022-01-21-activos-antes-y-despues-del-covid-19/activos.gif)
+![Activos](C:/Users/maxig/Desktop/Carpetas/Trabajos en R/Netlify/Blog Personal/_posts/2022-01-21-activos-antes-y-despues-del-covid-19/activos.gif)
 
 
 Publicado en: [Pagina de Rpubs](https://rpubs.com/MGaloto/Dinamica_Activos)

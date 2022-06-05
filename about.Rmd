@@ -28,11 +28,14 @@ knitr::opts_chunk$set(echo = FALSE)
 ```{css my-header-colors, echo = FALSE}
 .distill-site-nav {
     color: white;
-    background-image: linear-gradient(200deg, black, blue);
+    background-image: url('https://i.gifer.com/WGkW.gif');
     border: solid 1px black;
     border-radius: .3rem;
     font-size: 15px;
     font-weight: 300;
+    background-size: cover;
+    background-position: 100%;
+
 }
 
 .myimg {
@@ -45,6 +48,9 @@ knitr::opts_chunk$set(echo = FALSE)
 
 
 ```
+
+
+
 
 
 <div class="container">      
@@ -75,6 +81,8 @@ knitr::include_graphics("maxi2.jpeg")
 
 
 
+
+
 <link itemprop="url" href="">
 
 <ul class="network-icon" aria-hidden="true">
@@ -91,7 +99,7 @@ knitr::include_graphics("maxi2.jpeg")
 
 <li>
 <a  href="https://www.linkedin.com/in/maximilianogaloto/">
-<i class="fa fa-linkedin big-icon"></i> <span style = "color:blue">Linkedin</span>
+<i class="fa fa-linkedin big-icon"></i> <span style = "color:black">Linkedin</span>
 </a>
 </li>
 
@@ -108,14 +116,14 @@ knitr::include_graphics("maxi2.jpeg")
 
 <li>
 <a  href="https://www.instagram.com/ryeconomia/">
-<i class="fab fa-instagram big-icon"></i> <span style = "color:#F133D7">Instagram Data Analytics</span>
+<i class="fab fa-instagram big-icon"></i> <span style = "color:black">Instagram Data Analytics</span>
 </a>
 </li>
 
 
 <li>
 <a  href="https://www.instagram.com/maxigaloto/">
-<i class="fab fa-instagram big-icon"></i> <span style = "color:#F133D7">Instagram Personal</span>
+<i class="fab fa-instagram big-icon"></i> <span style = "color:black">Instagram Personal</span>
 </a>
 </li>
 
@@ -123,7 +131,7 @@ knitr::include_graphics("maxi2.jpeg")
 
 <li>
 <a  href="https://github.com/MGaloto">
-<i class="fa fa-github-square big-icon"></i> <span style = "color:#6D616C">GitHub</span>
+<i class="fa fa-github-square big-icon"></i> <span style = "color:black">GitHub</span>
 </a>
 </li>
 
@@ -131,7 +139,7 @@ knitr::include_graphics("maxi2.jpeg")
 
 <li>
 <a  href="https://rpubs.com/MGaloto">
-<i class="fa fa-line-chart big-icon"></i> <span style = "color:#ECB218">RPubs</span>
+<i class="fa fa-line-chart big-icon"></i> <span style = "color:black">RPubs</span>
 </a>
 </li>
 
@@ -140,14 +148,14 @@ knitr::include_graphics("maxi2.jpeg")
 
 <li>
 <a  href="https://mgaloto.pythonanywhere.com">
-<i class="fa fa-address-card"></i> <span style = "color:#61A0A2">Pythonanywhere</span>
+<i class="fa fa-address-card"></i> <span style = "color:black">Pythonanywhere</span>
 </a>
 </li>
 
 
 <li>
 <a  href="https://www.alphacast.io/p/MaxiGaloto">
-<i class="fa fa-address-card"></i> <span style = "color:#C871CC">Alphacast</span>
+<i class="fa fa-address-card"></i> <span style = "color:black">Alphacast</span>
 </a>
 </li>
 
@@ -174,25 +182,25 @@ Utilizo múltiples herramientas tecnológicas para llevar a cabo mis tareas
 
 
 
-<h3>Tecnologías, etiquetas y Lenguajes</h3>
+<h3>Tecnologías y Lenguajes</h3>
+
+<li><b><span style = "color:#5BC75C">Power BI</span></b></li>
+
+<li><b><span style = "color:#5B7CC7">Python</span></b></li>
 
 
-<li><span style = "color:#5BC75C">Power BI</span></li>
+<li><b><span style = "color:#40C6D3">R</span></b></li>
 
-<li><span style = "color:#5B7CC7">Python</span></li>
-
-
-<li><span style = "color:#40C6D3">R</span></li>
-
-<li><b><span style = "color:#DDE320">JavaSript</span></b></li>
+<li><b><b><span style = "color:#DDE320">JavaSript</span></b></li>
 
 
-<li><span style = "color:#E34120">HTML</span></li>
+<li><b><span style = "color:#E34120">HTML</span></b></li>
 
 
-<li><span style = "color:#209CE3">My Sql</span></li>
+<li><b><span style = "color:#209CE3">My Sql</span></b></li>
 
-<li><span style = "color:#39B925">MongoDB</span></li>
+<li><b><span style = "color:#39B925">MongoDB</span></b></li>
+
 
 </ul>
 
@@ -234,4 +242,10 @@ Utilizo múltiples herramientas tecnológicas para llevar a cabo mis tareas
 </div>
 </div>
 </div>
+
+
+
+
+
+
 
