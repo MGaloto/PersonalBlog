@@ -37,9 +37,13 @@ Distill for R Markdown combina las características técnicas de creación de Di
 </li>
 </ui>
 
+# Link
+
+<ui>
+<li>
 https://maxi-galo.netlify.app/
-
-
+</li>
+</ui>
 # Incluye
 
 <ui>

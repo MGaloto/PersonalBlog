@@ -118,7 +118,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["distr.png","machine-learning-lineal-regression_files/anchor-4.2.2/anchor.min.js","machine-learning-lineal-regression_files/bowser-1.9.3/bowser.min.js","machine-learning-lineal-regression_files/distill-2.2.21/template.v2.js","machine-learning-lineal-regression_files/header-attrs-2.11/header-attrs.js","machine-learning-lineal-regression_files/jquery-3.6.0/jquery-3.6.0.js","machine-learning-lineal-regression_files/jquery-3.6.0/jquery-3.6.0.min.js","machine-learning-lineal-regression_files/jquery-3.6.0/jquery-3.6.0.min.map","machine-learning-lineal-regression_files/popper-2.6.0/popper.min.js","machine-learning-lineal-regression_files/tippy-6.2.7/tippy-bundle.umd.min.js","machine-learning-lineal-regression_files/tippy-6.2.7/tippy-light-border.css","machine-learning-lineal-regression_files/tippy-6.2.7/tippy.css","machine-learning-lineal-regression_files/tippy-6.2.7/tippy.umd.min.js","machine-learning-lineal-regression_files/webcomponents-2.0.0/webcomponents.js","plot3d.gif"]}
+  {"type":"character","attributes":{},"value":["distr.png","machine-learning-lineal-regression_files/anchor-4.2.2/anchor.min.js","machine-learning-lineal-regression_files/bowser-1.9.3/bowser.min.js","machine-learning-lineal-regression_files/distill-2.2.21/template.v2.js","machine-learning-lineal-regression_files/header-attrs-2.11/header-attrs.js","machine-learning-lineal-regression_files/jquery-3.6.0/jquery-3.6.0.js","machine-learning-lineal-regression_files/jquery-3.6.0/jquery-3.6.0.min.js","machine-learning-lineal-regression_files/jquery-3.6.0/jquery-3.6.0.min.map","machine-learning-lineal-regression_files/popper-2.6.0/popper.min.js","machine-learning-lineal-regression_files/tippy-6.2.7/tippy-bundle.umd.min.js","machine-learning-lineal-regression_files/tippy-6.2.7/tippy-light-border.css","machine-learning-lineal-regression_files/tippy-6.2.7/tippy.css","machine-learning-lineal-regression_files/tippy-6.2.7/tippy.umd.min.js","machine-learning-lineal-regression_files/webcomponents-2.0.0/webcomponents.js","newplot.png","plot3d.gif"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2125,9 +2125,31 @@ document.addEventListener('DOMContentLoaded', function() {
 
 </style>
 </div>
-<h3 id="regresión-lineal"><strong>Regresión Lineal</strong></h3>
-<p>El Data Set de la inmobiliaria Properatti contiene observaciones de distintos tipos de propiedades en toda la Argentina, hay varios datos faltantes como también observaciones atípicas.</p>
-<p>El trabajo se realizo en Python utilizando Jupyter Notebook y las siguientes librerías:</p>
+<h1 id="regresion-lineal-multiple">Regresion Lineal Multiple</h1>
+<p>Las Notebooks presentadas en este proyecto contienen un análisis exploratorio y predictivo sobre el precio en dólares por metro cuadrado de distinto tipo de propiedades. Estos datos provienen de la inmobiliaria Properatti.</p>
+<p>Se realizo un profundo análisis sobre valores atípicos utilizando estadística descriptiva y visualización para limpiar los datos ya que el data set cuenta con valores nulos y errores de tipeo. En una de las variables del data set se utilizo la libreria NLTK de procesamiento de lenguaje natual para sacar palabras claves que sumen como features (Las amenities).</p>
+<p>El propósito de la limpieza del Data Set es a los efectos de poder estimar un modelo de <em>regresión lineal</em> para obtener los estimadores que mejor se ajusten y así predecir los precios en dólares por metro cuadrado.</p>
+<p>
+<a href="https://scikit-learn.org/stable/" rel="nofollow"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Python.svg/1024px-Python.svg.png" align="right" width="200" style="max-width: 100%;"></a>
+</p>
+<h1 id="presentacion">Presentacion</h1>
+<p>El trabajo final se presenta en una Notebook de Jupyter y en dos documentos R Markdown. En uno de ellos se encuentra el Data Wrangling y en el otro el modelo de <em>regresión lineal</em>.</p>
+<h1 id="incluye">Incluye</h1>
+<p><ui></p>
+<li>
+Extraccion, Transformacion y Carga de Datos.
+</li>
+<li>
+Limpieza del Data Set
+</li>
+<li>
+Graficos Dinamicos y Estaticos.
+</li>
+<li>
+Regresion Lineal Multiple
+</li>
+<p></ui></p>
+<h1 id="librerias">Librerias</h1>
 <p><ui></p>
 <li>
 {Matplotlib}
@@ -2138,16 +2160,39 @@ document.addEventListener('DOMContentLoaded', function() {
 <li>
 {Scikit-Learn}
 </li>
+<li>
+{Plotly}
+</li>
+<li>
+{NLTK}
+</li>
 <p></ui></p>
-<h3 id="d-plot"><strong>3D Plot</strong></h3>
-<div>
-<p><img src="plot3d.gif" width="600" height="500"/></p>
-</div>
-<h3 id="distribucion-de-precios"><strong>Distribucion de Precios</strong></h3>
-<div>
-<p><img src="distr.png" width="600" height="500"/></p>
-</div>
-<p>Codigo publicado en: <a href="https://github.com/MGaloto/cleandata">Github</a></p>
+<h1 id="visualizaciones">Visualizaciones</h1>
+<p><strong>3D Plot</strong></p>
+<p>Gráfico en tercera dimensión que relaciona tres variables del data set:</p>
+<p align="center">
+<img 
+    width="600"
+    height="500"
+    src="plot3d.gif"
+  >
+</p>
+<p><strong>NLTK</strong></p>
+<p>Palabras claves para las features obtenidas del uso de la librería NLTK:</p>
+<p align="center">
+<img 
+    width="650"
+    height="500"
+    src="newplot.png"
+  >
+</p>
+<h1 id="datos">Datos</h1>
+<p><a href="https://drive.google.com/file/d/1q25gqE943_Rhq9ejUrAVQSC-m3-O6XGF/view?usp=sharing">properatti.csv</a></p>
+<h1 id="codigo">Codigo</h1>
+<p><a href="https://github.com/MGaloto/cleandata">Github</a></p>
+<h1 id="dashboards">Dashboards</h1>
+<p><a href="https://rpubs.com/MGaloto/data_wrangling">Primera Parte</a></p>
+<p><a href="https://rpubs.com/MGaloto/regresionLinealMultiple">Segunda Parte</a></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

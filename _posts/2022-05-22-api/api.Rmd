@@ -40,7 +40,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 
 
-### **API**
+<h1 align="center">API</h1>
 
 Una API representa la capacidad de comunicación entre componentes de software. Se trata del conjunto de llamadas a ciertas bibliotecas que ofrecen acceso a ciertos servicios desde los procesos y representa un método para conseguir abstracción en la programación, generalmente (aunque no necesariamente) entre los niveles o capas inferiores y los superiores del software. Uno de los principales propósitos de una API consiste en proporcionar un conjunto de funciones de uso general, por ejemplo, para dibujar ventanas o iconos en la pantalla. De esta forma, los programadores se benefician de las ventajas de las API haciendo uso de su funcionalidad, evitándose el trabajo de programar todo desde el principio. Las API asimismo son abstractas: el software que proporciona una cierta API generalmente es llamado la implementación de esa API.
 
@@ -49,7 +49,22 @@ Una API representa la capacidad de comunicación entre componentes de software. 
 </p>
 
 
-### **Ficha Técnica**
+<br>
+</br>
+
+
+
+<h1 align="center">Web Scraping</h1>
+
+
+<p align="center">
+<img src="https://www.grazitti.com/wp-content/uploads/2019/08/ETL_Bannera.gif" alt="react" width="700" height="340" />
+</p>
+
+
+
+<br>
+</br>
 
 El siguiente trabajo consiste en el desarrollo de un Pipeline de Datos para automatizar la extraccion, transoformacion y carga de datos de las siguientes paginas:
 
@@ -57,12 +72,10 @@ El siguiente trabajo consiste en el desarrollo de un Pipeline de Datos para auto
 
 [Study Portals](https://studyportals.com/)
 
-
-
 Una vez finalizado se prueba una *API* en el servidor local para los contenidos obtenidos
 
 
-Librerías:
+Librerias:
 
 <ui>
 <li>
@@ -89,9 +102,7 @@ Ejemplo de un contenido:
 
 ```json
 {
-    "Area": [
-      "TECH"
-    ],
+    "Area": ["TECH"],
     "Pais": "United States",
     "Ciudad": "Newark",
     "Calles": "104 Hullihen Hall",
@@ -102,18 +113,13 @@ Ejemplo de un contenido:
     "Nivel": "master",
     "Part Time": "Unknown",
     "Full Time": "1 years",
-    "Cursada": [
-      "On Campus"
-    ],
+    "Cursada": ["On Campus"],
     "Duracion": "Unknown",
     "Titulo": "Mechanical Engineering",
     "Universidad": "University of Delaware",
     "Descripcion Programa": "The Department of Mechanical Engineering at the University of Delaware offers graduate programs leading to the degrees of Master of Science in Mechanical Engineering (MSME) and Doctor of Philosophy (PhD) in mechanical engineering. ",
     "Descripcion Universidad": "Founded 1833.",
-    "Categoria": [
-      "Engineering",
-      "Mechanical Engineering"
-    ],
+    "Categoria": ["Engineering","Mechanical Engineering"],
     "Deadline": null,
     "Requerimientos": null,
     "Tutition Free": "26303 EUR / year",
@@ -124,17 +130,75 @@ Ejemplo de un contenido:
   }
 
 ```
-CODIGO:
 
-[Github](https://github.com/MGaloto/api_university)
+<br>
+</br>
 
-API:
+<h1 align="center">Final Dashboard</h1>
 
 
+
+<ui>
+<li>
+https://rpubs.com/MGaloto/study_university
+</li>
+</ui>
 
 <p align="center">
   <img 
-    width="800"
-    height="600"
-    src="api.png">
+    width="650"
+    height="450"
+    src="dash.gif"
+  >
 </p>
+
+<br>
+</br>
+
+
+<h1 align="center">API</h1>
+
+```python
+
+from flask import Flask, json 
+
+app = Flask(__name__)
+
+
+'''
+degree = {'Bachelor', 'Course', 'Master', 'Phd'}
+page   = [0:64834]
+'''
+
+@app.route("/<degree>/<page>/")
+def Study(degree, page):
+    consolidado = json.load(open('Consolidado/consolidado_final.json', encoding='utf-8'))
+    consolidado_page = [consolidado[i] for i in range(len(consolidado)) if consolidado[i]['DegreeType'] == str(degree)][int(page)]
+    response = app.response_class(response = json.dumps(consolidado_page), status = 200, mimetype = "application/json")
+    return response
+
+app.run( port = 3000, host = "0.0.0.0" )
+
+```
+<br>
+</br>
+
+<p align="center">
+  <img 
+    width="650"
+    height="450"
+    src="api.gif"
+  >
+</p>
+
+<br>
+</br>
+
+
+<h1 align="center">Codigo</h1>
+
+<ui>
+<li>
+https://github.com/MGaloto/api_university
+</li>
+</ui>

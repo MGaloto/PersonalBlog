@@ -106,7 +106,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","site","listing"]}},"value":[{"type":"character","attributes":{},"value":["Maxi Galoto"]},{"type":"character","attributes":{},"value":["distill::distill_website"]},{"type":"character","attributes":{},"value":["posts"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","site","listing","output"]}},"value":[{"type":"character","attributes":{},"value":["Maxi Galoto"]},{"type":"character","attributes":{},"value":["distill::distill_website"]},{"type":"character","attributes":{},"value":["posts"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["css"]}},"value":[{"type":"character","attributes":{},"value":["styles.css"]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2046,6 +2046,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_site_in_header-->
   <!--/radix_placeholder_site_in_header-->
 
+  <link rel="stylesheet" href="styles.css" type="text/css"/>
 
 </head>
 
@@ -2211,6 +2212,66 @@ function init_posts_list() {
 <div class="posts-container posts-with-sidebar posts-apply-limit l-screen-inset">
 <div class="posts-list">
 <h1 class="posts-list-caption" data-caption="Maxi Galoto">Maxi Galoto</h1>
+<a href="posts/2022-06-30-algoritmos-de-clasificacion/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":["Python","Machine Learning"]}</script>
+<div class="metadata">
+<div class="publishedDate">June 30, 2022</div>
+<div class="dt-authors">
+<div class="dt-author">Maxi Galoto</div>
+</div>
+</div>
+<div class="thumbnail">
+<img src="https://miro.medium.com/max/700/1*pzrsGTuIVROqhz6_pXHgLg.jpeg"/>
+</div>
+<div class="description">
+<h2>Algoritmos de Clasificacion</h2>
+<div class="dt-tags">
+<div class="dt-tag">Python</div>
+<div class="dt-tag">Machine Learning</div>
+</div>
+<p>Notebooks y Scripts de Python utilizando la libreria Sckit-Learn para entrenar y probar modelos Supervisados de Clasificacion.</p>
+</div>
+</a>
+<a href="posts/2022-06-28-tcnicas-de-machine-learning/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":["Python","Machine Learning"]}</script>
+<div class="metadata">
+<div class="publishedDate">June 28, 2022</div>
+<div class="dt-authors">
+<div class="dt-author">Maxi Galoto</div>
+</div>
+</div>
+<div class="thumbnail">
+<img src="https://innovationatwork.ieee.org/wp-content/uploads/2021/01/bigstock-Machine-Learning-Artificial-I-311340295_1024X684.png"/>
+</div>
+<div class="description">
+<h2>Redes Neuronales</h2>
+<div class="dt-tags">
+<div class="dt-tag">Python</div>
+<div class="dt-tag">Machine Learning</div>
+</div>
+<p>Notebooks y Scripts de Python utilizando la libreria Tensorflow para entrenar y probar modelos de Aprendizaje Automatico.</p>
+</div>
+</a>
+<a href="posts/2022-06-05-shiny-macro-trends/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":["R","Shiny"]}</script>
+<div class="metadata">
+<div class="publishedDate">June 5, 2022</div>
+<div class="dt-authors">
+<div class="dt-author">Maxi Galoto</div>
+</div>
+</div>
+<div class="thumbnail">
+<img src="https://miro.medium.com/max/1400/1*D-B_EHZ859Zw7rPZ9tK-Vg.png"/>
+</div>
+<div class="description">
+<h2>Shiny App</h2>
+<div class="dt-tags">
+<div class="dt-tag">R</div>
+<div class="dt-tag">Shiny</div>
+</div>
+<p>Aplicacion utilizando el framework de R llamado Shiny sobre tendencias de variables macroeconomicas para Argentina.</p>
+</div>
+</a>
 <a href="posts/2022-05-22-api/" class="post-preview">
 <script class="post-metadata" type="text/json">{"categories":["Python"]}</script>
 <div class="metadata">
@@ -2258,7 +2319,7 @@ function init_posts_list() {
 </div>
 </div>
 <div class="thumbnail">
-<img src="https://i.ytimg.com/vi/ZVR2Way4nwQ/maxresdefault.jpg"/>
+<img data-src="https://i.ytimg.com/vi/ZVR2Way4nwQ/maxresdefault.jpg"/>
 </div>
 <div class="description">
 <h2>Arbol de Decision</h2>
@@ -2277,7 +2338,7 @@ function init_posts_list() {
 </div>
 </div>
 <div class="thumbnail">
-<img src="https://gdprinformer.com/wp-content/uploads/2017/09/GDPRandPoliticalMarketing.jpg"/>
+<img data-src="https://gdprinformer.com/wp-content/uploads/2017/09/GDPRandPoliticalMarketing.jpg"/>
 </div>
 <div class="description">
 <h2>Political Marketing</h2>
@@ -2296,7 +2357,7 @@ function init_posts_list() {
 </div>
 </div>
 <div class="thumbnail">
-<img src="https://www.powerdata.es/hs-fs/hubfs/images/Data%20Warehouse-1.jpg?width=700&amp;name=Data%20Warehouse-1.jpg"/>
+<img data-src="https://www.powerdata.es/hs-fs/hubfs/images/Data%20Warehouse-1.jpg?width=700&amp;name=Data%20Warehouse-1.jpg"/>
 </div>
 <div class="description">
 <h2>Base de Datos</h2>
@@ -2429,7 +2490,11 @@ function init_posts_list() {
 <ul>
 <li>
 <a href="#category:Articles">Articles</a>
-<span class="category-count">(11)</span>
+<span class="category-count">(14)</span>
+</li>
+<li>
+<a href="#category:Machine_Learning">Machine Learning</a>
+<span class="category-count">(2)</span>
 </li>
 <li>
 <a href="#category:MySql">MySql</a>
@@ -2437,11 +2502,15 @@ function init_posts_list() {
 </li>
 <li>
 <a href="#category:Python">Python</a>
-<span class="category-count">(4)</span>
+<span class="category-count">(6)</span>
 </li>
 <li>
 <a href="#category:R">R</a>
-<span class="category-count">(8)</span>
+<span class="category-count">(9)</span>
+</li>
+<li>
+<a href="#category:Shiny">Shiny</a>
+<span class="category-count">(1)</span>
 </li>
 </ul>
 </div>
@@ -2461,31 +2530,6 @@ function init_posts_list() {
 
 
 <div class="d-article">
-<div class="layout-chunk" data-layout="l-body">
-<style type="text/css">
-.distill-site-nav {
-    color: white;
-    background-image: url('https://i.gifer.com/WGkW.gif');
-    border: solid 1px black;
-    border-radius: .3rem;
-    font-size: 15px;
-    font-weight: 300;
-    background-size: cover;
-    background-position: 100%;
-
-}
-
-.posts-list .post-preview .thumbnail {
-    box-sizing: border-box;
-    margin-bottom: 24px;
-    position: relative;
-    max-width: 250px;
-    border: solid 1px black;
-    border-radius: .3rem;
-}
-
-</style>
-</div>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

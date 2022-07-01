@@ -1,0 +1,103 @@
+---
+title: "Algoritmos de Clasificacion"
+description: |
+  Notebooks y Scripts de Python utilizando la libreria Sckit-Learn para entrenar y probar modelos Supervisados de Clasificacion.
+author: Maxi Galoto
+date: 2022-06-30
+slug: almost-done
+categories:
+  - Python
+  - Machine Learning
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+<div >
+<img src="https://miro.medium.com/max/700/1*pzrsGTuIVROqhz6_pXHgLg.jpeg" alt="react" width="1" height="1" />
+</div>
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+```{css my-header-colors, echo = FALSE}
+
+.distill-site-nav {
+    color: white;
+    background-image: url('https://i.gifer.com/WGkW.gif');
+    border: solid 1px black;
+    border-radius: .3rem;
+    font-size: 15px;
+    font-weight: 300;
+    background-size: cover;
+    background-position: 100%;
+}
+
+```
+
+
+<h1>Introducción</h1>
+
+
+Recordemos los dos tipos de aprendizaje automático: 
+
+* Aprendizaje **supervisado** 
+
+* Aprendizaje **no supervisado**
+
+La diferencia entre ambos radica en la **existencia o no de una variable objetivo** para predecir.
+
+* Los métodos supervisados requieren tanto de datos de *input* como el *output* (o target) asociado para generar las reglas. 
+
+* Los métodos no supervisados solo requieren datos de *input*.
+
+<br>
+</br>
+
+# Aprendizaje supervisado
+
+
+Los algoritmos de aprendizaje supervisado se dividen en dos grandes tipos:
+
+- **Regresiones y Clasificaciones**
+
+visado.
+
+<br>
+</br>
+
+# Clasificación
+
+
+Con la clasificación, buscamos predecir una **variable objetivo** que es **categórica** en lugar de continua. 
+
+Algunos ejemplos típicos:
+
+- Predicción de bajas de clientes a la suscripción de un servicio (modelos de *churn*)
+- Distinción de comentarios positivos y negativos en redes sociales
+- Filtros de _spam_ en servicios de correo electrónico
+- Diagnóstico de enfermedades
+- Detección de fraudes de tarjeta de crédito
+
+Existen diferentes modelos que implementan soluciones a problemas de clasificación.
+
+<img src="https://raw.githubusercontent.com/Digital-House-DATA/ds_blend_2021_img/master/M4/CLASE_26_Intro-Clasif-KNN/Presentacion/img/M4_CLASE_26_Classification-Algorithms.jpg" align="center" alt="algoritmos" width=70% height=40% />
+
+
+<br>
+</br>
+
+
+<span style="color:blue">*En el repositorio que se va a compartir en este post se encuentran distintos tipos de algoritmos de Clasificaciones y Aprendizaje Super.*</span>.
+
+<br>
+</br>
+
+# Repositorio
+
+
+[Github](https://github.com/MGaloto/modelos_clasificacion)
+
