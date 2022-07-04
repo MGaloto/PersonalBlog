@@ -25,25 +25,55 @@ knitr::opts_chunk$set(echo = FALSE)
 ```{css my-header-colors, echo = FALSE}
 .distill-site-nav {
     color: white;
-    background-image: url('https://i.gifer.com/WGkW.gif');
+    background-image: url('https://media4.giphy.com/media/jaOXKCxtBPLieRLI0c/giphy.gif?cid=790b76115d6cd90afde8787c5cdcafd67fc94960f3437562&rid=giphy.gif&ct=g');
     border: solid 1px black;
     border-radius: .3rem;
     font-size: 15px;
     font-weight: 300;
     background-size: cover;
     background-position: 100%;
-
 }
 
-.posts-list .post-preview .thumbnail {
-    box-sizing: border-box;
-    margin-bottom: 24px;
-    position: relative;
-    max-width: 0px;
+h1{
+    font-family: 'Alata', sans-serif;
+    font-weight: 700;
 }
 
+p {
+    font-family: 'Cardo', serif;
+    font-weight: 200;
+    line-height: 1.3;
+    font-size: 1.075em;
+    font-style: normal;
+}
 
 ```
+
+
+# GGanimate
+
+
+<div>
+<a> 
+<img src="https://gganimate.com/reference/figures/logo.png" align="right" width="160" height ="180"> 
+
+<p>
+
+Gganimate es una extensión del paquete ggplot2 para crear ggplots animados. Proporciona una variedad de funciones nuevas que se pueden agregar al objeto de trazado para personalizar cómo debe cambiar con el tiempo.
+
+Características clave de ganimate:
+
+- Transiciones : desea que sus datos cambien
+- Vistas : quieres que tu punto de vista cambie
+- Sombras : quieres que la animación tenga memoria
+</p>
+</a>
+
+
+</div>
+---
+
+# Work
 
 _Durante el Shock Externo de la pandemia mundial podemos observar que las variables más elásticas fueron el **Bitcoin** y el **Nasdaq**_
 
@@ -78,6 +108,8 @@ Usd/Eur
 
 ![Activos](C:/Users/maxig/Desktop/Carpetas/Trabajos en R/Netlify/Blog Personal/_posts/2022-01-21-activos-antes-y-despues-del-covid-19/activos.gif)
 
+
+# Repositorio
 
 Publicado en: [Pagina de Rpubs](https://rpubs.com/MGaloto/Dinamica_Activos)
 

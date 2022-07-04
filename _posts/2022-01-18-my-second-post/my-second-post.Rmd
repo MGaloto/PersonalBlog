@@ -22,29 +22,116 @@ knitr::opts_chunk$set(echo = FALSE)
 
 
 ```{css my-header-colors, echo = FALSE}
+
 .distill-site-nav {
     color: white;
-    background-image: url('https://i.gifer.com/WGkW.gif');
+    background-image: url('https://media4.giphy.com/media/jaOXKCxtBPLieRLI0c/giphy.gif?cid=790b76115d6cd90afde8787c5cdcafd67fc94960f3437562&rid=giphy.gif&ct=g');
     border: solid 1px black;
     border-radius: .3rem;
     font-size: 15px;
     font-weight: 300;
     background-size: cover;
     background-position: 100%;
-
 }
 
+h1{
+    font-family: 'Alata', sans-serif;
+    font-weight: 700;
+}
 
+p {
+    font-family: 'Cardo', serif;
+    font-weight: 200;
+    line-height: 1.3;
+    font-size: 1.075em;
+    font-style: normal;
+}
 
 ```
 
 
-_Se puede observar un fuerte incremento del tipo de cambio luego del Shock Externo del Covid-19. Si bien la tendencia del dólar es alcista hace tiempo, este gráfico nos muestra una relación casi exponencial respecto al tiempo._
+
+# GGanimate
 
 
-![Dolar](C:/Users/maxig/Desktop/Carpetas/Trabajos en R/Netlify/Blog Personal/_posts/2022-01-18-my-second-post/dolar.gif)
+<div>
+<a> 
+<img src="https://gganimate.com/reference/figures/logo.png" align="right" width="160" height ="180"> 
+
+<p>
+
+Gganimate es una extensión del paquete ggplot2 para crear ggplots animados. Proporciona una variedad de funciones nuevas que se pueden agregar al objeto de trazado para personalizar cómo debe cambiar con el tiempo.
+
+Características clave de ganimate:
+
+- Transiciones : desea que sus datos cambien
+- Vistas : quieres que tu punto de vista cambie
+- Sombras : quieres que la animación tenga memoria
+</p>
+</a>
 
 
+</div>
+---
+
+
+
+
+<br>
+</br>
+
+# GIF
+
+El siguiente Gif es una Serie Temporal del dolar paralelo en Argentina para el periodo 2002 - 2022
+
+_Se puede observar un fuerte incremento del tipo de cambio luego del Shock Externo del Covid-19. Si bien la tendencia del dólar es alcista hace tiempo, este gráfico nos muestra una relación casi exponencial._
+
+
+![.](C:/Users/maxig/Desktop/Carpetas/Trabajos en R/Netlify/Blog Personal/_posts/2022-01-18-my-second-post/dolar.gif)
+
+
+```r
+dolar_final %>% 
+  ggplot(aes(x = Fecha, y = Promedio)) + 
+    geom_path(aes(x = Fecha, y = Promedio), alpha = 0.7, size = 1.5, width = 1, color = '#39ad58') + 
+    geom_point(aes(x = Fecha, y = Promedio), alpha = 1, size = 4, width = 2,color = 'grey') +
+    ggtitle("Regions With Most Cases") +
+    scale_x_date(date_labels = "%Y") +
+    scale_y_continuous(limits = c(0, 200)) + 
+    geom_text(aes(label = paste0("Precio: $",Promedio,'\nPeriodo:',month(dolar_final$Fecha),'/',year(dolar_final$Fecha))), 
+              hjust = +1, 
+              size = 6) +
+    labs(title = 'Dolar Paralelo, Fecha: {frame_along}',
+         x = 'Año',
+         y = 'Dolar Paralelo',
+         subtitle = "Dinamica del Dolar Paralelo",
+    caption = "Elaboracion propia en base a datos de Ambito.com") +
+    theme_bw() +
+    theme(legend.position = "bottom") + 
+    transition_reveal(Fecha) +
+    geom_vline(xintercept=dolar_final$Fecha[4515],
+               linetype=1, 
+               color = "black", 
+               size=0.8) +
+    annotate(
+    geom = "curve",
+    x = dolar_final$Fecha[4510],
+    y = 82, 
+    xend = dolar_final$Fecha[4200],
+    yend = 140, 
+    curvature = 0, 
+    size = 1,
+    arrow = arrow(length = unit(2, "mm"))) +
+    annotate(geom = "text",
+             size = 5,
+             x = dolar_final$Fecha[3950],
+             y = 155, 
+             label = " Inicio de la\nCuarentena\n 20/03/2020", 
+             hjust = "left")
+
+```
+
+# Repositorio
 
 Publicado en: [Pagina de Rpubs](https://rpubs.com/MGaloto/dolarparalelo)
 

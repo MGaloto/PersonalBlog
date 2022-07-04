@@ -4,15 +4,15 @@
       "path": "about.html",
       "title": "Acerca de mi",
       "author": [],
-      "contents": "\r\n\r\n\r\nThe consequences for human welfare involved in questions like these are simply staggering: Once one starts to think about them, it is hard to think about anything else.\r\n\r\n\r\n Robert E. Lucas. - 1987\r\n\r\n\r\n.distill-site-nav {\r\n    color: white;\r\n    background-image: url('https://i.gifer.com/WGkW.gif');\r\n    border: solid 1px black;\r\n    border-radius: .3rem;\r\n    font-size: 15px;\r\n    font-weight: 300;\r\n    background-size: cover;\r\n    background-position: 100%;\r\n\r\n}\r\n\r\n.myimg {\r\n  height: 450px;\r\n  width: 450px;\r\n  border-radius: 80%;\r\n  object-fit: cover;\r\n  border: solid 1px black;\r\n  max-width: 52%;\r\n}\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nMaxi Galoto\r\n\r\n\r\nLic. Economia. Maestrando en Ciencia de Datos. Buenos Aires, Argentina.\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nSoy de Buenos Aires, Argentina.\r\nHincha de Independiente de Avellaneda\r\nLicenciado en Economía, actualmente trabajando como Data Engineer y cursando un Master en Ciencia de Datos.\r\nMe apasiona la Ciencia de Datos, le encuentro un interesante propósito, creo firmemente en que las nuevas tecnologías nos pueden ayudar a mejorar la calidad de vida de todos.\r\n\r\n\r\nEducación\r\n\r\n\r\n\r\n\r\n\r\nLic. Economía, 2020.\r\n\r\n\r\nUniversidad de Ciencias Empresariales y Sociales, Buenos Aires, Argentina.\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nMaestría en Ciencia de Datos e Innovación Empresarial, 2021.\r\n\r\n\r\nCAECE, Buenos Aires, Argentina.\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nData Science, 2022\r\n\r\n\r\nDigital House, Buenos Aires, Argentina.\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-06-20T21:39:00-03:00"
+      "contents": "\r\n\r\n\r\nThe consequences for human welfare involved in questions like these are simply staggering: Once one starts to think about them, it is hard to think about anything else.\r\n\r\n\r\n Robert E. Lucas. - 1987\r\n\r\n\r\n\r\n\r\n\r\nMaxi Galoto\r\n\r\n\r\nLic. Economia. Maestrando en Ciencia de Datos. Buenos Aires, Argentina.\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nSoy de Buenos Aires, Argentina.\r\nHincha de Independiente de Avellaneda\r\nLicenciado en Economía, actualmente trabajando como Data Engineer y cursando un Master en Ciencia de Datos.\r\nMe apasiona la Ciencia de Datos, le encuentro un interesante propósito, creo firmemente en que las nuevas tecnologías nos pueden ayudar a mejorar la calidad de vida de todos.\r\n\r\n\r\nEducación\r\n\r\n\r\n\r\n\r\n\r\nLic. Economía, 2020.\r\n\r\n\r\nUniversidad de Ciencias Empresariales y Sociales, Buenos Aires, Argentina.\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nMaestría en Ciencia de Datos e Innovación Empresarial, 2021.\r\n\r\n\r\nCAECE, Buenos Aires, Argentina.\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nData Science, 2022\r\n\r\n\r\nDigital House, Buenos Aires, Argentina.\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+      "last_modified": "2022-07-02T16:18:44-03:00"
     },
     {
       "path": "index.html",
       "title": "Maxi Galoto",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-06-30T21:24:26-03:00"
+      "last_modified": "2022-07-03T21:22:20-03:00"
     }
   ],
   "collections": ["posts/posts.json"]

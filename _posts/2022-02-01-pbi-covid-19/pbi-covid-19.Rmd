@@ -24,14 +24,26 @@ knitr::opts_chunk$set(echo = FALSE)
 ```{css my-header-colors, echo = FALSE}
 .distill-site-nav {
     color: white;
-    background-image: url('https://i.gifer.com/WGkW.gif');
+    background-image: url('https://media4.giphy.com/media/jaOXKCxtBPLieRLI0c/giphy.gif?cid=790b76115d6cd90afde8787c5cdcafd67fc94960f3437562&rid=giphy.gif&ct=g');
     border: solid 1px black;
     border-radius: .3rem;
     font-size: 15px;
     font-weight: 300;
     background-size: cover;
     background-position: 100%;
+}
 
+h1{
+    font-family: 'Alata', sans-serif;
+    font-weight: 700;
+}
+
+p {
+    font-family: 'Cardo', serif;
+    font-weight: 200;
+    line-height: 1.3;
+    font-size: 1.075em;
+    font-style: normal;
 }
 
 
@@ -85,6 +97,14 @@ gdp_var_2$Variacion = round(gdp_var_2$Variacion*100,2)
 ```
 
 
+<div>
+
+
+<p style="text-align:center;"><img src="https://miro.medium.com/max/590/1*GOS7SjdpRRUKVdLNwrFAGg.png" ></p>
+<p>
+
+</div>
+---
 
 ### **Ficha técnica del estudio**
 
@@ -283,7 +303,7 @@ grafico_barras_2 %>%  config(displayModeBar = F)
 
 ```
 
-
+# Repositorio
 
 Dashboard publicado en: [RPubs](https://rpubs.com/MGaloto/PBI_Logs)
 
